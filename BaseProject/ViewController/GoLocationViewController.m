@@ -1,45 +1,30 @@
 //
-//  LocationViewController.m
+//  GoLocationViewController.m
 //  BaseProject
 //
-//  Created by jake on 15/10/23.
+//  Created by jake on 15/10/28.
 //  Copyright © 2015年 Tarena. All rights reserved.
 //
 
-#import "LocationViewController.h"
-#import <CoreLocation/CoreLocation.h>
+#import "GoLocationViewController.h"
 #import "CityListViewModel.h"
 #import "LocationCityViewController.h"
 #import "MainViewController.h"
 #import "LocationDistrictViewController.h"
-@interface LocationViewController ()<UITableViewDelegate,UITableViewDataSource,CLLocationManagerDelegate,UISearchDisplayDelegate,LocationDistrictViewControllerDelegate>
-@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@interface GoLocationViewController ()<UITableViewDelegate,UITableViewDataSource,UISearchDisplayDelegate,LocationDistrictViewControllerDelegate>
 
-@property (nonatomic , strong) CLLocationManager *manager;
 @property (nonatomic , strong) CityListViewModel *cityListVM;
 
-
+//用于存储目的地的地址
+@property (nonatomic , strong) NSString *destination;
 @property (nonatomic , strong) NSMutableArray *searchCity;//存储搜索出来的数组
 @end
 
-@implementation LocationViewController
-
-- (CLLocationManager *)manager {
-    if(_manager == nil) {
-        _manager = [[CLLocationManager alloc] init];
-        if([UIDevice currentDevice].systemVersion.floatValue >= 8.0){
-//进行系统版本判断
-            _manager.delegate = self;
-            [_manager requestWhenInUseAuthorization];
-        }
-    }
-    return _manager;
-}
+@implementation GoLocationViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-//从网络获取数据
+    //从网络获取数据
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     [self.cityListVM getCityListDataCompletionHandle:^(NSError *error) {
         [self.tableView reloadData];
@@ -53,51 +38,23 @@
     [self.searchDisplayController.searchResultsTableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
 }
 
-- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations{
-    CLLocation *location = locations.firstObject;
-    DDLogVerbose(@"location %@",location);
-    
-    [self.manager stopUpdatingLocation];
-    
-//反编码获得地址
-    [self reGeocoder:location];
-    
-}
 
-//反地理编码
-- (void)reGeocoder:(CLLocation *)location{
-    CLGeocoder *geocoder = [CLGeocoder new];
-    [geocoder reverseGeocodeLocation:location completionHandler:^(NSArray<CLPlacemark *> * _Nullable placemarks, NSError * _Nullable error) {
-        for (CLPlacemark *mark in placemarks) {
-            DDLogVerbose(@"本地地址：%@",mark.name);
-            self.locationName = mark.locality;
-            DDLogVerbose(@"定位好了");
-            self.title = self.locationName;
-//  刷新定位cell
-            NSIndexSet *indexSet=[[NSIndexSet alloc]initWithIndex:0];
-            [self.tableView reloadSections:indexSet withRowAnimation:UITableViewRowAnimationFade];
-        }
-    }];
-}
+
 
 #pragma mark TableViewDataSource
 
 kRemoveCellSeparator
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 2;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     if(tableView == self.searchDisplayController.searchResultsTableView){
         return self.searchCity.count;
     }else{
-        if(section == 0){
-            return 1;
-        }else if(section == 1){
-            return [self.cityListVM getProviceCount];
-        }else{
-            return 0;
-        }
+        
+        return [self.cityListVM getProviceCount];
+        
     }
 }
 
@@ -111,18 +68,14 @@ kRemoveCellSeparator
             cell.textLabel.text = self.searchCity[indexPath.row];
         }
     }else{
-        if(indexPath.section == 0 ){
-            cell = [tableView dequeueReusableCellWithIdentifier:@"HeaderCell" forIndexPath:indexPath];
-            UILabel *label = (UILabel *)[cell.contentView viewWithTag:100];
-            label.text = self.locationName;
-    
-        }else{
-//        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"ProviceCell"];
-            cell = [tableView dequeueReusableCellWithIdentifier:@"ProviceCell" forIndexPath:indexPath];
+        
+      
+            //        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"ProviceCell"];
+            cell = [tableView dequeueReusableCellWithIdentifier:@"GoCell" forIndexPath:indexPath];
             cell.textLabel.text = [self.cityListVM getProviceNameAtIndex:indexPath];
-//        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-       
-        }
+            //        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+            
+     
     }
     return cell;
 }
@@ -133,33 +86,24 @@ kRemoveCellSeparator
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     if(tableView == self.tableView){
-        if(!indexPath.section){
-            DDLogVerbose(@"开始定位");
-//开始更新位置信息
-            MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-            hud.mode = MBProgressHUDModeIndeterminate;
-            hud.labelText = @"正在获取您的当前位置";
-            [self.manager startUpdatingLocation];
-            [hud hide:YES afterDelay:1];
         
-        }else{
             NSString *selectedProvice = [self.cityListVM getProviceNameAtIndex:indexPath];
-//获取在该省份对象数组
+            //获取在该省份对象数组
             NSArray *cityArray = [self.cityListVM getCityListModelFromProvice:selectedProvice];
-//推送结果到下一个视图
+            //推送结果到下一个视图
             LocationCityViewController *vc = [[LocationCityViewController alloc] initWithCityArray:cityArray];
             vc.cityListVM = self.cityListVM;
             vc.dataVC = self;
             [self.navigationController pushViewController:vc animated:YES];
+            
         
-        }
     }else{
-//在搜索结果中选择位置
-        self.locationName = self.searchCity[indexPath.row];
+        //在搜索结果中选择位置
+        self.destination = self.searchCity[indexPath.row];
         //给代理方发送消息
-        [self.delegate  locationViewEnd:self withLocalName:self.locationName];
+        [self.delegate  goLocationView:self withDistination:self.destination];
         
-        NSString *message = [NSString stringWithFormat:@"切换到 %@",self.locationName];
+        NSString *message = [NSString stringWithFormat:@"切换到 %@",self.destination];
         UIAlertView *alertView = [[UIAlertView alloc]bk_initWithTitle:@"设置成功" message:message];
         [alertView bk_addButtonWithTitle:@"确定" handler:^{
             [self.navigationController popViewControllerAnimated:YES];
@@ -201,17 +145,17 @@ kRemoveCellSeparator
 
 
 - (void)locationDistrictView:(LocationDistrictViewController *)senderVC withLocalName:(NSString *)localName{
-    self.locationName = localName;
+    self.destination = localName;
     //给代理方发送消息（给主界面）
-    [self.delegate locationViewEnd:self withLocalName:self.locationName];
+    [self.delegate goLocationView:self withDistination:self.destination];
 }
 
 #pragma mark - 懒加载
 - (CityListViewModel *)cityListVM {
-	if(_cityListVM == nil) {
-		_cityListVM = [[CityListViewModel alloc] init];
-	}
-	return _cityListVM;
+    if(_cityListVM == nil) {
+        _cityListVM = [[CityListViewModel alloc] init];
+    }
+    return _cityListVM;
 }
 
 
@@ -220,14 +164,7 @@ kRemoveCellSeparator
         _searchCity = [NSMutableArray array];
     }
     return _searchCity;
-
+    
 }
 
-- (NSString *)locationName{
-    if(!_locationName){
-        _locationName = @"定位当前地址";
-    }
-    return _locationName;
-
-}
 @end

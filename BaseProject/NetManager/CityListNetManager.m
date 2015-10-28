@@ -29,7 +29,7 @@ static const NSString *APPKEY = @"b6a901979de1bad19fa819d7856afea6";
             DDLogVerbose(@"创建city数据文件夹成功！");
         }
         plistPath = [cityDataDirectory stringByAppendingPathComponent:@"cityData.plist"];
-        DDLogVerbose(@"%@",plistPath);
+//        DDLogVerbose(@"%@",plistPath);
     }
     return plistPath;
 }

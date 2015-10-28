@@ -8,7 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "CityListViewModel.h"
+#import "LocationViewController.h"
+#import "GoLocationViewController.h"
 @interface LocationCityViewController : UITableViewController
 - (instancetype) initWithCityArray:(NSArray *)cityArray;
 @property (nonatomic , strong) CityListViewModel *cityListVM;
+@property (nonatomic , strong) id dataVC;
+
 @end

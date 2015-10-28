@@ -12,3 +12,5 @@
 //用于存储目的地的地址
 @property (nonatomic , strong) NSString *destination;
 @end
+
+

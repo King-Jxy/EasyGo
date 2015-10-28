@@ -69,6 +69,8 @@ kRemoveCellSeparator
     NSString *cityName = self.citys[indexPath.row];
     NSArray *districtArr = [self.cityListVM getDistrictListModelFromCity:cityName];
     LocationDistrictViewController *vc = [[LocationDistrictViewController alloc]initWithDistrictArray:districtArr];
+#warning 代理设置
+    vc.delegate = self.dataVC;
     [self.navigationController  pushViewController:vc animated:YES];
 }
 

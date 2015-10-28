@@ -8,6 +8,8 @@
 
 #import "LocationDistrictViewController.h"
 #import "CityListModel.h"
+#import "LocationViewController.h"
+#import "MainViewController.h"
 @interface LocationDistrictViewController ()
 @property (nonatomic , strong) NSArray *districts;
 @end
@@ -59,7 +61,16 @@ kRemoveCellSeparator
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    
+    NSString *message = [NSString stringWithFormat:@"切换到 %@",self.districts[indexPath.row]];
+    UIAlertView *alertView = [[UIAlertView alloc]bk_initWithTitle:@"设置成功" message:message];
+    [alertView bk_addButtonWithTitle:@"确定" handler:^{
+//给代理发送消息
+        [self.delegate locationDistrictView:self withLocalName:self.districts[indexPath.row]];
+//把获得的值统一传回给LocationViewController来处理
+        
+        [self.navigationController popToRootViewControllerAnimated:YES];
+    }];
+    [alertView show];
 }
 
 /*
