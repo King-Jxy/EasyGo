@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="p1n-dM-rJR">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="p1n-dM-rJR">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
-        <!--资讯-->
+        <!--Main View Controller-->
         <scene sceneID="NsB-C7-PSp">
             <objects>
                 <viewController id="0Sz-QH-HIn" customClass="MainViewController" sceneMemberID="viewController">
@@ -24,18 +24,10 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
                             <view alpha="0.69999999999999996" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="b9F-Fl-8R5" userLabel="WeatherView">
-                                <rect key="frame" x="0.0" y="93" width="375" height="201"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="230"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.96013957262039185" green="0.75198167562484741" blue="0.19670948386192322" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="rmG-1h-3LV">
-                                <rect key="frame" x="0.0" y="64" width="375" height="29"/>
-                                <animations/>
-                                <segments>
-                                    <segment title="First"/>
-                                    <segment title="Second"/>
-                                </segments>
-                            </segmentedControl>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="M13-PA-Cnr" userLabel="ChoosePlaceButton">
                                 <rect key="frame" x="112" y="220" width="150" height="143"/>
                                 <subviews>
@@ -54,7 +46,18 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="资讯" id="lci-X2-D6f">
+                    <navigationItem key="navigationItem" id="lci-X2-D6f">
+                        <nil key="title"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="compose" id="eEc-JD-xSs"/>
+                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="rmG-1h-3LV">
+                            <rect key="frame" x="117" y="8" width="141" height="29"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <animations/>
+                            <segments>
+                                <segment title="本地"/>
+                                <segment title="目的地"/>
+                            </segments>
+                        </segmentedControl>
                         <barButtonItem key="rightBarButtonItem" title="我的位置" id="nSS-qI-9Dn">
                             <connections>
                                 <segue destination="nNd-cq-plJ" kind="push" id="ys1-Az-cyU"/>
@@ -86,31 +89,32 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="E2S-8k-NV5">
-                                <rect key="frame" x="0.0" y="64" width="320" height="44"/>
-                                <animations/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <outlet property="delegate" destination="nNd-cq-plJ" id="TDL-jf-2ND"/>
-                                </connections>
-                            </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="59" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="uRe-zL-ciA">
-                                <rect key="frame" x="0.0" y="108" width="320" height="372"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <searchBar key="tableHeaderView" contentMode="redraw" placeholder="搜索您的位置" id="E2S-8k-NV5">
+                                    <rect key="frame" x="0.0" y="64" width="320" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <animations/>
+                                    <textInputTraits key="textInputTraits"/>
+                                    <connections>
+                                        <outlet property="delegate" destination="nNd-cq-plJ" id="TDL-jf-2ND"/>
+                                    </connections>
+                                </searchBar>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="HeaderCell" rowHeight="59" id="mEw-hj-21E">
-                                        <rect key="frame" x="0.0" y="28" width="320" height="59"/>
+                                        <rect key="frame" x="0.0" y="136" width="320" height="59"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mEw-hj-21E" id="wgw-8s-22t">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="58"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="定位当前位置" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZIu-G6-Knm">
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="100" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="定位当前位置" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZIu-G6-Knm">
                                                     <rect key="frame" x="10" y="18" width="102" height="21"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="icon_pin_floating" translatesAutoresizingMaskIntoConstraints="NO" id="0Fh-6i-n2w">
@@ -144,7 +148,7 @@
                                         <color key="backgroundColor" red="0.61482319080000003" green="0.85883532070000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="ProviceCell" textLabel="I2J-xv-aca" style="IBUITableViewCellStyleDefault" id="ktJ-cz-Gs5">
-                                        <rect key="frame" x="0.0" y="87" width="320" height="59"/>
+                                        <rect key="frame" x="0.0" y="195" width="320" height="59"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ktJ-cz-Gs5" id="vqV-dI-kUt">
                                             <rect key="frame" x="0.0" y="0.0" width="287" height="58"/>
@@ -155,7 +159,7 @@
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -174,13 +178,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="uRe-zL-ciA" firstAttribute="leading" secondItem="sn5-8H-wWu" secondAttribute="leading" id="11Q-Hb-41X"/>
-                            <constraint firstItem="E2S-8k-NV5" firstAttribute="top" secondItem="0QR-6g-wBw" secondAttribute="bottom" id="3Pm-hr-e3O"/>
-                            <constraint firstItem="E2S-8k-NV5" firstAttribute="leading" secondItem="sn5-8H-wWu" secondAttribute="leading" id="3oo-75-Uft"/>
                             <constraint firstItem="JIQ-My-uck" firstAttribute="top" secondItem="uRe-zL-ciA" secondAttribute="bottom" id="4B1-8d-yWz"/>
-                            <constraint firstAttribute="trailing" secondItem="E2S-8k-NV5" secondAttribute="trailing" id="7SO-h4-ids"/>
                             <constraint firstAttribute="trailing" secondItem="uRe-zL-ciA" secondAttribute="trailing" id="Ev2-R4-da2"/>
-                            <constraint firstItem="uRe-zL-ciA" firstAttribute="top" secondItem="E2S-8k-NV5" secondAttribute="bottom" id="hxh-mT-e8l"/>
-                            <constraint firstItem="uRe-zL-ciA" firstAttribute="top" secondItem="E2S-8k-NV5" secondAttribute="bottom" id="jeB-t6-ozL"/>
+                            <constraint firstItem="uRe-zL-ciA" firstAttribute="top" secondItem="0QR-6g-wBw" secondAttribute="bottom" constant="-64" id="ufe-dF-6eV"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="我的位置" id="LCb-gW-Hzt"/>
@@ -195,13 +195,14 @@
                 <searchDisplayController id="Kqx-ZZ-Xwz">
                     <connections>
                         <outlet property="delegate" destination="nNd-cq-plJ" id="hz7-Fz-ljd"/>
+                        <outlet property="searchBar" destination="E2S-8k-NV5" id="BXk-Ue-qsU"/>
                         <outlet property="searchContentsController" destination="nNd-cq-plJ" id="hXj-rl-GCt"/>
                         <outlet property="searchResultsDataSource" destination="nNd-cq-plJ" id="s5C-oK-m93"/>
                         <outlet property="searchResultsDelegate" destination="nNd-cq-plJ" id="jSQ-jZ-Vv2"/>
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="1242" y="-265"/>
+            <point key="canvasLocation" x="1212" y="-301"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="5iY-6H-dB4">

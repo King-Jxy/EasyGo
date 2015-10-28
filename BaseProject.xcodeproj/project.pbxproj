@@ -8,27 +8,27 @@
 
 /* Begin PBXBuildFile section */
 		1FACF87C97D68F953ECE365C /* libPods-BaseProject.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EAAD623A23724C816F8DC02 /* libPods-BaseProject.a */; };
-		232746631BD90E8000BC335D /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 232746621BD90E8000BC335D /* MainViewController.m */; settings = {ASSET_TAGS = (); }; };
+		232746631BD90E8000BC335D /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 232746621BD90E8000BC335D /* MainViewController.m */; };
 		23B965C61BDA581200245FE5 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23B965C51BDA581200245FE5 /* CoreLocation.framework */; };
 		23B965C81BDA581900245FE5 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23B965C71BDA581900245FE5 /* MapKit.framework */; };
-		23B965CB1BDA594600245FE5 /* LocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23B965CA1BDA594600245FE5 /* LocationViewController.m */; settings = {ASSET_TAGS = (); }; };
-		23B965CE1BDB22FD00245FE5 /* CityListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 23B965CD1BDB22FD00245FE5 /* CityListModel.m */; settings = {ASSET_TAGS = (); }; };
-		23B965D11BDB24EE00245FE5 /* CityListNetManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 23B965D01BDB24EE00245FE5 /* CityListNetManager.m */; settings = {ASSET_TAGS = (); }; };
-		23B965D41BDB437500245FE5 /* CityListViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 23B965D31BDB437500245FE5 /* CityListViewModel.m */; settings = {ASSET_TAGS = (); }; };
-		23B966AF1BDE025200245FE5 /* LocationCityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23B966AE1BDE025200245FE5 /* LocationCityViewController.m */; settings = {ASSET_TAGS = (); }; };
-		23B966B21BDE028000245FE5 /* LocationDistrictViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23B966B11BDE028000245FE5 /* LocationDistrictViewController.m */; settings = {ASSET_TAGS = (); }; };
-		3804CE511BD758F10046C8C8 /* AppDelegate+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 3804CE4A1BD758F10046C8C8 /* AppDelegate+Category.m */; settings = {ASSET_TAGS = (); }; };
-		3804CE521BD758F10046C8C8 /* NSObject+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 3804CE4C1BD758F10046C8C8 /* NSObject+Common.m */; settings = {ASSET_TAGS = (); }; };
-		3804CE531BD758F10046C8C8 /* NSString+PJR.m in Sources */ = {isa = PBXBuildFile; fileRef = 3804CE4E1BD758F10046C8C8 /* NSString+PJR.m */; settings = {ASSET_TAGS = (); }; };
-		3804CE541BD758F10046C8C8 /* NSString+QRCode.m in Sources */ = {isa = PBXBuildFile; fileRef = 3804CE501BD758F10046C8C8 /* NSString+QRCode.m */; settings = {ASSET_TAGS = (); }; };
+		23B965CB1BDA594600245FE5 /* LocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23B965CA1BDA594600245FE5 /* LocationViewController.m */; };
+		23B965CE1BDB22FD00245FE5 /* CityListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 23B965CD1BDB22FD00245FE5 /* CityListModel.m */; };
+		23B965D11BDB24EE00245FE5 /* CityListNetManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 23B965D01BDB24EE00245FE5 /* CityListNetManager.m */; };
+		23B965D41BDB437500245FE5 /* CityListViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 23B965D31BDB437500245FE5 /* CityListViewModel.m */; };
+		23B966AF1BDE025200245FE5 /* LocationCityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23B966AE1BDE025200245FE5 /* LocationCityViewController.m */; };
+		23B966B21BDE028000245FE5 /* LocationDistrictViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23B966B11BDE028000245FE5 /* LocationDistrictViewController.m */; };
+		3804CE511BD758F10046C8C8 /* AppDelegate+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 3804CE4A1BD758F10046C8C8 /* AppDelegate+Category.m */; };
+		3804CE521BD758F10046C8C8 /* NSObject+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 3804CE4C1BD758F10046C8C8 /* NSObject+Common.m */; };
+		3804CE531BD758F10046C8C8 /* NSString+PJR.m in Sources */ = {isa = PBXBuildFile; fileRef = 3804CE4E1BD758F10046C8C8 /* NSString+PJR.m */; };
+		3804CE541BD758F10046C8C8 /* NSString+QRCode.m in Sources */ = {isa = PBXBuildFile; fileRef = 3804CE501BD758F10046C8C8 /* NSString+QRCode.m */; };
 		3886C0981BD748830014E661 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3886C0971BD748830014E661 /* main.m */; };
 		3886C09B1BD748830014E661 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3886C09A1BD748830014E661 /* AppDelegate.m */; };
 		3886C0A11BD748830014E661 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3886C09F1BD748830014E661 /* Main.storyboard */; };
 		3886C0A31BD748830014E661 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3886C0A21BD748830014E661 /* Assets.xcassets */; };
-		3886C0AE1BD749A00014E661 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3886C0AD1BD749A00014E661 /* LaunchScreen.xib */; settings = {ASSET_TAGS = (); }; };
-		3886C0BB1BD74AE90014E661 /* BaseViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3886C0BA1BD74AE90014E661 /* BaseViewModel.m */; settings = {ASSET_TAGS = (); }; };
-		3886C0BE1BD74AFE0014E661 /* BaseNetManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3886C0BD1BD74AFE0014E661 /* BaseNetManager.m */; settings = {ASSET_TAGS = (); }; };
-		3886C0C11BD74B090014E661 /* BaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3886C0C01BD74B090014E661 /* BaseModel.m */; settings = {ASSET_TAGS = (); }; };
+		3886C0AE1BD749A00014E661 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3886C0AD1BD749A00014E661 /* LaunchScreen.xib */; };
+		3886C0BB1BD74AE90014E661 /* BaseViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3886C0BA1BD74AE90014E661 /* BaseViewModel.m */; };
+		3886C0BE1BD74AFE0014E661 /* BaseNetManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3886C0BD1BD74AFE0014E661 /* BaseNetManager.m */; };
+		3886C0C11BD74B090014E661 /* BaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3886C0C01BD74B090014E661 /* BaseModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -91,6 +91,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		23BE46151BDE7C910025E6AA /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				23B965C91BDA594600245FE5 /* LocationViewController.h */,
+				23B965CA1BDA594600245FE5 /* LocationViewController.m */,
+				23B966AD1BDE025200245FE5 /* LocationCityViewController.h */,
+				23B966AE1BDE025200245FE5 /* LocationCityViewController.m */,
+				23B966B01BDE028000245FE5 /* LocationDistrictViewController.h */,
+				23B966B11BDE028000245FE5 /* LocationDistrictViewController.m */,
+			);
+			name = Location;
+			sourceTree = "<group>";
+		};
 		3804CE481BD758F10046C8C8 /* Category */ = {
 			isa = PBXGroup;
 			children = (
@@ -218,14 +231,9 @@
 		3886C0B61BD74A4A0014E661 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				23BE46151BDE7C910025E6AA /* Location */,
 				232746611BD90E8000BC335D /* MainViewController.h */,
 				232746621BD90E8000BC335D /* MainViewController.m */,
-				23B965C91BDA594600245FE5 /* LocationViewController.h */,
-				23B965CA1BDA594600245FE5 /* LocationViewController.m */,
-				23B966AD1BDE025200245FE5 /* LocationCityViewController.h */,
-				23B966AE1BDE025200245FE5 /* LocationCityViewController.m */,
-				23B966B01BDE028000245FE5 /* LocationDistrictViewController.h */,
-				23B966B11BDE028000245FE5 /* LocationDistrictViewController.m */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -504,7 +512,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PREFIX_HEADER = BaseProject/Resource/PrefixHeader.pch;
 				INFOPLIST_FILE = BaseProject/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jake.BaseProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -519,7 +527,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PREFIX_HEADER = BaseProject/Resource/PrefixHeader.pch;
 				INFOPLIST_FILE = BaseProject/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jake.BaseProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
