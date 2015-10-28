@@ -68,9 +68,9 @@
     [geocoder reverseGeocodeLocation:location completionHandler:^(NSArray<CLPlacemark *> * _Nullable placemarks, NSError * _Nullable error) {
         for (CLPlacemark *mark in placemarks) {
             DDLogVerbose(@"本地地址：%@",mark.name);
-//            self.locationName = @"测试看看";
-//            DDLogVerbose(@"定位好了");
-//            self.title = self.locationName;
+            self.locationName = mark.locality;
+            DDLogVerbose(@"定位好了");
+            self.title = self.locationName;
 //  刷新定位cell
             NSIndexSet *indexSet=[[NSIndexSet alloc]initWithIndex:0];
             [self.tableView reloadSections:indexSet withRowAnimation:UITableViewRowAnimationFade];

@@ -9,13 +9,20 @@
 #import "CityListViewModel.h"
 #import "CityListNetManager.h"
 #import "CityListModel.h"
+@interface CityListViewModel()
+
+@end
+
 @implementation CityListViewModel
 
+
+
 - (void)getCityListDataCompletionHandle:(void(^)(NSError *error))completionHandle{
-    [CityListNetManager getCityListDataCompletionHandle:^(CityListModel *model, NSError *error) {
-        self.cityList = model.result;
-        completionHandle(error);
-    }];
+
+        [CityListNetManager getCityListDataCompletionHandle:^(CityListModel *model, NSError *error) {
+            self.cityList = model.result;
+            completionHandle(error);
+        }];
 }
 
 - (NSInteger)getProviceCount{
@@ -85,4 +92,6 @@
     }
     return _districtArr;
 }
+
+
 @end
