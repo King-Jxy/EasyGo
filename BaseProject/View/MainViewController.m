@@ -9,14 +9,20 @@
 #import "MainViewController.h"
 #import "LocationViewController.h"
 #import "GoLocationViewController.h"
+#import "WeatherViewModel.h"
+#import "WeatherView.h"
 @interface MainViewController () <LocationViewControllerDelegate,GoLocationViewControllerDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *newsTableView;
-@property (weak, nonatomic) IBOutlet UIView *weatherView;
+@property (weak, nonatomic) IBOutlet WeatherView *weatherView;
+@property (weak, nonatomic) IBOutlet UIImageView *cityImageView;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *placeSegment;
 @property (weak, nonatomic) IBOutlet UIButton *goWhereButton;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *setMyLocation;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *imageActivity;
+
 //本地的地址
 @property (nonatomic , strong) NSString *localName;
+@property (nonatomic , strong) WeatherViewModel *weatherVM;
 @end
 
 @implementation MainViewController
@@ -30,12 +36,23 @@
     layer.shadowOpacity = 0.6;
     
 }
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:YES];
+//    self.newsTableView.tableHeaderView = self.weatherView;
+}
 
 //实现代理方法
 - (void)locationViewEnd:(LocationViewController *)senderVC withLocalName:(NSString *)localName{
     self.localName = localName;
     DDLogVerbose(@"本地地址是%@",self.localName);
     [self.placeSegment setTitle:self.localName forSegmentAtIndex:0];
+    [self.imageActivity startAnimating];
+    [self.weatherVM getWeatherDataWithCity:localName completionHandle:^(NSError *error) {
+        self.weatherView.weatherVM = self.weatherVM;
+        
+
+        [self.imageActivity stopAnimating];
+    }];
 }
 
 - (void)goLocationView:(GoLocationViewController *)senderVC withDistination:(NSString *)destination{
@@ -54,5 +71,24 @@
     }
 }
 
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:YES];
+    
+}
+
+- (NSString *)localName {
+	if(_localName == nil) {
+		_localName = [[NSString alloc] init];
+        //此处做一个本地址的数据持久化
+	}
+	return _localName;
+}
+
+- (WeatherViewModel *)weatherVM {
+	if(_weatherVM == nil) {
+		_weatherVM = [[WeatherViewModel alloc] init];
+	}
+	return _weatherVM;
+}
 
 @end

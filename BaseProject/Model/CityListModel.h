@@ -4,7 +4,6 @@
 
 @interface CityListModel : BaseModel
 @property (nonatomic, strong)NSArray* result;
-//@property (nonatomic, strong)NSDictionary* result_ArrayItem;
 @property (nonatomic, strong)NSString* resultcode;
 @property (nonatomic, strong)NSString* reason;
 @property (nonatomic, strong)NSNumber* error_code;

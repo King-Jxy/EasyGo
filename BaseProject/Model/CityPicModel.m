@@ -9,5 +9,24 @@
 #import "CityPicModel.h"
 
 @implementation CityPicModel
++ (NSDictionary *)replacedKeyFromPropertyName{
+    return @{@"aerrno":@"errno"};
+}
+@end
+
+@implementation CityPicDataModel
++ (NSDictionary *)objectClassInArray{
+    return @{@"weather":[CityPicWeatherModel class]};
+}
+
+@end
+
+@implementation CityPicWeatherModel
+
+
+@end
+
+@implementation CityPicPm25Model
+
 
 @end

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="p1n-dM-rJR">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="p1n-dM-rJR">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
@@ -24,46 +24,50 @@
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
-                            <view alpha="0.69999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b9F-Fl-8R5" userLabel="WeatherView">
+                            <view alpha="0.69999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b9F-Fl-8R5" userLabel="WeatherView" customClass="WeatherView">
                                 <rect key="frame" x="0.0" y="64" width="375" height="200"/>
+                                <subviews>
+                                    <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="qpc-iP-zaa">
+                                        <rect key="frame" x="169" y="81" width="37" height="37"/>
+                                        <animations/>
+                                        <color key="color" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    </activityIndicatorView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FwE-jY-uIk">
+                                        <rect key="frame" x="305" y="10" width="60" height="60"/>
+                                        <animations/>
+                                        <color key="backgroundColor" red="0.61482319080000003" green="0.85883532070000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="W4K-hB-fBY"/>
+                                            <constraint firstAttribute="width" constant="60" id="wvu-cj-0FP"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <state key="normal" title="去哪"/>
+                                        <connections>
+                                            <segue destination="3cN-AR-PuE" kind="push" identifier="GoLocationSegue" id="ELV-hs-ppr"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <animations/>
-                                <color key="backgroundColor" red="0.96013957262039185" green="0.75198167562484741" blue="0.19670948386192322" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FwE-jY-uIk">
-                                <rect key="frame" x="148" y="244" width="80" height="80"/>
-                                <animations/>
-                                <color key="backgroundColor" red="0.61482319080000003" green="0.85883532070000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="80" id="W4K-hB-fBY"/>
-                                    <constraint firstAttribute="width" constant="80" id="wvu-cj-0FP"/>
+                                    <constraint firstItem="FwE-jY-uIk" firstAttribute="top" secondItem="b9F-Fl-8R5" secondAttribute="top" constant="10" id="dth-hh-5x5"/>
+                                    <constraint firstItem="qpc-iP-zaa" firstAttribute="centerX" secondItem="b9F-Fl-8R5" secondAttribute="centerX" id="gLb-Zk-0rQ"/>
+                                    <constraint firstAttribute="trailing" secondItem="FwE-jY-uIk" secondAttribute="trailing" constant="10" id="rfx-c3-H4G"/>
+                                    <constraint firstItem="qpc-iP-zaa" firstAttribute="centerY" secondItem="b9F-Fl-8R5" secondAttribute="centerY" id="ySW-c6-jnT"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="去哪"/>
-                                <connections>
-                                    <segue destination="3cN-AR-PuE" kind="push" identifier="GoLocationSegue" id="ELV-hs-ppr"/>
-                                </connections>
-                            </button>
+                            </view>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="b9F-Fl-8R5" firstAttribute="height" secondItem="Pvb-MM-K0T" secondAttribute="height" multiplier="0.3" id="0Lk-YM-8qV"/>
                             <constraint firstItem="VOb-Hw-80E" firstAttribute="top" secondItem="b9F-Fl-8R5" secondAttribute="bottom" constant="-64" id="1kc-Xl-rG1"/>
-                            <constraint firstItem="FwE-jY-uIk" firstAttribute="centerY" secondItem="Pvb-MM-K0T" secondAttribute="centerY" constant="-50" id="3Iu-YK-MGp"/>
                             <constraint firstItem="b9F-Fl-8R5" firstAttribute="leading" secondItem="Pvb-MM-K0T" secondAttribute="leading" id="AZW-qo-sHu"/>
                             <constraint firstAttribute="trailing" secondItem="VOb-Hw-80E" secondAttribute="trailing" id="GKf-m4-fv2"/>
                             <constraint firstItem="5ms-3i-TEx" firstAttribute="top" secondItem="VOb-Hw-80E" secondAttribute="bottom" id="PW1-Fe-Uri"/>
                             <constraint firstItem="VOb-Hw-80E" firstAttribute="leading" secondItem="Pvb-MM-K0T" secondAttribute="leading" id="QOY-Y8-3Hk"/>
                             <constraint firstItem="b9F-Fl-8R5" firstAttribute="top" secondItem="gUZ-EQ-etK" secondAttribute="bottom" id="V0Q-5m-jSG"/>
-                            <constraint firstItem="FwE-jY-uIk" firstAttribute="centerY" secondItem="Pvb-MM-K0T" secondAttribute="centerY" constant="-50" id="jpK-vu-nSm"/>
-                            <constraint firstItem="FwE-jY-uIk" firstAttribute="centerX" secondItem="Pvb-MM-K0T" secondAttribute="centerX" id="lgJ-3u-w1X"/>
                             <constraint firstAttribute="trailing" secondItem="b9F-Fl-8R5" secondAttribute="trailing" id="v7e-jB-Oxz"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="jpK-vu-nSm"/>
-                            </mask>
-                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="lci-X2-D6f">
                         <nil key="title"/>
@@ -86,6 +90,7 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="goWhereButton" destination="FwE-jY-uIk" id="cz3-75-vVB"/>
+                        <outlet property="imageActivity" destination="qpc-iP-zaa" id="eCR-Eh-mWd"/>
                         <outlet property="newsTableView" destination="VOb-Hw-80E" id="Lyt-1M-657"/>
                         <outlet property="placeSegment" destination="rmG-1h-3LV" id="qKB-yo-lo9"/>
                         <outlet property="setMyLocation" destination="nSS-qI-9Dn" id="HP9-nA-3nn"/>
@@ -94,7 +99,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DcV-ea-97V" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="750.5" y="-114.5"/>
+            <point key="canvasLocation" x="497.5" y="-182.5"/>
         </scene>
         <!--去哪-->
         <scene sceneID="tvh-im-Ghi">
@@ -304,7 +309,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RTd-wc-T1g" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="279" y="-105"/>
+            <point key="canvasLocation" x="9" y="2"/>
         </scene>
     </scenes>
     <resources>

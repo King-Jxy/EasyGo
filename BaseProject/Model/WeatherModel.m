@@ -11,3 +11,26 @@
 @implementation WeatherModel
 
 @end
+
+@implementation WeatherFutureModel
+
+@end
+
+@implementation WeatherIdModel
+
+@end
+
+@implementation WeatherTodayModel
+
+@end
+
+@implementation WeatherSkModel
+
+@end
+
+@implementation WeatherResultModel
++ (NSDictionary *)objectClassInArray{
+    return @{@"future":[WeatherFutureModel class]};
+}
+@end
+
