@@ -93,8 +93,44 @@
 - (void)drawRect:(CGRect)rect {
     [self setImageViews];
     [self setLables];
+    
+    
+//    [self addSubview:self.goWhereButton];
+    [self addSubview:self.imageActivity];
+    
+    [self.imageActivity setActivityIndicatorViewStyle:UIActivityIndicatorViewStyleWhiteLarge];
+    [self.imageActivity mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.center.mas_equalTo(self);
+    }];
+    
+//    [self.goWhereButton mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.top.mas_equalTo(10);
+//        make.right.mas_equalTo(-10);
+//    }];
+    
 }
 
+- (UIButton *)goWhereButton {
+    if(_goWhereButton == nil) {
+        _goWhereButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
+        _goWhereButton.backgroundColor = [UIColor  greenColor];
+        _goWhereButton.titleLabel.text = @"去哪";
+        _goWhereButton.titleLabel.textColor = [UIColor whiteColor];
+        CALayer *layer = _goWhereButton.layer;
+        layer.shadowColor = [[UIColor blackColor]CGColor];
+        layer.cornerRadius = 30;
+        //透明度
+        layer.shadowOpacity = 0.6;
+    }
+    return _goWhereButton;
+}
+
+- (UIActivityIndicatorView *)imageActivity {
+    if(_imageActivity == nil) {
+        _imageActivity = [[UIActivityIndicatorView alloc] init];
+    }
+    return _imageActivity;
+}
 
 - (UIImageView *)bkImageView {
     if(_bkImageView == nil) {

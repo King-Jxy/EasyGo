@@ -49,6 +49,10 @@
 		2395319D1BE1FC0E00FEB8DD /* 31.png in Resources */ = {isa = PBXBuildFile; fileRef = 2395317B1BE1FC0E00FEB8DD /* 31.png */; };
 		2395319E1BE1FC0E00FEB8DD /* 53.png in Resources */ = {isa = PBXBuildFile; fileRef = 2395317C1BE1FC0E00FEB8DD /* 53.png */; };
 		2395319F1BE1FC0E00FEB8DD /* Thumbs.db in Resources */ = {isa = PBXBuildFile; fileRef = 2395317D1BE1FC0E00FEB8DD /* Thumbs.db */; };
+		239531A71BE23F1700FEB8DD /* bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 239531A61BE23F1700FEB8DD /* bg.jpg */; };
+		239531AD1BE245CB00FEB8DD /* BDNewsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 239531AC1BE245CB00FEB8DD /* BDNewsModel.m */; };
+		239531B01BE248C800FEB8DD /* NewsListNetManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 239531AF1BE248C800FEB8DD /* NewsListNetManager.m */; };
+		239531B31BE24B4600FEB8DD /* NewsListViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 239531B21BE24B4600FEB8DD /* NewsListViewModel.m */; };
 		23B965C61BDA581200245FE5 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23B965C51BDA581200245FE5 /* CoreLocation.framework */; };
 		23B965C81BDA581900245FE5 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23B965C71BDA581900245FE5 /* MapKit.framework */; };
 		23B965CB1BDA594600245FE5 /* LocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23B965CA1BDA594600245FE5 /* LocationViewController.m */; };
@@ -120,6 +124,13 @@
 		2395317B1BE1FC0E00FEB8DD /* 31.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 31.png; sourceTree = "<group>"; };
 		2395317C1BE1FC0E00FEB8DD /* 53.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 53.png; sourceTree = "<group>"; };
 		2395317D1BE1FC0E00FEB8DD /* Thumbs.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = Thumbs.db; sourceTree = "<group>"; };
+		239531A61BE23F1700FEB8DD /* bg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bg.jpg; sourceTree = "<group>"; };
+		239531AB1BE245CB00FEB8DD /* BDNewsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDNewsModel.h; sourceTree = "<group>"; };
+		239531AC1BE245CB00FEB8DD /* BDNewsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDNewsModel.m; sourceTree = "<group>"; };
+		239531AE1BE248C800FEB8DD /* NewsListNetManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsListNetManager.h; sourceTree = "<group>"; };
+		239531AF1BE248C800FEB8DD /* NewsListNetManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsListNetManager.m; sourceTree = "<group>"; };
+		239531B11BE24B4600FEB8DD /* NewsListViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsListViewModel.h; sourceTree = "<group>"; };
+		239531B21BE24B4600FEB8DD /* NewsListViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsListViewModel.m; sourceTree = "<group>"; };
 		23B965C51BDA581200245FE5 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		23B965C71BDA581900245FE5 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		23B965C91BDA594600245FE5 /* LocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationViewController.h; sourceTree = "<group>"; };
@@ -313,6 +324,8 @@
 				2321E8231BE10AF90007FE0A /* CityPicModel.m */,
 				2321E7941BE1092D0007FE0A /* WeatherModel.h */,
 				2321E7951BE1092D0007FE0A /* WeatherModel.m */,
+				239531AB1BE245CB00FEB8DD /* BDNewsModel.h */,
+				239531AC1BE245CB00FEB8DD /* BDNewsModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -326,6 +339,8 @@
 				23B965D01BDB24EE00245FE5 /* CityListNetManager.m */,
 				2321E8251BE10DBE0007FE0A /* WeatherNetManager.h */,
 				2321E8261BE10DBE0007FE0A /* WeatherNetManager.m */,
+				239531AE1BE248C800FEB8DD /* NewsListNetManager.h */,
+				239531AF1BE248C800FEB8DD /* NewsListNetManager.m */,
 			);
 			path = NetManager;
 			sourceTree = "<group>";
@@ -333,6 +348,7 @@
 		3886C0B21BD74A4A0014E661 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				239531A61BE23F1700FEB8DD /* bg.jpg */,
 				2395315B1BE1FC0E00FEB8DD /* night */,
 				3886C0A21BD748830014E661 /* Assets.xcassets */,
 				3886C0AD1BD749A00014E661 /* LaunchScreen.xib */,
@@ -385,6 +401,8 @@
 				23B965D31BDB437500245FE5 /* CityListViewModel.m */,
 				2321E8281BE130630007FE0A /* WeatherViewModel.h */,
 				2321E8291BE130630007FE0A /* WeatherViewModel.m */,
+				239531B11BE24B4600FEB8DD /* NewsListViewModel.h */,
+				239531B21BE24B4600FEB8DD /* NewsListViewModel.m */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -479,6 +497,7 @@
 				2395317F1BE1FC0E00FEB8DD /* 01.png in Resources */,
 				3886C0A31BD748830014E661 /* Assets.xcassets in Resources */,
 				2395319E1BE1FC0E00FEB8DD /* 53.png in Resources */,
+				239531A71BE23F1700FEB8DD /* bg.jpg in Resources */,
 				2395317E1BE1FC0E00FEB8DD /* 00.png in Resources */,
 				2395319D1BE1FC0E00FEB8DD /* 31.png in Resources */,
 				3886C0AE1BD749A00014E661 /* LaunchScreen.xib in Resources */,
@@ -566,6 +585,7 @@
 			files = (
 				2321E8271BE10DBE0007FE0A /* WeatherNetManager.m in Sources */,
 				2321E7901BE0FCAC0007FE0A /* GoLocationViewController.m in Sources */,
+				239531B01BE248C800FEB8DD /* NewsListNetManager.m in Sources */,
 				23B965D11BDB24EE00245FE5 /* CityListNetManager.m in Sources */,
 				3886C0BE1BD74AFE0014E661 /* BaseNetManager.m in Sources */,
 				23B966B21BDE028000245FE5 /* LocationDistrictViewController.m in Sources */,
@@ -582,8 +602,10 @@
 				3886C0BB1BD74AE90014E661 /* BaseViewModel.m in Sources */,
 				3886C0C11BD74B090014E661 /* BaseModel.m in Sources */,
 				2395315A1BE1C2AE00FEB8DD /* WeatherView.m in Sources */,
+				239531AD1BE245CB00FEB8DD /* BDNewsModel.m in Sources */,
 				3886C0981BD748830014E661 /* main.m in Sources */,
 				3804CE521BD758F10046C8C8 /* NSObject+Common.m in Sources */,
+				239531B31BE24B4600FEB8DD /* NewsListViewModel.m in Sources */,
 				2321E82A1BE130630007FE0A /* WeatherViewModel.m in Sources */,
 				2321E8241BE10AF90007FE0A /* CityPicModel.m in Sources */,
 			);

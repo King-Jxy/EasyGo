@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 #import "AppDelegate+Category.h"
-#import "WeatherNetManager.h"
+#import "NewsListNetManager.h"
 @interface AppDelegate ()
 
 @end
@@ -18,7 +18,9 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     [self initializeWithApplication:application];
-    
+//    [NewsListNetManager getNewsListDataCompletionHandle:^(BDNewsModel *model, NSError *error) {
+//        DDLogVerbose(@"model%@",model);
+//    }];
     return YES;
 }
 

@@ -21,6 +21,11 @@
 @property (nonatomic , strong) UILabel *temp;
 
 
+@property (strong, nonatomic)  UIButton *goWhereButton;
+@property (strong, nonatomic)  UIActivityIndicatorView *imageActivity;
+
+
+
 
 
 
