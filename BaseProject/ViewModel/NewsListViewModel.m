@@ -46,9 +46,11 @@
 }
 
 - (NSArray *)getImageURLArrAtIndex:(NSIndexPath *)index{
+
+    
     NSMutableArray *arr = [NSMutableArray new];
-    NSArray *array = [self getNewsDetailAtIndex:index].imageurls;
-    for (BDImageUrlModel *urlModel in array.firstObject) {
+    NSArray *array =   [BDImageUrlModel prase:[self getNewsDetailAtIndex:index].imageurls];
+    for (BDImageUrlModel *urlModel in array) {
         NSURL *url = [NSURL URLWithString:urlModel.url];
         [arr addObject:url];
     }
@@ -61,9 +63,9 @@
 }
 
 - (NSInteger)getImageCountAtIndex:(NSIndexPath *)index{
-    NSArray *imgs = [self getNewsDetailAtIndex:index].imageurls;
+//    NSArray *imgs = [self getNewsDetailAtIndex:index].imageurls;
 //    NSArray *imgArr = imgs.firstObject;
-    return imgs.count;
+    return [self getImageURLArrAtIndex:index].count;
 }
 
 - (NSString *)getSiteAtIndex:(NSIndexPath *)index{

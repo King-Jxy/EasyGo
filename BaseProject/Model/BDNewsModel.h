@@ -49,4 +49,6 @@
 @property (nonatomic, strong) NSString *url;
 @property (nonatomic, assign) double width;
 @property (nonatomic, assign) double height;
+
++ (id)prase:(NSArray *)imageUrls;
 @end

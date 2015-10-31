@@ -12,6 +12,7 @@
 #import "WeatherViewModel.h"
 #import "WeatherView.h"
 #import "NewsListViewModel.h"
+#import "NewsWebViewController.h"
 @interface MainViewController () <LocationViewControllerDelegate,GoLocationViewControllerDelegate,UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *newsTableView;
 
@@ -137,6 +138,10 @@
 #pragma mark - TableViewDelegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [self.newsTableView deselectRowAtIndexPath:indexPath animated:YES];
+    NSURL *url = [self.newsListVM getWebURLAtIndex:indexPath];
+    NewsWebViewController *vc = [[NewsWebViewController alloc]initWithURL:url];
+    [self.navigationController pushViewController:vc animated:YES];
+    
 }
 
 - (NSString *)localName {

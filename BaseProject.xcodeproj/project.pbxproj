@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1FACF87C97D68F953ECE365C /* libPods-BaseProject.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EAAD623A23724C816F8DC02 /* libPods-BaseProject.a */; };
+		230671F41BE4621300F31D79 /* NewsWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 230671F31BE4621300F31D79 /* NewsWebViewController.m */; };
 		2321E7901BE0FCAC0007FE0A /* GoLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2321E78F1BE0FCAC0007FE0A /* GoLocationViewController.m */; };
 		2321E7961BE1092D0007FE0A /* WeatherModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2321E7951BE1092D0007FE0A /* WeatherModel.m */; };
 		2321E8241BE10AF90007FE0A /* CityPicModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2321E8231BE10AF90007FE0A /* CityPicModel.m */; };
@@ -76,6 +77,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		230671F21BE4621300F31D79 /* NewsWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsWebViewController.h; sourceTree = "<group>"; };
+		230671F31BE4621300F31D79 /* NewsWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsWebViewController.m; sourceTree = "<group>"; };
 		2321E78E1BE0FCAC0007FE0A /* GoLocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoLocationViewController.h; sourceTree = "<group>"; };
 		2321E78F1BE0FCAC0007FE0A /* GoLocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoLocationViewController.m; sourceTree = "<group>"; };
 		2321E7941BE1092D0007FE0A /* WeatherModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherModel.h; sourceTree = "<group>"; };
@@ -388,6 +391,8 @@
 				23BE46151BDE7C910025E6AA /* Location */,
 				232746611BD90E8000BC335D /* MainViewController.h */,
 				232746621BD90E8000BC335D /* MainViewController.m */,
+				230671F21BE4621300F31D79 /* NewsWebViewController.h */,
+				230671F31BE4621300F31D79 /* NewsWebViewController.m */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -591,6 +596,7 @@
 				23B966B21BDE028000245FE5 /* LocationDistrictViewController.m in Sources */,
 				3804CE541BD758F10046C8C8 /* NSString+QRCode.m in Sources */,
 				23B965D41BDB437500245FE5 /* CityListViewModel.m in Sources */,
+				230671F41BE4621300F31D79 /* NewsWebViewController.m in Sources */,
 				3804CE531BD758F10046C8C8 /* NSString+PJR.m in Sources */,
 				23B965CB1BDA594600245FE5 /* LocationViewController.m in Sources */,
 				23B965CE1BDB22FD00245FE5 /* CityListModel.m in Sources */,
