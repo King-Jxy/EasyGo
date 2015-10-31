@@ -77,6 +77,9 @@
             NSIndexSet *indexSet=[[NSIndexSet alloc]initWithIndex:0];
             [self.tableView reloadSections:indexSet withRowAnimation:UITableViewRowAnimationFade];
         }
+        [self hideProgress];
+        [self.delegate  locationViewEnd:self withLocalName:self.locationName];
+        [self showSuccessMsg:@"定位成功"];
     }];
 }
 
@@ -136,11 +139,13 @@ kRemoveCellSeparator
         if(!indexPath.section){
             DDLogVerbose(@"开始定位");
 //开始更新位置信息
-            MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-            hud.mode = MBProgressHUDModeIndeterminate;
-            hud.labelText = @"正在获取您的当前位置";
+//            MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+//            hud.mode = MBProgressHUDModeIndeterminate;
+//            hud.labelText = @"正在获取您的当前位置";
+//            [self.manager startUpdatingLocation];
+//            [hud hide:YES afterDelay:1];
+            [self showProgress];
             [self.manager startUpdatingLocation];
-            [hud hide:YES afterDelay:1];
         
         }else{
             NSString *selectedProvice = [self.cityListVM getProviceNameAtIndex:indexPath];

@@ -73,7 +73,7 @@
     [self.weekLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.mas_equalTo(-80);
        
-        make.bottom.mas_equalTo(self.temp.mas_top).mas_equalTo(-20);
+        make.top.mas_equalTo(self.weatherLabel.mas_bottom).mas_equalTo(self.frame.size.height/5*2);
     }];
 
     

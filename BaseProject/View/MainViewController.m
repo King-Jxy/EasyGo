@@ -70,7 +70,7 @@
     
     [self.newsTableView.header beginRefreshing];
     
-    
+    [self.placeSegment addTarget:self action:@selector(placeChanged:) forControlEvents:UIControlEventValueChanged];
 }
 
 
@@ -92,23 +92,60 @@
     
 }
 
+//切换本地和目的地
+- (void)placeChanged:(UISegmentedControl *)sender{
+    if(sender.selectedSegmentIndex == 0){
+        if(!self.localName){
+            [self showErrorMsg:@"未确认本地地址"];
+            return;
+        }
+        [self.headerView.imageActivity startAnimating];
+        [self.weatherVM getWeatherDataWithCity:self.localName completionHandle:^(NSError *error) {
+            self.headerView.weatherVM = self.weatherVM;
+            [self.weatherImageView setImageWithURL:[self.weatherVM getImageURL] ];
+            [self.headerView.imageActivity stopAnimating];
+        }];
+    }else{
+        if(!self.destination){
+            [self showErrorMsg:@"未指定目的地"];
+            return;
+        }
+        [self.headerView.imageActivity startAnimating];
+        [self.weatherVM getWeatherDataWithCity:self.destination completionHandle:^(NSError *error) {
+            self.headerView.weatherVM = self.weatherVM;
+            [self.weatherImageView setImageWithURL:[self.weatherVM getImageURL] ];
+            [self.headerView.imageActivity stopAnimating];
+        }];
+    }
+}
+
 //实现代理方法
 - (void)locationViewEnd:(LocationViewController *)senderVC withLocalName:(NSString *)localName{
     self.localName = localName;
     DDLogVerbose(@"本地地址是%@",self.localName);
     [self.placeSegment setTitle:self.localName forSegmentAtIndex:0];
-    [self.headerView.imageActivity startAnimating];
-    [self.weatherVM getWeatherDataWithCity:localName completionHandle:^(NSError *error) {
-        self.headerView.weatherVM = self.weatherVM;
+    if(self.placeSegment.selectedSegmentIndex == 0){
+        [self.headerView.imageActivity startAnimating];
+        [self.weatherVM getWeatherDataWithCity:localName completionHandle:^(NSError *error) {
+            self.headerView.weatherVM = self.weatherVM;
         [self.weatherImageView setImageWithURL:[self.weatherVM getImageURL] ];
         [self.headerView.imageActivity stopAnimating];
-    }];
+        }];
+    }
 }
 
 - (void)goLocationView:(GoLocationViewController *)senderVC withDistination:(NSString *)destination{
     self.destination = destination;
     DDLogVerbose(@"目的地址是%@",self.destination);
     [self.placeSegment setTitle:self.destination forSegmentAtIndex:1];
+    if(self.placeSegment.selectedSegmentIndex == 1){
+        [self.headerView.imageActivity startAnimating];
+        [self.weatherVM getWeatherDataWithCity:destination completionHandle:^(NSError *error) {
+            self.headerView.weatherVM = self.weatherVM;
+            [self.weatherImageView setImageWithURL:[self.weatherVM getImageURL] ];
+            [self.headerView.imageActivity stopAnimating];
+        }];
+    }
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
