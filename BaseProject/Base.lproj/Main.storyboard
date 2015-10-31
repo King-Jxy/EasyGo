@@ -52,22 +52,13 @@
                                                         <constraint firstAttribute="width" secondItem="A0C-cl-fSP" secondAttribute="height" multiplier="146:109" id="lJM-e6-c6B"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" tag="102" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sTy-vC-6VJ">
-                                                    <rect key="frame" x="63" y="79" width="38" height="18"/>
-                                                    <animations/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                             </subviews>
                                             <animations/>
                                             <constraints>
                                                 <constraint firstAttribute="bottom" secondItem="RCy-Sz-2iV" secondAttribute="bottom" constant="10" id="3Lc-Ow-BTv"/>
                                                 <constraint firstItem="A0C-cl-fSP" firstAttribute="leading" secondItem="Pjs-zn-0te" secondAttribute="trailing" constant="25" id="3gJ-hg-mV4"/>
                                                 <constraint firstItem="A0C-cl-fSP" firstAttribute="top" secondItem="3sp-pK-QOM" secondAttribute="top" constant="10" id="5sa-iY-hhG"/>
-                                                <constraint firstAttribute="bottom" secondItem="sTy-vC-6VJ" secondAttribute="bottom" constant="10" id="BVO-gE-Djb"/>
                                                 <constraint firstItem="RCy-Sz-2iV" firstAttribute="leading" secondItem="3sp-pK-QOM" secondAttribute="leading" constant="10" id="IiR-lo-e89"/>
-                                                <constraint firstItem="sTy-vC-6VJ" firstAttribute="leading" secondItem="RCy-Sz-2iV" secondAttribute="trailing" constant="15" id="Ktu-39-HN2"/>
                                                 <constraint firstItem="Pjs-zn-0te" firstAttribute="top" secondItem="3sp-pK-QOM" secondAttribute="top" constant="15" id="WzO-x9-48G"/>
                                                 <constraint firstAttribute="trailing" secondItem="A0C-cl-fSP" secondAttribute="trailing" constant="10" id="aJC-Z8-sk2"/>
                                                 <constraint firstItem="Pjs-zn-0te" firstAttribute="leading" secondItem="3sp-pK-QOM" secondAttribute="leading" constant="10" id="o6M-DB-YzE"/>
@@ -98,24 +89,15 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" tag="102" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XzQ-Q3-OhW">
-                                                    <rect key="frame" x="63" y="66" width="38" height="18"/>
-                                                    <animations/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                             </subviews>
                                             <animations/>
                                             <constraints>
                                                 <constraint firstAttribute="bottom" secondItem="Cli-mc-u47" secondAttribute="bottom" constant="10" id="0hj-WN-gAv"/>
-                                                <constraint firstAttribute="bottom" secondItem="XzQ-Q3-OhW" secondAttribute="bottom" constant="10" id="9Ad-fe-Huc"/>
                                                 <constraint firstAttribute="trailing" secondItem="ifM-vJ-xSs" secondAttribute="trailing" constant="10" id="Ddh-d9-fg2"/>
                                                 <constraint firstItem="ifM-vJ-xSs" firstAttribute="leading" secondItem="e9W-zy-4SO" secondAttribute="leading" constant="10" id="OQT-Z5-I3B"/>
                                                 <constraint firstItem="Cli-mc-u47" firstAttribute="leading" secondItem="e9W-zy-4SO" secondAttribute="leading" constant="10" id="dac-Gn-GIY"/>
                                                 <constraint firstItem="ifM-vJ-xSs" firstAttribute="top" secondItem="e9W-zy-4SO" secondAttribute="top" constant="10" id="fbk-jZ-xTZ"/>
                                                 <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="Cli-mc-u47" secondAttribute="trailing" constant="10" id="fgT-D0-d9a"/>
-                                                <constraint firstItem="XzQ-Q3-OhW" firstAttribute="leading" secondItem="Cli-mc-u47" secondAttribute="trailing" constant="15" id="oHh-7x-IUu"/>
                                             </constraints>
                                             <variation key="default">
                                                 <mask key="constraints">
@@ -216,11 +198,34 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sfz-Mb-n9r" userLabel="HeaderView">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sfz-Mb-n9r" userLabel="HeaderView" customClass="WeatherView">
                                 <rect key="frame" x="-4" y="64" width="383" height="200"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="png.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Bdt-4W-sjx">
+                                        <rect key="frame" x="0.0" y="0.0" width="383" height="200"/>
+                                        <animations/>
+                                    </imageView>
+                                    <button opaque="NO" alpha="0.90000000000000002" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SNZ-tu-cGj">
+                                        <rect key="frame" x="313" y="13" width="60" height="60"/>
+                                        <animations/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="60" id="EYx-GZ-qU5"/>
+                                            <constraint firstAttribute="height" constant="60" id="j7b-tE-L83"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                                        <state key="normal" title="去哪"/>
+                                    </button>
+                                </subviews>
                                 <animations/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="Bdt-4W-sjx" secondAttribute="bottom" id="3Pm-UE-PyB"/>
+                                    <constraint firstItem="SNZ-tu-cGj" firstAttribute="top" secondItem="sfz-Mb-n9r" secondAttribute="top" constant="13" id="LO1-D3-yIg"/>
+                                    <constraint firstAttribute="trailing" secondItem="Bdt-4W-sjx" secondAttribute="trailing" id="QVA-fm-Zet"/>
+                                    <constraint firstAttribute="trailing" secondItem="SNZ-tu-cGj" secondAttribute="trailing" constant="10" id="ZBY-eX-Hii"/>
+                                    <constraint firstItem="Bdt-4W-sjx" firstAttribute="top" secondItem="sfz-Mb-n9r" secondAttribute="top" id="nCa-ic-XIr"/>
+                                    <constraint firstItem="Bdt-4W-sjx" firstAttribute="leading" secondItem="sfz-Mb-n9r" secondAttribute="leading" id="rLa-By-2fS"/>
                                     <constraint firstAttribute="height" constant="200" id="yF7-Ae-2EP"/>
                                 </constraints>
                             </view>
@@ -263,14 +268,18 @@
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="goWhereBtn" destination="SNZ-tu-cGj" id="yLK-c5-xXB"/>
+                        <outlet property="headerView" destination="sfz-Mb-n9r" id="2L2-oB-atY"/>
+                        <outlet property="headerViewHeightConstraint" destination="yF7-Ae-2EP" id="6C9-vB-UhO"/>
                         <outlet property="newsTableView" destination="VOb-Hw-80E" id="Lyt-1M-657"/>
                         <outlet property="placeSegment" destination="rmG-1h-3LV" id="qKB-yo-lo9"/>
                         <outlet property="setMyLocation" destination="nSS-qI-9Dn" id="HP9-nA-3nn"/>
+                        <outlet property="weatherImageView" destination="Bdt-4W-sjx" id="ggG-iX-NP2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DcV-ea-97V" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="667.5" y="-478.5"/>
+            <point key="canvasLocation" x="703.5" y="-477.5"/>
         </scene>
         <!--去哪-->
         <scene sceneID="tvh-im-Ghi">
@@ -485,5 +494,6 @@
     </scenes>
     <resources>
         <image name="icon_pin_floating" width="22" height="30"/>
+        <image name="png.jpg" width="391" height="220"/>
     </resources>
 </document>

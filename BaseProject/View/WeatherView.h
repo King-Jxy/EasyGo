@@ -12,7 +12,7 @@
 
 @property (nonatomic , strong) WeatherViewModel *weatherVM;
 
-@property (nonatomic , strong) UIImageView *bkImageView;
+//@property (nonatomic , strong) UIImageView *bkImageView;
 @property (nonatomic , strong) UIImageView *weatherIcon;
 @property (nonatomic , strong) UILabel *weatherLabel;
 @property (nonatomic , strong) UILabel *cityLabel;

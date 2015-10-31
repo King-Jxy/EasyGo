@@ -19,12 +19,7 @@
 
 - (void)setImageViews{
 
-    [self addSubview:self.bkImageView];
-    [self.bkImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.mas_equalTo(0);
-    }];
-    [self.bkImageView setImageWithURL:[self.weatherVM getImageURL]];
-    
+
 
 //设置随屏幕大小变化的图片
     CGRect frame = self.weatherIcon.frame;
@@ -35,7 +30,7 @@
     self.weatherIcon.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png",[self.weatherVM getWeatherIcon]]];
     [self addSubview:self.weatherIcon];
     [self.weatherIcon mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.bottom.mas_equalTo(-10);
+        make.bottom.mas_equalTo(-5);
         make.left.mas_equalTo(10);
     }];
 }
@@ -63,39 +58,42 @@
     
     self.temp.text = [self.weatherVM getTemp];
     self.temp.textColor = [UIColor whiteColor];
-    self.temp.font = [UIFont systemFontOfSize:30 weight:5];
+    self.temp.font = [UIFont systemFontOfSize:28 weight:5];
     [self addSubview:self.temp];
     [self.temp mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(self.weatherIcon.mas_right).mas_equalTo(20);
+        make.right.mas_equalTo(-80);
         make.bottom.mas_equalTo(self.weatherIcon).mas_equalTo(5);
     }];
     
-    self.dateLabel.text = [self.weatherVM getDate];
-    self.dateLabel.textColor = [UIColor whiteColor];
-    self.dateLabel.font = [UIFont systemFontOfSize:15 weight:7];
-    [self addSubview:self.dateLabel];
-    [self.dateLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(self.weatherIcon.mas_right).mas_equalTo(20);
-        make.bottom.mas_equalTo(self.temp.mas_top).mas_equalTo(-10);
-    }];
     
     self.weekLabel.text = [self.weatherVM getWeek];
     self.weekLabel.textColor = [UIColor whiteColor];
     self.weekLabel.font = [UIFont systemFontOfSize:15 weight:7];
     [self addSubview:self.weekLabel];
     [self.weekLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(self.dateLabel.mas_right).mas_equalTo(10);
-        make.top.mas_equalTo(self.dateLabel);
+        make.right.mas_equalTo(-80);
+       
+        make.bottom.mas_equalTo(self.temp.mas_top).mas_equalTo(-20);
     }];
 
+    
+    self.dateLabel.text = [self.weatherVM getDate];
+    self.dateLabel.textColor = [UIColor whiteColor];
+    self.dateLabel.font = [UIFont systemFontOfSize:15 weight:7];
+    [self addSubview:self.dateLabel];
+    [self.dateLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(self.temp.mas_left);
+         make.top.mas_equalTo(self.weekLabel);
+    }];
+    
+    
 }
 
 - (void)drawRect:(CGRect)rect {
     [self setImageViews];
     [self setLables];
     
-    
-//    [self addSubview:self.goWhereButton];
+
     [self addSubview:self.imageActivity];
     
     [self.imageActivity setActivityIndicatorViewStyle:UIActivityIndicatorViewStyleWhiteLarge];
@@ -103,10 +101,7 @@
         make.center.mas_equalTo(self);
     }];
     
-//    [self.goWhereButton mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.top.mas_equalTo(10);
-//        make.right.mas_equalTo(-10);
-//    }];
+
     
 }
 
@@ -132,12 +127,7 @@
     return _imageActivity;
 }
 
-- (UIImageView *)bkImageView {
-    if(_bkImageView == nil) {
-        _bkImageView = [[UIImageView alloc] init];
-    }
-    return _bkImageView;
-}
+
 - (UIImageView *)weatherIcon {
     if(_weatherIcon == nil) {
         _weatherIcon = [[UIImageView alloc] init];
