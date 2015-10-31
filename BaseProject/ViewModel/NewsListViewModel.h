@@ -27,4 +27,6 @@
 - (NSInteger)getImageCountAtIndex:(NSIndexPath *)index;
 
 - (NSString *)getSiteAtIndex:(NSIndexPath *)index;
+
+- (NSString *)getTimeAgoAtIndex:(NSIndexPath *)index;
 @end

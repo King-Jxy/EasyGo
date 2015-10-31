@@ -8,6 +8,7 @@
 
 #import "NewsListViewModel.h"
 #import "NewsListNetManager.h"
+#import "NSString+CalcTime.h"
 @implementation NewsListViewModel
 - (NSMutableArray *)dataArr {
     if(_dataArr == nil) {
@@ -71,4 +72,13 @@
 - (NSString *)getSiteAtIndex:(NSIndexPath *)index{
     return [self getNewsDetailAtIndex:index].site;
 }
+
+
+- (NSString *)getTimeAgoAtIndex:(NSIndexPath *)index{
+    NSString *time = [self getNewsDetailAtIndex:index].ts;
+    NSString *timeAge = [NSString timeAgoFromTimestamp:[NSNumber numberWithFloat:[time floatValue]]];
+    return timeAge;
+}
+
+
 @end

@@ -88,7 +88,7 @@
     }
 }
 
-#pragma Mark - TableViewDataSource
+#pragma mark - TableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return [self.newsListVM getRowNum];
 }
@@ -102,19 +102,25 @@
         titleLabel.text = [self.newsListVM getTitleAtIndex:indexPath];
         UILabel *siteLabel = (UILabel *)[cell.contentView viewWithTag:101];
         siteLabel.text = [self.newsListVM getSiteAtIndex:indexPath];
+        UILabel *timeLabel = (UILabel *)[cell.contentView viewWithTag:102];
+        timeLabel.text = [self.newsListVM getTimeAgoAtIndex:indexPath];
         [cell.contentView addSubview:titleLabel];
         [cell.contentView addSubview:siteLabel];
+//        [cell.contentView addSubview:timeLabel];
     }else if(num == 1){
         cell = [tableView dequeueReusableCellWithIdentifier:@"OnePCell" forIndexPath:indexPath];
         UILabel *titleLabel = (UILabel *)[cell.contentView viewWithTag:100];
         titleLabel.text = [self.newsListVM getTitleAtIndex:indexPath];
         UILabel *siteLabel = (UILabel *)[cell.contentView viewWithTag:101];
         siteLabel.text = [self.newsListVM getSiteAtIndex:indexPath];
+        UILabel *timeLabel = (UILabel *)[cell.contentView viewWithTag:102];
+        timeLabel.text = [self.newsListVM getTimeAgoAtIndex:indexPath];
         UIImageView *image = (UIImageView *)[cell.contentView viewWithTag:200];
         [image setImageWithURL:[self.newsListVM getImageURLArrAtIndex:indexPath].firstObject];
         [cell.contentView addSubview:image];
         [cell.contentView addSubview:titleLabel];
         [cell.contentView addSubview:siteLabel];
+//        [cell.contentView addSubview:timeLabel];
     }else if(num == 3){
         cell = [tableView dequeueReusableCellWithIdentifier:@"ThreePCell" forIndexPath:indexPath];
         UILabel *titleLabel = (UILabel *)[cell.contentView viewWithTag:100];
