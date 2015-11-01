@@ -54,16 +54,16 @@
     self.newsTableView.contentInset = UIEdgeInsetsMake(kFloatingViewMaximumHeight, 0, 0, 0);
     [self.newsTableView addObserver:self forKeyPath:@"contentOffset" options:NSKeyValueObservingOptionNew context:nil];
 //下拉刷新数据
-    self.newsTableView.header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
-        [self.newsListVM refreshDataCompletionHandle:^(NSError *error) {
-            [self.newsTableView reloadData];
-            [self.newsTableView.header endRefreshing];
-            if(error){
-                DDLogVerbose(@"%@",error.userInfo);
-            }
-        }];
-    }];
-    [self.newsTableView.header beginRefreshing];
+//    self.newsTableView.header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+//        [self.newsListVM refreshDataCompletionHandle:^(NSError *error) {
+//            [self.newsTableView reloadData];
+//            [self.newsTableView.header endRefreshing];
+//            if(error){
+//                DDLogVerbose(@"%@",error.userInfo);
+//            }
+//        }];
+//    }];
+//    [self.newsTableView.header beginRefreshing];
 //给Segment添加监测
     [self.placeSegment addTarget:self action:@selector(placeChanged:) forControlEvents:UIControlEventValueChanged];
 //监测有无本地信息，没有则弹出提醒框
@@ -76,14 +76,15 @@
         }];
         [alert show];
     }else{
+//获取上一次存储的本地信息的天气
         self.localName = location;
+        [self.placeSegment setTitle:location forSegmentAtIndex:0];
          [self.headerView.imageActivity startAnimating];
         [self.weatherVM getWeatherDataWithCity:self.localName completionHandle:^(NSError *error) {
             [self.headerView.imageActivity stopAnimating];
             self.headerView.weatherVM = self.weatherVM;
             [self.weatherImageView setImageWithURL:[self.weatherVM getImageURL] ];
         }];
-
     }
 }
 
@@ -95,7 +96,14 @@
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:YES];
-    
+//每次进入界面的时候刷新数据
+    [self.newsListVM refreshDataCompletionHandle:^(NSError *error) {
+        [self.newsTableView reloadData];
+        [self.newsTableView.header endRefreshing];
+        if(error){
+            DDLogVerbose(@"%@",error.userInfo);
+        }
+    }];
     self.savedDelegate = self.navigationController.interactivePopGestureRecognizer.delegate;
     self.navigationController.interactivePopGestureRecognizer.delegate = self;//这里是为了保留系统的右滑返回手势
 //    self.newsTableView.tableHeaderView = self.weatherView;
@@ -114,7 +122,7 @@
             [self showErrorMsg:@"未确认本地地址"];
 //如果本地址为空就返回
             return;
-        }else if([[self.weatherVM getLocalName] isEqualToString:[self.placeSegment titleForSegmentAtIndex:0]]){
+        }else {
 //如果切回来地址未变化，就不再刷新
             self.headerView.weatherVM = self.weatherVM;
             [self.weatherImageView setImageWithURL:[self.weatherVM getImageURL] ];
