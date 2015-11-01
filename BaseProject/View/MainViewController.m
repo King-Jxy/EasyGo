@@ -19,22 +19,19 @@
 
 @interface MainViewController () <LocationViewControllerDelegate,GoLocationViewControllerDelegate,UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *newsTableView;
-
-@property (weak, nonatomic) IBOutlet UIImageView *cityImageView;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *placeSegment;
-
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *setMyLocation;
-
 @property (weak, nonatomic) IBOutlet UIButton *goWhereBtn;
+@property (weak, nonatomic) IBOutlet UIImageView *weatherImageView;//天气背景图
+@property (weak, nonatomic) IBOutlet WeatherView *headerView;//天气视图
 
 
-@property (weak, nonatomic) IBOutlet UIImageView *weatherImageView;
-@property (weak, nonatomic) IBOutlet WeatherView *headerView;
-
-//本地的地址
-@property (nonatomic , strong) NSString *localName;
-@property (nonatomic , strong) WeatherViewModel *weatherVM;
+@property (nonatomic , strong) NSString *localName;//本地的地址
+@property (nonatomic , strong) WeatherViewModel *weatherVM;//记录本地的天气信息
+@property (nonatomic , strong) WeatherViewModel *dWeatherVM;//记录目的地的天气信息
 @property (nonatomic , strong) NewsListViewModel *newsListVM;
+
+@property (nonatomic , strong) NSUserDefaults *userDefault;//本地地址缓存和欢迎界面
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *headerViewHeightConstraint;
 @property (nonatomic , strong) id savedDelegate;
@@ -56,8 +53,7 @@
     self.edgesForExtendedLayout = UIRectEdgeNone;//因为会利用到tableView的contentInset，所以不想系统给我们改，最好把这个设置为UIRectEdgeNone,否则在viewDidAppear的时候tableView的contentInset会变
     self.newsTableView.contentInset = UIEdgeInsetsMake(kFloatingViewMaximumHeight, 0, 0, 0);
     [self.newsTableView addObserver:self forKeyPath:@"contentOffset" options:NSKeyValueObservingOptionNew context:nil];
-    
-    
+//下拉刷新数据
     self.newsTableView.header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         [self.newsListVM refreshDataCompletionHandle:^(NSError *error) {
             [self.newsTableView reloadData];
@@ -67,10 +63,28 @@
             }
         }];
     }];
-    
     [self.newsTableView.header beginRefreshing];
-    
+//给Segment添加监测
     [self.placeSegment addTarget:self action:@selector(placeChanged:) forControlEvents:UIControlEventValueChanged];
+//监测有无本地信息，没有则弹出提醒框
+    NSString *location = [self.userDefault stringForKey:@"localName"];
+    if(!location){
+        UIAlertView *alert = [UIAlertView bk_showAlertViewWithTitle:@"未监测到本地地址" message:@"是否前往设置本地地址" cancelButtonTitle:@"不，谢谢" otherButtonTitles:@[@"好"] handler:^(UIAlertView *alertView, NSInteger buttonIndex) {
+            if(buttonIndex == 1){
+            [self performSegueWithIdentifier:@"MyLocationSegue" sender:self];
+            }
+        }];
+        [alert show];
+    }else{
+        self.localName = location;
+         [self.headerView.imageActivity startAnimating];
+        [self.weatherVM getWeatherDataWithCity:self.localName completionHandle:^(NSError *error) {
+            [self.headerView.imageActivity stopAnimating];
+            self.headerView.weatherVM = self.weatherVM;
+            [self.weatherImageView setImageWithURL:[self.weatherVM getImageURL] ];
+        }];
+
+    }
 }
 
 
@@ -81,6 +95,7 @@
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:YES];
+    
     self.savedDelegate = self.navigationController.interactivePopGestureRecognizer.delegate;
     self.navigationController.interactivePopGestureRecognizer.delegate = self;//这里是为了保留系统的右滑返回手势
 //    self.newsTableView.tableHeaderView = self.weatherView;
@@ -91,63 +106,68 @@
     self.navigationController.interactivePopGestureRecognizer.delegate = self.savedDelegate;//这里是为了保留系统的右滑返回手势
     
 }
-
+#pragma mark - SegmentControl
 //切换本地和目的地
 - (void)placeChanged:(UISegmentedControl *)sender{
     if(sender.selectedSegmentIndex == 0){
         if(!self.localName){
             [self showErrorMsg:@"未确认本地地址"];
+//如果本地址为空就返回
             return;
-        }
-        [self.headerView.imageActivity startAnimating];
-        [self.weatherVM getWeatherDataWithCity:self.localName completionHandle:^(NSError *error) {
+        }else if([[self.weatherVM getLocalName] isEqualToString:[self.placeSegment titleForSegmentAtIndex:0]]){
+//如果切回来地址未变化，就不再刷新
             self.headerView.weatherVM = self.weatherVM;
             [self.weatherImageView setImageWithURL:[self.weatherVM getImageURL] ];
-            [self.headerView.imageActivity stopAnimating];
-        }];
+            return;
+        }
+     
     }else{
         if(!self.destination){
             [self showErrorMsg:@"未指定目的地"];
             return;
+        }else if([[self.dWeatherVM getLocalName] isEqualToString:[self.placeSegment titleForSegmentAtIndex:1]]){
+//如果切回来地址未变化，就不再刷新
+            self.headerView.weatherVM = self.dWeatherVM;
+            [self.weatherImageView setImageWithURL:[self.dWeatherVM getImageURL] ];
+            return;
         }
-        [self.headerView.imageActivity startAnimating];
-        [self.weatherVM getWeatherDataWithCity:self.destination completionHandle:^(NSError *error) {
-            self.headerView.weatherVM = self.weatherVM;
-            [self.weatherImageView setImageWithURL:[self.weatherVM getImageURL] ];
-            [self.headerView.imageActivity stopAnimating];
-        }];
     }
 }
 
-//实现代理方法
+#pragma mark - 代理方法获取天气信息
+//实现代理方法（本地信息）
 - (void)locationViewEnd:(LocationViewController *)senderVC withLocalName:(NSString *)localName{
     self.localName = localName;
     DDLogVerbose(@"本地地址是%@",self.localName);
     [self.placeSegment setTitle:self.localName forSegmentAtIndex:0];
+     [self.headerView.imageActivity startAnimating];
+    [self.placeSegment setSelectedSegmentIndex:0];
     if(self.placeSegment.selectedSegmentIndex == 0){
-        [self.headerView.imageActivity startAnimating];
         [self.weatherVM getWeatherDataWithCity:localName completionHandle:^(NSError *error) {
+            [self.headerView.imageActivity stopAnimating];
             self.headerView.weatherVM = self.weatherVM;
-        [self.weatherImageView setImageWithURL:[self.weatherVM getImageURL] ];
-        [self.headerView.imageActivity stopAnimating];
+            [self.weatherImageView setImageWithURL:[self.weatherVM getImageURL] ];
         }];
     }
+//此处做一个本地数据持久化
+    [self.userDefault setValue:localName forKey:@"localName"];
 }
-
+//代理方法（目的地）
 - (void)goLocationView:(GoLocationViewController *)senderVC withDistination:(NSString *)destination{
     self.destination = destination;
     DDLogVerbose(@"目的地址是%@",self.destination);
     [self.placeSegment setTitle:self.destination forSegmentAtIndex:1];
+     [self.headerView.imageActivity startAnimating];
+    [self.placeSegment setSelectedSegmentIndex:1];
     if(self.placeSegment.selectedSegmentIndex == 1){
-        [self.headerView.imageActivity startAnimating];
-        [self.weatherVM getWeatherDataWithCity:destination completionHandle:^(NSError *error) {
-            self.headerView.weatherVM = self.weatherVM;
-            [self.weatherImageView setImageWithURL:[self.weatherVM getImageURL] ];
+        [self.dWeatherVM getWeatherDataWithCity:destination completionHandle:^(NSError *error) {
             [self.headerView.imageActivity stopAnimating];
+            self.headerView.weatherVM = self.dWeatherVM;
+            [self.weatherImageView setImageWithURL:[self.dWeatherVM getImageURL] ];
         }];
     }
 }
-
+#pragma mark - prepareForSegue
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if([segue.identifier isEqualToString:@"MyLocationSegue"]){
         LocationViewController *vc = segue.destinationViewController;
@@ -158,20 +178,18 @@
     }
 }
 
-
+#pragma mark - headrView浮动
 //浮动headerView效果：
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
     if ([keyPath isEqualToString:@"contentOffset"]) {
         CGPoint offset = [change[NSKeyValueChangeNewKey] CGPointValue];
-        NSLog(@"offset.y: %lf",offset.y);
-        NSLog(@"%d",kFloatingViewMinimumHeight);
+
         if (offset.y <= 0 && 0-offset.y >= kFloatingViewMinimumHeight) {
             self.headerViewHeightConstraint.constant = 0 - offset.y;
         } else {
             self.headerViewHeightConstraint.constant = kFloatingViewMinimumHeight;
         }
     }
-    NSLog(@"%lf",self.headerView.frame.size.height);
 }
 
 
@@ -228,15 +246,13 @@
     
 }
 
-- (NSString *)localName {
-	if(_localName == nil) {
-		_localName = [[NSString alloc] init];
-        //此处做一个本地址的数据持久化
-#warning TODO 此处做一个本地址的数据持久化
-	}
-	return _localName;
+//需要autoLayout支持，自动计算高度
+- (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return UITableViewAutomaticDimension;
 }
 
+
+#pragma mark - 懒加载
 - (WeatherViewModel *)weatherVM {
 	if(_weatherVM == nil) {
 		_weatherVM = [[WeatherViewModel alloc] init];
@@ -251,6 +267,20 @@
 		_newsListVM = [[NewsListViewModel alloc] init];
 	}
 	return _newsListVM;
+}
+
+- (WeatherViewModel *)dWeatherVM {
+	if(_dWeatherVM == nil) {
+		_dWeatherVM = [[WeatherViewModel alloc] init];
+	}
+	return _dWeatherVM;
+}
+
+- (NSUserDefaults *)userDefault {
+	if(_userDefault == nil) {
+		_userDefault = [NSUserDefaults standardUserDefaults];
+	}
+	return _userDefault;
 }
 
 @end

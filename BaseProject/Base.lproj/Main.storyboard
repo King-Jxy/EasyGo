@@ -5,6 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--Main View Controller-->
@@ -32,7 +33,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="107"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" tag="100" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pjs-zn-0te">
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="100" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pjs-zn-0te">
                                                     <rect key="frame" x="10" y="15" width="213" height="22"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
@@ -47,11 +48,8 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" tag="200" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="A0C-cl-fSP">
-                                                    <rect key="frame" x="248" y="10" width="117" height="87"/>
+                                                    <rect key="frame" x="260" y="10" width="105" height="87"/>
                                                     <animations/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" secondItem="A0C-cl-fSP" secondAttribute="height" multiplier="146:109" id="lJM-e6-c6B"/>
-                                                    </constraints>
                                                 </imageView>
                                             </subviews>
                                             <animations/>
@@ -60,6 +58,7 @@
                                                 <constraint firstItem="A0C-cl-fSP" firstAttribute="leading" secondItem="Pjs-zn-0te" secondAttribute="trailing" constant="25" id="3gJ-hg-mV4"/>
                                                 <constraint firstItem="A0C-cl-fSP" firstAttribute="top" secondItem="3sp-pK-QOM" secondAttribute="top" constant="10" id="5sa-iY-hhG"/>
                                                 <constraint firstItem="RCy-Sz-2iV" firstAttribute="leading" secondItem="3sp-pK-QOM" secondAttribute="leading" constant="10" id="IiR-lo-e89"/>
+                                                <constraint firstItem="A0C-cl-fSP" firstAttribute="width" secondItem="3sp-pK-QOM" secondAttribute="width" multiplier="0.28" id="WjX-xj-Zow"/>
                                                 <constraint firstItem="Pjs-zn-0te" firstAttribute="top" secondItem="3sp-pK-QOM" secondAttribute="top" constant="15" id="WzO-x9-48G"/>
                                                 <constraint firstAttribute="trailing" secondItem="A0C-cl-fSP" secondAttribute="trailing" constant="10" id="aJC-Z8-sk2"/>
                                                 <constraint firstItem="Pjs-zn-0te" firstAttribute="leading" secondItem="3sp-pK-QOM" secondAttribute="leading" constant="10" id="o6M-DB-YzE"/>
