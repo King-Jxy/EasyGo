@@ -3,7 +3,7 @@
 # Uncomment this line if you're using Swift
 # use_frameworks!
 
-target 'BaseProject' do
+target 'WeatherNews' do
 
 pod 'AFNetworking'
 pod 'BlocksKit'
@@ -14,8 +14,9 @@ pod 'MJExtension'
 pod 'MJRefresh'
 pod 'SDWebImage'
 pod 'SVProgressHUD'
-pod "TPKeyboardAvoiding"
-pod "MLTransition"
+pod 'TPKeyboardAvoiding'
+pod 'MLTransition'
+pod 'REMenu'
 
 end
 
