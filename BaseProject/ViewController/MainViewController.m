@@ -53,17 +53,7 @@
     self.edgesForExtendedLayout = UIRectEdgeNone;//因为会利用到tableView的contentInset，所以不想系统给我们改，最好把这个设置为UIRectEdgeNone,否则在viewDidAppear的时候tableView的contentInset会变
     self.newsTableView.contentInset = UIEdgeInsetsMake(kFloatingViewMaximumHeight, 0, 0, 0);
     [self.newsTableView addObserver:self forKeyPath:@"contentOffset" options:NSKeyValueObservingOptionNew context:nil];
-//下拉刷新数据
-//    self.newsTableView.header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
-//        [self.newsListVM refreshDataCompletionHandle:^(NSError *error) {
-//            [self.newsTableView reloadData];
-//            [self.newsTableView.header endRefreshing];
-//            if(error){
-//                DDLogVerbose(@"%@",error.userInfo);
-//            }
-//        }];
-//    }];
-//    [self.newsTableView.header beginRefreshing];
+
 //给Segment添加监测
     [self.placeSegment addTarget:self action:@selector(placeChanged:) forControlEvents:UIControlEventValueChanged];
 //监测有无本地信息，没有则弹出提醒框
@@ -152,11 +142,12 @@
      [self.headerView.imageActivity startAnimating];
     [self.placeSegment setSelectedSegmentIndex:0];
     if(self.placeSegment.selectedSegmentIndex == 0){
-        [self.weatherVM getWeatherDataWithCity:localName completionHandle:^(NSError *error) {
-            [self.headerView.imageActivity stopAnimating];
-            self.headerView.weatherVM = self.weatherVM;
-            [self.weatherImageView setImageWithURL:[self.weatherVM getImageURL] ];
-        }];
+#warning 节约API使用
+//        [self.weatherVM getWeatherDataWithCity:localName completionHandle:^(NSError *error) {
+//            [self.headerView.imageActivity stopAnimating];
+//            self.headerView.weatherVM = self.weatherVM;
+//            [self.weatherImageView setImageWithURL:[self.weatherVM getImageURL] ];
+//        }];
     }
 //此处做一个本地数据持久化
     [self.userDefault setValue:localName forKey:@"localName"];
@@ -169,11 +160,12 @@
      [self.headerView.imageActivity startAnimating];
     [self.placeSegment setSelectedSegmentIndex:1];
     if(self.placeSegment.selectedSegmentIndex == 1){
-        [self.dWeatherVM getWeatherDataWithCity:destination completionHandle:^(NSError *error) {
-            [self.headerView.imageActivity stopAnimating];
-            self.headerView.weatherVM = self.dWeatherVM;
-            [self.weatherImageView setImageWithURL:[self.dWeatherVM getImageURL] ];
-        }];
+#warning 节约API使用
+//        [self.dWeatherVM getWeatherDataWithCity:destination completionHandle:^(NSError *error) {
+//            [self.headerView.imageActivity stopAnimating];
+//            self.headerView.weatherVM = self.dWeatherVM;
+//            [self.weatherImageView setImageWithURL:[self.dWeatherVM getImageURL] ];
+//        }];
     }
 }
 #pragma mark - prepareForSegue

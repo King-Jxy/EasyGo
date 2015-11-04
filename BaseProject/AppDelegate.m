@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 #import "AppDelegate+Category.h"
-#import "NewsListNetManager.h"
+#import "TripNetManager.h"
 @interface AppDelegate ()
 
 @end
@@ -29,6 +29,11 @@
     [[UINavigationBar appearance] setBarStyle:UIBarStyleBlack];
     //5.设置导航栏返回按钮的箭头样式
     [[UINavigationBar appearance] setBackIndicatorImage:[UIImage imageNamed:@"arrow-left.png"]];
+    
+    
+//    [TripNetManager getS2StaionDataFromStart:@"温州" toEnd:@"杭州" CompletionHandle:^(S2StationModel *model, NSError *error) {
+//        DDLogVerbose(@"%@",model);
+//    }];
     return YES;
 }
 
