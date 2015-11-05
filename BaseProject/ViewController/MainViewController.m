@@ -105,6 +105,22 @@
     self.navigationController.interactivePopGestureRecognizer.delegate = self.savedDelegate;//这里是为了保留系统的右滑返回手势
     
 }
+
+
+#pragma mark - 注册通知
+- (void)broadcast{
+    //待发送的消息，格式为多个键值对
+    NSDictionary *location = @{@"start":self.localName,@"end":self.destination};
+    
+    //获取通知中心
+    NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
+    //发送通知
+    //第一个参数：广播的名称
+    //第二个参数：谁在发广播
+    //第三个参数：发的消息内容是什么
+    [center postNotificationName:@"location" object:self userInfo:location];
+    
+}
 #pragma mark - SegmentControl
 //切换本地和目的地
 - (void)placeChanged:(UISegmentedControl *)sender{
@@ -155,6 +171,8 @@
 //代理方法（目的地）
 - (void)goLocationView:(GoLocationViewController *)senderVC withDistination:(NSString *)destination{
     self.destination = destination;
+//发送通知，发送内容为触发地和目的地的地址
+    [self broadcast];
     DDLogVerbose(@"目的地址是%@",self.destination);
     [self.placeSegment setTitle:self.destination forSegmentAtIndex:1];
      [self.headerView.imageActivity startAnimating];

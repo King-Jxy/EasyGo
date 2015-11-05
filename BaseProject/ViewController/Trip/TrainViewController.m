@@ -13,6 +13,9 @@
 #import "BusViewController.h"
 #import "GoLocationViewController.h"
 #import "LocationViewController.h"
+#import "CalendarHomeViewController.h"
+#import "CalendarViewController.h"
+#import "Color.h"
 @interface TrainViewController () <GoLocationViewControllerDelegate,LocationViewControllerDelegate,UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic , strong) DriveViewController *dvc;
 @property (nonatomic , strong) SubwayViewController *svc;
@@ -20,14 +23,27 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic , strong) NSString *start;
 @property (nonatomic , strong) NSString *end;
+
+@property (nonatomic , strong) NSString *satrtDate;
+@property (nonatomic , strong) CalendarHomeViewController *chvc;
 @end
 
 @implementation TrainViewController
+- (instancetype)init{
+    self = [super init];
+    if (self) {
+        //注册广播
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(receiveMessage:) name:@"location" object:nil];
+    }
+    return self;
+}
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"出行方式" style:UIBarButtonItemStyleBordered target:self action:@selector(showReMenu)];
     self.tableView.tableFooterView = [UIView new];
+   
 }
 #pragma mark - 起点和终点选择的代理方法
 - (void)goLocationView:(GoLocationViewController *)senderVC withDistination:(NSString *)destination{
@@ -38,6 +54,20 @@
 - (void)locationViewEnd:(LocationViewController *)senderVC withLocalName:(NSString *)localName{
     self.start = localName;
     [self.tableView reloadData];
+}
+
+#pragma mark - 广播接收消息
+
+-(void)receiveMessage:(NSNotification *)notification{
+    
+    NSDictionary *location = notification.userInfo;
+    //按照key值，取到value
+    self.start = location[@"start"];
+    self.end = location[@"end"];
+}
+
+- (void)dealloc{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 
@@ -130,7 +160,7 @@
             cell.imageView.image = [UIImage imageNamed:@"07.png"];
         }else{
             cell = [tableView dequeueReusableCellWithIdentifier:@"TrainStartDateCell" forIndexPath:indexPath];
-            cell.detailTextLabel.text = @"11月3日 周二";
+            cell.detailTextLabel.text = self.satrtDate;
             cell.imageView.image = [UIImage imageNamed:@"09.png"];
         }
     }else{
@@ -153,7 +183,20 @@
             gvc.delegate = self;
             [self.navigationController pushViewController:gvc animated:YES];
         }else{
+            __weak TrainViewController *weakSelf = self;
+            self.chvc.calendarblock = ^(CalendarDayModel *model){
+                
+                NSLog(@"\n---------------------------");
+                NSLog(@"1星期 %@",[model getWeek]);
+                NSLog(@"2字符串 %@",[model toString]);
+                NSLog(@"3节日  %@",model.holiday);
+                
+            weakSelf.satrtDate = [NSString stringWithFormat:@"%@ %@",[model toString],[model getWeek]];
+                [weakSelf.tableView reloadData];
+            };
             
+            [self.navigationController pushViewController:self.chvc animated:YES];
+
         }
     }else{
         
@@ -191,6 +234,23 @@
 		_bvc = [kStoryboard(@"Main")instantiateViewControllerWithIdentifier:@"BusViewController"];
 	}
 	return _bvc;
+}
+
+- (CalendarHomeViewController *)chvc {
+	if(_chvc == nil) {
+		_chvc = [[CalendarHomeViewController alloc] init];
+        _chvc.calendartitle = @"选择出行日期";
+        [_chvc setAirPlaneToDay:365 ToDateforString:nil];
+	}
+	return _chvc;
+}
+
+- (NSString *)satrtDate {
+	if(_satrtDate == nil) {
+		_satrtDate = [[NSString alloc] init];
+        _satrtDate = [self getDateAndWeek];
+	}
+	return _satrtDate;
 }
 
 @end

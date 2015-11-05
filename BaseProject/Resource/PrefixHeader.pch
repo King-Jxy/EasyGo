@@ -54,5 +54,6 @@ static const int ddLogLevel = DDLogLevelError;
 #import <Masonry.h>
 
 #import "NSObject+Common.h"
+#import "NSObject+DateFormat.h"
 
 #endif /* PrefixHeader_pch */
