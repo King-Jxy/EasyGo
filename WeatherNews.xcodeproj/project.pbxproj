@@ -84,6 +84,7 @@
 		23B78A5A1BE7989B003FAB86 /* BusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23B78A591BE7989B003FAB86 /* BusViewController.m */; };
 		23B965C61BDA581200245FE5 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23B965C51BDA581200245FE5 /* CoreLocation.framework */; };
 		23B965C81BDA581900245FE5 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23B965C71BDA581900245FE5 /* MapKit.framework */; };
+		23CA0CDE1BEBB4FD006C777B /* LeftTicketModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 23CA0CDD1BEBB4FD006C777B /* LeftTicketModel.m */; };
 		3804CE511BD758F10046C8C8 /* AppDelegate+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 3804CE4A1BD758F10046C8C8 /* AppDelegate+Category.m */; };
 		3804CE521BD758F10046C8C8 /* NSObject+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 3804CE4C1BD758F10046C8C8 /* NSObject+Common.m */; };
 		3804CE531BD758F10046C8C8 /* NSString+PJR.m in Sources */ = {isa = PBXBuildFile; fileRef = 3804CE4E1BD758F10046C8C8 /* NSString+PJR.m */; };
@@ -215,6 +216,8 @@
 		23B78A591BE7989B003FAB86 /* BusViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BusViewController.m; sourceTree = "<group>"; };
 		23B965C51BDA581200245FE5 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		23B965C71BDA581900245FE5 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		23CA0CDC1BEBB4FD006C777B /* LeftTicketModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftTicketModel.h; sourceTree = "<group>"; };
+		23CA0CDD1BEBB4FD006C777B /* LeftTicketModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftTicketModel.m; sourceTree = "<group>"; };
 		3804CE491BD758F10046C8C8 /* AppDelegate+Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+Category.h"; sourceTree = "<group>"; };
 		3804CE4A1BD758F10046C8C8 /* AppDelegate+Category.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+Category.m"; sourceTree = "<group>"; };
 		3804CE4B1BD758F10046C8C8 /* NSObject+Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Common.h"; sourceTree = "<group>"; };
@@ -327,6 +330,8 @@
 			children = (
 				2371775B1BE93E75008560DF /* S2StationModel.h */,
 				2371775C1BE93E75008560DF /* S2StationModel.m */,
+				23CA0CDC1BEBB4FD006C777B /* LeftTicketModel.h */,
+				23CA0CDD1BEBB4FD006C777B /* LeftTicketModel.m */,
 			);
 			path = TrainModel;
 			sourceTree = "<group>";
@@ -788,6 +793,7 @@
 				237177651BE93FF1008560DF /* CityListNetManager.m in Sources */,
 				2371775D1BE93E75008560DF /* S2StationModel.m in Sources */,
 				3804CE531BD758F10046C8C8 /* NSString+PJR.m in Sources */,
+				23CA0CDE1BEBB4FD006C777B /* LeftTicketModel.m in Sources */,
 				23B78A541BE7983F003FAB86 /* DriveViewController.m in Sources */,
 				232FCE201BE9A7CF008B83A5 /* NSObject+DateFormat.m in Sources */,
 				2371775A1BE93E3B008560DF /* WeatherModel.m in Sources */,

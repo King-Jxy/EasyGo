@@ -7,7 +7,16 @@
 //
 
 #import "TrainViewModel.h"
+#import "TripNetManager.h"
+
+@interface TrainViewModel ()
+@property (nonatomic , strong) NSArray *trainS2SList;
+@end
 
 @implementation TrainViewModel
-
+- (id)getS2StaionDataFromStart:(NSString *)start toEnd:(NSString *)end completionHandle:(void(^)(NSError *error))completionHandle{
+    return [TripNetManager getS2StaionDataFromStart:start toEnd:end CompletionHandle:^(S2StationModel *model, NSError *error) {
+        self.trainS2SList = model.result.list;
+    }];
+}
 @end

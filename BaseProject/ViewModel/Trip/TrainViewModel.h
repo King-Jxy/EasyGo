@@ -9,5 +9,5 @@
 #import "BaseViewModel.h"
 
 @interface TrainViewModel : BaseViewModel
-
+- (id)getS2StaionDataFromStart:(NSString *)start toEnd:(NSString *)end completionHandle:(void(^)(NSError *error))completionHandle;
 @end

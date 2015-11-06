@@ -64,4 +64,18 @@
 }
 
 
+- (NSString *)getTimestamp{
+    NSDateFormatter* formatter = [[NSDateFormatter alloc]init];
+    [formatter setDateFormat:@"YYYYMMddHHmmss"];
+    NSString *dateStr = [formatter stringFromDate:[NSDate date]];
+    return dateStr;
+}
+
+- (NSString *)getDate{
+    NSDateFormatter* formatter = [[NSDateFormatter alloc]init];
+    [formatter setDateFormat:@"YYYY-MM-dd"];
+    NSString *dateStr = [formatter stringFromDate:[NSDate date]];
+    return dateStr;
+}
+
 @end
