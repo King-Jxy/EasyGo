@@ -22,7 +22,14 @@
     self.tableView.tableFooterView = [UIView new];
 }
 
-
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:YES];
+    self.tableView.header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        [self.tableView reloadData];
+        [self.tableView.header endRefreshing];
+    }];
+    [self.tableView.header beginRefreshing];
+}
 
 #pragma mark - Table view data source
 
@@ -39,7 +46,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    if([self.trainVM getPriceOfswzAtIndex:indexPath.row]){
+    if([self.trainVM getPriceOfzyAtIndex:indexPath.row]){
       NewTrainCell  *cell  = [tableView dequeueReusableCellWithIdentifier:@"NewTrainCell" forIndexPath:indexPath];
         cell.trainCodeName.text = [self.trainVM getTrainNameAtIndex:INDEX];
         cell.startStationName.text = [self.trainVM getStartStationNameAtIndex:INDEX];
@@ -48,14 +55,26 @@
         cell.endTime.text  = [self.trainVM getArriveTimeAtIndex:INDEX];
         cell.lishiTime.text = [self.trainVM getLishiTimeAtIndex:INDEX];
         
-        cell.swzNum.text = [cell.swzNum.text stringByAppendingString:[self.trainVM getNumOfswzAtIndex:INDEX]];
-        cell.zyNum.text = [cell.zyNum.text stringByAppendingString:[self.trainVM getNumOfzyAtIndex:INDEX]];;
-        cell.zeNum.text = [cell.zeNum.text stringByAppendingString:[self.trainVM getNumOfzeAtIndex:INDEX]];
-        
+        if(![self.trainVM getPriceOfswzAtIndex:INDEX]){
+            cell.swzNum.text = @"";
+        }else{
+            
+            cell.swzNum.text = [@"商务座：" stringByAppendingString:[self.trainVM getNumOfswzAtIndex:INDEX]];
+        }
+        if(![self.trainVM getPriceOfzyAtIndex:INDEX]){
+            cell.zyNum.text = @"";
+        }else{
+            cell.zyNum.text = [@"一等座：" stringByAppendingString:[self.trainVM getNumOfzyAtIndex:INDEX]];
+        }
+        if(![self.trainVM getPriceOfzeAtIndex:INDEX]){
+            cell.zeNum.text = @"";
+        }else{
+            cell.zeNum.text = [@"二等座：" stringByAppendingString:[self.trainVM getNumOfzeAtIndex:INDEX]];
+        }
         if(![self.trainVM getPriceOfwzAtIndex:INDEX]){
             cell.wzNum.text = @"";
         }else{
-            cell.wzNum.text = [cell.wzNum.text stringByAppendingString:[self.trainVM getNumOfwzAtIndex:INDEX]];
+            cell.wzNum.text = [@"无座：" stringByAppendingString:[self.trainVM getNumOfwzAtIndex:INDEX]];
         }
          return cell;
     }else{
@@ -67,14 +86,25 @@
         cell.endTime.text  = [self.trainVM getArriveTimeAtIndex:INDEX];
         cell.lishiTime.text = [self.trainVM getLishiTimeAtIndex:INDEX];
         
-        cell.rwNum.text = [cell.rwNum.text stringByAppendingString:[self.trainVM getNumOfrwAtIndex:INDEX]];
-        cell.ywNum.text = [cell.ywNum.text stringByAppendingString:[self.trainVM getNumOfywAtIndex:INDEX]];;
-        cell.yzNum.text = [cell.yzNum.text stringByAppendingString:[self.trainVM getNumOfyzAtIndex:INDEX]];
-        
+        if(![self.trainVM getPriceOfrwAtIndex:INDEX]){
+            cell.rwNum.text = @"";
+        }else{
+            cell.rwNum.text = [@"软卧：" stringByAppendingString:[self.trainVM getNumOfrwAtIndex:INDEX]];
+        }
+        if(![self.trainVM getPriceOfywAtIndex:INDEX]){
+            cell.ywNum.text = @"";
+        }else{
+            cell.ywNum.text = [@"硬卧：" stringByAppendingString:[self.trainVM getNumOfywAtIndex:INDEX]];
+        }
+        if(![self.trainVM getPriceOfyzAtIndex:INDEX]){
+            cell.yzNum.text = @"";
+        }else{
+            cell.yzNum.text = [@"硬座：" stringByAppendingString:[self.trainVM getNumOfyzAtIndex:INDEX]];
+        }
         if(![self.trainVM getPriceOfwzAtIndex:INDEX]){
             cell.wzNum.text = @"";
         }else{
-            cell.wzNum.text = [cell.wzNum.text stringByAppendingString:[self.trainVM getNumOfwzAtIndex:INDEX]];
+            cell.wzNum.text = [@"无座：" stringByAppendingString:[self.trainVM getNumOfwzAtIndex:INDEX]];
         }
          return cell;
     }

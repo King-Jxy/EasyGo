@@ -47,42 +47,63 @@
     return [self getModelAtIndex:index].rw_pri;
 }//软卧
 - (NSString *)getNumOfrwAtIndex:(NSInteger)index{
+    if([[self getModelAtIndex:index].rw_num doubleValue] >= 999){
+        return @"有";
+    }
     return [self getModelAtIndex:index].rw_num;
 }
 - (NSString *)getPriceOfywAtIndex:(NSInteger)index{
     return [self getModelAtIndex:index].yw_pri;
 }//硬卧
 - (NSString *)getNumOfywAtIndex:(NSInteger)index{
+    if([[self getModelAtIndex:index].yw_num doubleValue] >= 999){
+        return @"有";
+    }
     return [self getModelAtIndex:index].yw_num;
 }
 - (NSString *)getPriceOfyzAtIndex:(NSInteger)index{
     return [self getModelAtIndex:index].yz_pri;
 }//硬座
 - (NSString *)getNumOfyzAtIndex:(NSInteger)index{
+    if([[self getModelAtIndex:index].yz_num doubleValue] >= 999){
+        return @"有";
+    }
     return [self getModelAtIndex:index].yz_num;
 }
 - (NSString *)getPriceOfwzAtIndex:(NSInteger)index{
     return [self getModelAtIndex:index].wz_pri;
 }//无座
 - (NSString *)getNumOfwzAtIndex:(NSInteger)index{
+    if([[self getModelAtIndex:index].wz_num doubleValue] >= 999){
+        return @"有";
+    }
     return [self getModelAtIndex:index].wz_num;
 }
 - (NSString *)getPriceOfswzAtIndex:(NSInteger)index{
     return [self getModelAtIndex:index].swz_pri;
 }//商务
 - (NSString *)getNumOfswzAtIndex:(NSInteger)index{
+    if([[self getModelAtIndex:index].swz_num doubleValue] >= 999){
+        return @"有";
+    }
     return [self getModelAtIndex:index].swz_num;
 }
 - (NSString *)getPriceOfzyAtIndex:(NSInteger)index{
     return [self getModelAtIndex:index].zy_pri;
 }//一等
 - (NSString *)getNumOfzyAtIndex:(NSInteger)index{
+    if([[self getModelAtIndex:index].zy_num doubleValue] >= 999){
+        return @"有";
+    }
     return [self getModelAtIndex:index].zy_num;
 }
 - (NSString *)getPriceOfzeAtIndex:(NSInteger)index{
     return [self getModelAtIndex:index].ze_pri;
 }//二等
 - (NSString *)getNumOfzeAtIndex:(NSInteger)index{
+    if([[self getModelAtIndex:index].ze_num doubleValue] >= 999){
+        return @"有";
+    }
     return [self getModelAtIndex:index].ze_num;
 }
 
