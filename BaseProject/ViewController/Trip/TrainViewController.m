@@ -16,6 +16,8 @@
 #import "CalendarHomeViewController.h"
 #import "CalendarViewController.h"
 #import "Color.h"
+#import "TrainViewModel.h"
+#import "LeftTicketViewController.h"
 @interface TrainViewController () <GoLocationViewControllerDelegate,LocationViewControllerDelegate,UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic , strong) DriveViewController *dvc;
 @property (nonatomic , strong) SubwayViewController *svc;
@@ -24,8 +26,12 @@
 @property (nonatomic , strong) NSString *start;
 @property (nonatomic , strong) NSString *end;
 
-@property (nonatomic , strong) NSString *satrtDate;
+@property (nonatomic , strong) NSString *startDate;
+@property (nonatomic , strong) NSString *startDateWeek;
 @property (nonatomic , strong) CalendarHomeViewController *chvc;
+
+@property (nonatomic , strong) TrainViewModel *trainVM;
+
 @end
 
 @implementation TrainViewController
@@ -160,7 +166,7 @@
             cell.imageView.image = [UIImage imageNamed:@"07.png"];
         }else{
             cell = [tableView dequeueReusableCellWithIdentifier:@"TrainStartDateCell" forIndexPath:indexPath];
-            cell.detailTextLabel.text = self.satrtDate;
+            cell.detailTextLabel.text = self.startDateWeek;
             cell.imageView.image = [UIImage imageNamed:@"09.png"];
         }
     }else{
@@ -191,7 +197,8 @@
                 NSLog(@"2字符串 %@",[model toString]);
                 NSLog(@"3节日  %@",model.holiday);
                 
-            weakSelf.satrtDate = [NSString stringWithFormat:@"%@ %@",[model toString],[model getWeek]];
+            weakSelf.startDateWeek = [NSString stringWithFormat:@"%@ %@",[model toString],[model getWeek]];
+                weakSelf.startDate =[NSString stringWithFormat:@"%@",[model toString]];
                 [weakSelf.tableView reloadData];
             };
             
@@ -199,7 +206,33 @@
 
         }
     }else{
+        if(!self.start){
+            [self showErrorMsg:@"未填写出发站"];
+        }else if(!self.end){
+            [self showErrorMsg:@"未填写到达站"];
+        }else{
+        [self showProgress];
+        [self.trainVM getLeftTicketDataFromStation:self.start toStation:self.end andDate:self.startDate completionHandle:^(NSError *error) {
+            [self hideProgress];
+            if([[self.trainVM getErrorCode] isEqualToString:@"000"]){
+                if([self.trainVM getTrainCount] == 0){
+                    [self showErrorMsg:@"未找到列车"];
+                }else{
+//推出下一个界面
+                    LeftTicketViewController *lvc = [kStoryboard(@"Main")instantiateViewControllerWithIdentifier:@"LeftTicketViewController"];
+                    lvc.trainVM = self.trainVM;
+                    [self.navigationController pushViewController:lvc animated:YES];
+                }
+                
+            }else if([[self.trainVM getErrorCode] isEqualToString:@"001"]){
+                [self showErrorMsg:@"未填写出发站"];
+                
+            }else if([[self.trainVM getErrorCode] isEqualToString:@"002"]){
+                [self showErrorMsg:@"未填写到达站"];
+            }
+        }];
         
+    }
     }
 }
 
@@ -245,12 +278,27 @@
 	return _chvc;
 }
 
-- (NSString *)satrtDate {
-	if(_satrtDate == nil) {
-		_satrtDate = [[NSString alloc] init];
-        _satrtDate = [self getDateAndWeek];
+- (NSString *)startDateWeek {
+	if(_startDateWeek == nil) {
+		_startDateWeek = [[NSString alloc] init];
+        _startDateWeek = [self getDateAndWeek];
 	}
-	return _satrtDate;
+	return _startDateWeek;
+}
+
+- (TrainViewModel *)trainVM {
+	if(_trainVM == nil) {
+		_trainVM = [[TrainViewModel alloc] init];
+	}
+	return _trainVM;
+}
+
+- (NSString *)startDate {
+	if(_startDate == nil) {
+		_startDate = [[NSString alloc] init];
+        _startDate = [self getDate];
+	}
+	return _startDate;
 }
 
 @end

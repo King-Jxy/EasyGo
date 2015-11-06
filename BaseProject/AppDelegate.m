@@ -31,8 +31,7 @@
     [[UINavigationBar appearance] setBackIndicatorImage:[UIImage imageNamed:@"arrow-left.png"]];
     
     
-    NSString *jake = [self getTimestamp];
-    DDLogVerbose(@"%@",jake);
+
     
 //    [TripNetManager getLeftTicketDataFromStation:@"温州" toStation:@"丽水" andDate:@"2015-11-08"  CompletionHandle:^(LeftTicketModel *model, NSError *error) {
 //        DDLogVerbose(@"%@",model);
