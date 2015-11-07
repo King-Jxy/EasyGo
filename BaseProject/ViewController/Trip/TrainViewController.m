@@ -28,6 +28,7 @@
 
 @property (nonatomic , strong) NSString *startDate;
 @property (nonatomic , strong) NSString *startDateWeek;
+@property (nonatomic , strong) NSDate *date;
 @property (nonatomic , strong) CalendarHomeViewController *chvc;
 
 @property (nonatomic , strong) TrainViewModel *trainVM;
@@ -192,13 +193,14 @@
             __weak TrainViewController *weakSelf = self;
             self.chvc.calendarblock = ^(CalendarDayModel *model){
                 
-                NSLog(@"\n---------------------------");
-                NSLog(@"1星期 %@",[model getWeek]);
-                NSLog(@"2字符串 %@",[model toString]);
-                NSLog(@"3节日  %@",model.holiday);
+//                NSLog(@"\n---------------------------");
+//                NSLog(@"1星期 %@",[model getWeek]);
+//                NSLog(@"2字符串 %@",[model toString]);
+//                NSLog(@"3节日  %@",model.holiday);
                 
             weakSelf.startDateWeek = [NSString stringWithFormat:@"%@ %@",[model toString],[model getWeek]];
                 weakSelf.startDate =[NSString stringWithFormat:@"%@",[model toString]];
+                weakSelf.date = model.date;
                 [weakSelf.tableView reloadData];
             };
             
@@ -211,6 +213,10 @@
         }else if(!self.end){
             [self showErrorMsg:@"未填写到达站"];
         }else{
+            if([self daysWithinEraFromDate:[NSDate date] toDate:self.date]>60){
+                [self showErrorMsg:@"时间不在订票范围内"];
+                return;
+            }
         [self showProgress];
         [self.trainVM getLeftTicketDataFromStation:self.start toStation:self.end andDate:self.startDate completionHandle:^(NSError *error) {
             [self hideProgress];

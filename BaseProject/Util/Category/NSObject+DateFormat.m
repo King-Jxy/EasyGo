@@ -78,4 +78,12 @@
     return dateStr;
 }
 
+-(NSInteger)daysWithinEraFromDate:(NSDate *) startDate toDate:(NSDate *) endDate {
+    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+    unsigned int unitFlag = NSDayCalendarUnit;
+    NSDateComponents *components = [calendar components:unitFlag fromDate:startDate toDate:endDate options:0];
+    NSInteger days = [components day] + 1;
+    
+    return days;
+}
 @end

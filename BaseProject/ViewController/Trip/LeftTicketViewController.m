@@ -18,7 +18,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.title = [[[self.trainVM getFromStationNameAtIndex:0] stringByAppendingString:@" - "]stringByAppendingString:[self.trainVM getToStationNameAtIndex:0]];
     self.tableView.tableFooterView = [UIView new];
 }
 
@@ -49,8 +49,15 @@
     if([self.trainVM getPriceOfzyAtIndex:indexPath.row]){
       NewTrainCell  *cell  = [tableView dequeueReusableCellWithIdentifier:@"NewTrainCell" forIndexPath:indexPath];
         cell.trainCodeName.text = [self.trainVM getTrainNameAtIndex:INDEX];
-        cell.startStationName.text = [self.trainVM getStartStationNameAtIndex:INDEX];
-        cell.endStationName.text = [self.trainVM getEndStationNameAtIndex:INDEX];
+        cell.startStationName.text = [self.trainVM getFromStationNameAtIndex:INDEX];
+        if([[self.trainVM getStartStationNameAtIndex:INDEX] isEqualToString:[self.trainVM getFromStationNameAtIndex:INDEX]]){
+            cell.startStationName.text = [[self.trainVM getFromStationNameAtIndex:INDEX]stringByAppendingString:@"[始]"];
+        }
+        
+        cell.endStationName.text = [self.trainVM getToStationNameAtIndex:INDEX];
+        if([[self.trainVM getEndStationNameAtIndex:INDEX] isEqualToString:[self.trainVM getToStationNameAtIndex:INDEX]]){
+            cell.endStationName.text = [[self.trainVM getToStationNameAtIndex:INDEX]stringByAppendingString:@"[终]"];
+        }
         cell.startTime.text = [self.trainVM getStartTimeAtIndex:INDEX];
         cell.endTime.text  = [self.trainVM getArriveTimeAtIndex:INDEX];
         cell.lishiTime.text = [self.trainVM getLishiTimeAtIndex:INDEX];
@@ -80,8 +87,16 @@
     }else{
       OldTrainCell *cell = [tableView dequeueReusableCellWithIdentifier:@"OldTrainCell" forIndexPath:indexPath];
         cell.trainCodeName.text = [self.trainVM getTrainNameAtIndex:INDEX];
-        cell.startStationName.text = [self.trainVM getStartStationNameAtIndex:INDEX];
-        cell.endStationName.text = [self.trainVM getEndStationNameAtIndex:INDEX];
+        cell.trainCodeName.text = [self.trainVM getTrainNameAtIndex:INDEX];
+        cell.startStationName.text = [self.trainVM getFromStationNameAtIndex:INDEX];
+        if([[self.trainVM getStartStationNameAtIndex:INDEX] isEqualToString:[self.trainVM getFromStationNameAtIndex:INDEX]]){
+            cell.startStationName.text = [[self.trainVM getFromStationNameAtIndex:INDEX]stringByAppendingString:@"[始]"];
+        }
+        
+        cell.endStationName.text = [self.trainVM getToStationNameAtIndex:INDEX];
+        if([[self.trainVM getEndStationNameAtIndex:INDEX] isEqualToString:[self.trainVM getToStationNameAtIndex:INDEX]]){
+            cell.endStationName.text = [[self.trainVM getToStationNameAtIndex:INDEX]stringByAppendingString:@"[终]"];
+        }
         cell.startTime.text = [self.trainVM getStartTimeAtIndex:INDEX];
         cell.endTime.text  = [self.trainVM getArriveTimeAtIndex:INDEX];
         cell.lishiTime.text = [self.trainVM getLishiTimeAtIndex:INDEX];

@@ -13,6 +13,8 @@
 
 - (NSString *)getTimestamp;//20151105232948
 
-- (NSString *)getDate;
+- (NSString *)getDate;//2015-11-07
 
+//两个NSDate之间相差几天
+-(NSInteger)daysWithinEraFromDate:(NSDate *) startDate toDate:(NSDate *) endDate;
 @end
