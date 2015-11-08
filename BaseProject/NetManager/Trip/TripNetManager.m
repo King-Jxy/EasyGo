@@ -40,4 +40,19 @@
     }];
     
 }
+
+//https://route.showapi.com/832-2?showapi_appid=11919&showapi_timestamp=20151109041652&train_num=k102&showapi_sign=b9019ef4f75ea0130f7e764acfdcb9f2
+
++ (id)getTrainTimeListFromTrainName:(NSString *)name CompletionHandle:(void(^)(TrainTimeModel *model , NSError *error))completionHandle{
+    NSString *path = @"https://route.showapi.com/832-2";
+    NSMutableDictionary *params = [NSMutableDictionary new];
+    [params setObject:APPID forKey:@"showapi_appid"];
+    [params setObject:APPSIGN forKey:@"showapi_sign"];
+    [params setObject:[self getTimestamp] forKey:@"showapi_timestamp"];
+    [params setObject:name forKey:@"train_num"];
+
+    return [self GET:path parameters:params completionHandler:^(id responseObj, NSError *error) {
+        completionHandle([TrainTimeModel objectWithKeyValues:responseObj],error);
+    }];
+}
 @end

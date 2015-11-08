@@ -7,11 +7,13 @@
 //
 
 #import "BaseViewModel.h"
-
+#import "LeftTicketModel.h"
 @interface TrainViewModel : BaseViewModel
 - (id)getS2StaionDataFromStart:(NSString *)start toEnd:(NSString *)end completionHandle:(void(^)(NSError *error))completionHandle;
 
 - (id)getLeftTicketDataFromStation:(NSString *)start toStation:(NSString *)end andDate:(NSString *)date completionHandle:(void(^)(NSError *error))completionHandle;
+
+- (LTBodyDataModel *)getModelAtIndex:(NSInteger)index;
 
 - (NSString *)getStartStationNameAtIndex:(NSInteger)index;
 - (NSString *)getEndStationNameAtIndex:(NSInteger)index;

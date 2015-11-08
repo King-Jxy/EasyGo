@@ -11,6 +11,7 @@
 #import "NewTrainCell.h"
 #import "UMSocial.h"
 #import "UMSocialWechatHandler.h"
+#import "TrainTimeViewController.h"
 #define INDEX indexPath.row
 @interface LeftTicketViewController ()<UMSocialDataDelegate,UMSocialUIDelegate>
 
@@ -147,20 +148,20 @@
 #pragma mark - Table view delegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
+    [self performSegueWithIdentifier:@"TicketDetailSegue" sender:indexPath];
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
     return [NSString stringWithFormat:@"共有%ld次列车",[self.trainVM getTrainCount]];
 }
 
-/*
+
 #pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(NSIndexPath *)index {
+    TrainTimeViewController *vc = segue.destinationViewController;
+    vc.selectedData = [self.trainVM getModelAtIndex:index.row];
 }
-*/
+
 
 @end

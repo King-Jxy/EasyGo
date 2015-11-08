@@ -8,7 +8,6 @@
 
 #import "TrainViewModel.h"
 #import "TripNetManager.h"
-#import "LeftTicketModel.h"
 @interface TrainViewModel ()
 @property (nonatomic , strong) NSArray *trainS2SList;
 @property (nonatomic , strong) NSArray *leftTicketDataList;
@@ -26,7 +25,7 @@
 
 - (id)getLeftTicketDataFromStation:(NSString *)start toStation:(NSString *)end andDate:(NSString *)date completionHandle:(void(^)(NSError *error))completionHandle{
     return [TripNetManager getLeftTicketDataFromStation:start toStation:end andDate:date CompletionHandle:^(LeftTicketModel *model, NSError *error) {
-        self.leftTicketDataList = model.showapi_res_body.data;
+        self.leftTicketDataList = [model.showapi_res_body.data copy];
         self.errorCode = model.showapi_res_body.error_code;
         self.resError = model.showapi_res_error;
         completionHandle(error);

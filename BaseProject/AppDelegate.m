@@ -54,6 +54,8 @@
     [UMSocialConfig hiddenNotInstallPlatforms:@[UMShareToQQ, UMShareToQzone, UMShareToWechatSession, UMShareToWechatTimeline]];
 //注册友盟分析
     [MobClick startWithAppkey:@"563efdb8e0f55a78c7000f47" reportPolicy:BATCH channelId:nil];
+    
+    
     return YES;
 }
 

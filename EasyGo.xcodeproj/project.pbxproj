@@ -54,6 +54,9 @@
 		232FCE1D1BE9A138008B83A5 /* NSDate+WQCalendarLogic.m in Sources */ = {isa = PBXBuildFile; fileRef = 232FCE141BE9A138008B83A5 /* NSDate+WQCalendarLogic.m */; };
 		232FCE201BE9A7CF008B83A5 /* NSObject+DateFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = 232FCE1F1BE9A7CF008B83A5 /* NSObject+DateFormat.m */; };
 		234F8ECA1BEF9DAB00EF589E /* libMobClickLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 234F8EC71BEF9DAB00EF589E /* libMobClickLibrary.a */; };
+		234F8ECD1BEFED4800EF589E /* TrainTimeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 234F8ECC1BEFED4800EF589E /* TrainTimeModel.m */; };
+		234F8ED01BEFF0EC00EF589E /* TrainTimeViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 234F8ECF1BEFF0EC00EF589E /* TrainTimeViewModel.m */; };
+		234F8ED31BEFF50F00EF589E /* TrainTimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 234F8ED21BEFF50F00EF589E /* TrainTimeViewController.m */; };
 		235958FD1BEEFAB800E9B181 /* UMSocialLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 235958751BEEFAB800E9B181 /* UMSocialLocalizable.strings */; };
 		235958FE1BEEFAB800E9B181 /* libUMSocial_Sdk_4.3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 235958831BEEFAB800E9B181 /* libUMSocial_Sdk_4.3.a */; };
 		235958FF1BEEFAB800E9B181 /* UMSCommentDetailController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 235958851BEEFAB800E9B181 /* UMSCommentDetailController.xib */; };
@@ -248,6 +251,12 @@
 		234F8EC71BEF9DAB00EF589E /* libMobClickLibrary.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libMobClickLibrary.a; sourceTree = "<group>"; };
 		234F8EC81BEF9DAB00EF589E /* MobClick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobClick.h; sourceTree = "<group>"; };
 		234F8EC91BEF9DAB00EF589E /* MobClickSocialAnalytics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobClickSocialAnalytics.h; sourceTree = "<group>"; };
+		234F8ECB1BEFED4800EF589E /* TrainTimeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrainTimeModel.h; sourceTree = "<group>"; };
+		234F8ECC1BEFED4800EF589E /* TrainTimeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrainTimeModel.m; sourceTree = "<group>"; };
+		234F8ECE1BEFF0EC00EF589E /* TrainTimeViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrainTimeViewModel.h; sourceTree = "<group>"; };
+		234F8ECF1BEFF0EC00EF589E /* TrainTimeViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrainTimeViewModel.m; sourceTree = "<group>"; };
+		234F8ED11BEFF50F00EF589E /* TrainTimeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrainTimeViewController.h; sourceTree = "<group>"; };
+		234F8ED21BEFF50F00EF589E /* TrainTimeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrainTimeViewController.m; sourceTree = "<group>"; };
 		235958761BEEFAB800E9B181 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/UMSocialLocalizable.strings; sourceTree = "<group>"; };
 		235958781BEEFAB800E9B181 /* UMSocial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMSocial.h; sourceTree = "<group>"; };
 		235958791BEEFAB800E9B181 /* UMSocialAccountManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMSocialAccountManager.h; sourceTree = "<group>"; };
@@ -741,6 +750,8 @@
 				2371775C1BE93E75008560DF /* S2StationModel.m */,
 				23CA0CDC1BEBB4FD006C777B /* LeftTicketModel.h */,
 				23CA0CDD1BEBB4FD006C777B /* LeftTicketModel.m */,
+				234F8ECB1BEFED4800EF589E /* TrainTimeModel.h */,
+				234F8ECC1BEFED4800EF589E /* TrainTimeModel.m */,
 			);
 			path = TrainModel;
 			sourceTree = "<group>";
@@ -800,6 +811,8 @@
 			children = (
 				237177771BE94DB8008560DF /* TrainViewModel.h */,
 				237177781BE94DB8008560DF /* TrainViewModel.m */,
+				234F8ECE1BEFF0EC00EF589E /* TrainTimeViewModel.h */,
+				234F8ECF1BEFF0EC00EF589E /* TrainTimeViewModel.m */,
 			);
 			path = Trip;
 			sourceTree = "<group>";
@@ -820,6 +833,8 @@
 				23B78A501BE79823003FAB86 /* TrainViewController.m */,
 				23CA0CEB1BED0F84006C777B /* LeftTicketViewController.h */,
 				23CA0CEC1BED0F84006C777B /* LeftTicketViewController.m */,
+				234F8ED11BEFF50F00EF589E /* TrainTimeViewController.h */,
+				234F8ED21BEFF50F00EF589E /* TrainTimeViewController.m */,
 				23B78A521BE7983F003FAB86 /* DriveViewController.h */,
 				23B78A531BE7983F003FAB86 /* DriveViewController.m */,
 				23B78A551BE79852003FAB86 /* SubwayViewController.h */,
@@ -1308,10 +1323,12 @@
 				237177671BE93FF1008560DF /* WeatherNetManager.m in Sources */,
 				3886C0BB1BD74AE90014E661 /* BaseViewModel.m in Sources */,
 				23B78A371BE79130003FAB86 /* LocationDistrictViewController.m in Sources */,
+				234F8ED01BEFF0EC00EF589E /* TrainTimeViewModel.m in Sources */,
 				3886C0C11BD74B090014E661 /* BaseModel.m in Sources */,
 				2395315A1BE1C2AE00FEB8DD /* WeatherView.m in Sources */,
 				3886C0981BD748830014E661 /* main.m in Sources */,
 				23B78A5A1BE7989B003FAB86 /* BusViewController.m in Sources */,
+				234F8ED31BEFF50F00EF589E /* TrainTimeViewController.m in Sources */,
 				3804CE521BD758F10046C8C8 /* NSObject+Common.m in Sources */,
 				23CA0CE71BED0DBE006C777B /* OldTrainCell.m in Sources */,
 				237177591BE93E3B008560DF /* CityPicModel.m in Sources */,
@@ -1321,6 +1338,7 @@
 				237177741BE94D82008560DF /* NewsListViewModel.m in Sources */,
 				232FCE151BE9A138008B83A5 /* CalendarDayCell.m in Sources */,
 				23CA0CEA1BED0DCF006C777B /* NewTrainCell.m in Sources */,
+				234F8ECD1BEFED4800EF589E /* TrainTimeModel.m in Sources */,
 				232FCE191BE9A138008B83A5 /* CalendarMonthCollectionViewLayout.m in Sources */,
 				237177751BE94D82008560DF /* WeatherViewModel.m in Sources */,
 				232FCE181BE9A138008B83A5 /* CalendarLogic.m in Sources */,
