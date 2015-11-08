@@ -673,22 +673,105 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="自驾" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WGG-0C-fEE">
-                                <rect key="frame" x="147" y="218" width="34" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="起点：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A2C-lo-Pf0">
+                                <rect key="frame" x="15" y="86" width="51" height="21"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="终点：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yZa-fM-YRJ">
+                                <rect key="frame" x="15" y="123" width="51" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="出发城市" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OBX-fk-uN2">
+                                <rect key="frame" x="71" y="84" width="81" height="30"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="出发地点" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CtA-pf-0mr">
+                                <rect key="frame" x="162" y="84" width="148" height="30"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="到达城市" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Tew-27-hC9">
+                                <rect key="frame" x="71" y="121" width="81" height="30"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="到达地点" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oXi-Gj-pLQ">
+                                <rect key="frame" x="162" y="121" width="148" height="30"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9lw-8a-oUw">
+                                <rect key="frame" x="30" y="166" width="30" height="30"/>
+                                <animations/>
+                                <state key="normal" title="公交"/>
+                                <connections>
+                                    <action selector="test:" destination="a2o-0E-B6Z" eventType="touchUpInside" id="hTd-4U-bf7"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PCh-jM-I3W">
+                                <rect key="frame" x="145" y="166" width="30" height="30"/>
+                                <animations/>
+                                <state key="normal" title="乘驾"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nr3-5g-K2h">
+                                <rect key="frame" x="246" y="166" width="30" height="30"/>
+                                <animations/>
+                                <state key="normal" title="步行"/>
+                            </button>
+                            <mapView contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="bRq-Lc-yZT">
+                                <rect key="frame" x="0.0" y="206" width="320" height="274"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                            </mapView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="yZa-fM-YRJ" firstAttribute="leading" secondItem="IWk-Wa-XpB" secondAttribute="leading" constant="15" id="1kZ-Kp-dw1"/>
+                            <constraint firstItem="A2C-lo-Pf0" firstAttribute="top" secondItem="Pmx-xP-4xM" secondAttribute="bottom" constant="66" id="7ER-uM-XnS"/>
+                            <constraint firstItem="9lw-8a-oUw" firstAttribute="top" secondItem="PCh-jM-I3W" secondAttribute="top" id="81n-7N-8x8"/>
+                            <constraint firstItem="oXi-Gj-pLQ" firstAttribute="width" secondItem="CtA-pf-0mr" secondAttribute="width" id="9x0-KF-owF"/>
+                            <constraint firstAttribute="trailing" secondItem="Nr3-5g-K2h" secondAttribute="trailing" constant="44" id="A6x-Cu-k6i"/>
+                            <constraint firstItem="9lw-8a-oUw" firstAttribute="leading" secondItem="IWk-Wa-XpB" secondAttribute="leading" constant="30" id="Eur-WD-GZV"/>
+                            <constraint firstItem="Nr3-5g-K2h" firstAttribute="top" secondItem="oXi-Gj-pLQ" secondAttribute="bottom" constant="15" id="H2d-SY-68W"/>
+                            <constraint firstItem="CtA-pf-0mr" firstAttribute="leading" secondItem="OBX-fk-uN2" secondAttribute="trailing" constant="10" id="I3A-RW-e7f"/>
+                            <constraint firstItem="Xdc-Vs-c12" firstAttribute="top" secondItem="bRq-Lc-yZT" secondAttribute="bottom" id="IAr-Zu-bIu"/>
+                            <constraint firstItem="PCh-jM-I3W" firstAttribute="centerX" secondItem="IWk-Wa-XpB" secondAttribute="centerX" id="IvO-zd-PCs"/>
+                            <constraint firstItem="CtA-pf-0mr" firstAttribute="centerY" secondItem="OBX-fk-uN2" secondAttribute="centerY" id="QGR-Sp-kTf"/>
+                            <constraint firstItem="bRq-Lc-yZT" firstAttribute="top" secondItem="PCh-jM-I3W" secondAttribute="bottom" constant="10" id="TdX-4S-Qud"/>
+                            <constraint firstItem="Tew-27-hC9" firstAttribute="width" secondItem="OBX-fk-uN2" secondAttribute="width" id="V1H-Y8-B5S"/>
+                            <constraint firstItem="Tew-27-hC9" firstAttribute="centerX" secondItem="OBX-fk-uN2" secondAttribute="centerX" id="Vab-bS-HnE"/>
+                            <constraint firstItem="OBX-fk-uN2" firstAttribute="width" secondItem="A2C-lo-Pf0" secondAttribute="width" constant="30" id="WNi-Zd-oTu"/>
+                            <constraint firstAttribute="trailing" secondItem="bRq-Lc-yZT" secondAttribute="trailing" id="Y2D-2b-3bc"/>
+                            <constraint firstItem="Tew-27-hC9" firstAttribute="centerY" secondItem="yZa-fM-YRJ" secondAttribute="centerY" constant="2" id="b29-GC-Eov"/>
+                            <constraint firstAttribute="trailing" secondItem="CtA-pf-0mr" secondAttribute="trailing" constant="10" id="e8U-Rf-xU4"/>
+                            <constraint firstItem="A2C-lo-Pf0" firstAttribute="leading" secondItem="IWk-Wa-XpB" secondAttribute="leading" constant="15" id="ghL-Ab-Bux"/>
+                            <constraint firstItem="OBX-fk-uN2" firstAttribute="centerY" secondItem="A2C-lo-Pf0" secondAttribute="centerY" constant="2" id="grB-yf-Gzr"/>
+                            <constraint firstItem="oXi-Gj-pLQ" firstAttribute="centerY" secondItem="Tew-27-hC9" secondAttribute="centerY" id="h4P-h8-kQN"/>
+                            <constraint firstItem="oXi-Gj-pLQ" firstAttribute="centerX" secondItem="CtA-pf-0mr" secondAttribute="centerX" id="hvA-mi-uKy"/>
+                            <constraint firstItem="OBX-fk-uN2" firstAttribute="leading" secondItem="A2C-lo-Pf0" secondAttribute="trailing" constant="5" id="i2l-8s-VeO"/>
+                            <constraint firstItem="PCh-jM-I3W" firstAttribute="top" secondItem="Nr3-5g-K2h" secondAttribute="top" id="lbb-Kc-yKc"/>
+                            <constraint firstItem="bRq-Lc-yZT" firstAttribute="leading" secondItem="IWk-Wa-XpB" secondAttribute="leading" id="sO2-s2-v8h"/>
+                            <constraint firstItem="yZa-fM-YRJ" firstAttribute="top" secondItem="A2C-lo-Pf0" secondAttribute="bottom" constant="16" id="yue-bT-CCu"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="sbH-rV-4gm"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="inl-EV-fOj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1118" y="97"/>
+            <point key="canvasLocation" x="1112" y="118"/>
         </scene>
         <!--车次列表-->
         <scene sceneID="K56-Z7-FJX">

@@ -227,7 +227,7 @@
                 if([self.trainVM getTrainCount] == 0){
                     [self showErrorMsg:@"当天已无列车"];
                 }else{
-//推出下一个界面
+//推出下一个界面（查询成功）
                     LeftTicketViewController *lvc = [kStoryboard(@"Main")instantiateViewControllerWithIdentifier:@"LeftTicketViewController"];
                     lvc.trainVM = self.trainVM;
                     [self.navigationController pushViewController:lvc animated:YES];
