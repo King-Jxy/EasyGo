@@ -9,11 +9,28 @@
 #import "AppDelegate.h"
 #import "AppDelegate+Category.h"
 #import "TripNetManager.h"
+#import "UMSocial.h"
+#import "MobClick.h"
+#import "MobClickSocialAnalytics.h"
 @interface AppDelegate ()
 
 @end
 
 @implementation AppDelegate
+
+- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url
+{
+    return  [UMSocialSnsService handleOpenURL:url];
+}
+
+- (BOOL)application:(UIApplication *)application
+            openURL:(NSURL *)url
+  sourceApplication:(NSString *)sourceApplication
+         annotation:(id)annotation
+{
+    return  [UMSocialSnsService handleOpenURL:url];
+}
+
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
@@ -30,12 +47,13 @@
     //5.设置导航栏返回按钮的箭头样式
     [[UINavigationBar appearance] setBackIndicatorImage:[UIImage imageNamed:@"arrow-left.png"]];
     
-    
+    	
 
-    
-//    [TripNetManager getLeftTicketDataFromStation:@"温州" toStation:@"丽水" andDate:@"2015-11-08"  CompletionHandle:^(LeftTicketModel *model, NSError *error) {
-//        DDLogVerbose(@"%@",model);
-//    }];
+//友盟分享
+    [UMSocialData setAppKey:@"563efdb8e0f55a78c7000f47"];
+    [UMSocialConfig hiddenNotInstallPlatforms:@[UMShareToQQ, UMShareToQzone, UMShareToWechatSession, UMShareToWechatTimeline]];
+//注册友盟分析
+    [MobClick startWithAppkey:@"563efdb8e0f55a78c7000f47" reportPolicy:BATCH channelId:nil];
     return YES;
 }
 

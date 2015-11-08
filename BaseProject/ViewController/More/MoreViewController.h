@@ -2,7 +2,7 @@
 //  MoreViewController.h
 //  WeatherNews
 //
-//  Created by jake on 15/11/2.
+//  Created by jake on 15/11/7.
 //  Copyright © 2015年 Tarena. All rights reserved.
 //
 

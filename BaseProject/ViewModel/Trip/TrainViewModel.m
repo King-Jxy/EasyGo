@@ -13,6 +13,7 @@
 @property (nonatomic , strong) NSArray *trainS2SList;
 @property (nonatomic , strong) NSArray *leftTicketDataList;
 @property (nonatomic , strong) NSString *errorCode;
+@property (nonatomic , strong) NSString *resError;
 @end
 
 @implementation TrainViewModel
@@ -27,6 +28,7 @@
     return [TripNetManager getLeftTicketDataFromStation:start toStation:end andDate:date CompletionHandle:^(LeftTicketModel *model, NSError *error) {
         self.leftTicketDataList = model.showapi_res_body.data;
         self.errorCode = model.showapi_res_body.error_code;
+        self.resError = model.showapi_res_error;
         completionHandle(error);
     }];
 }
@@ -133,6 +135,10 @@
 }
 - (NSInteger)getTrainCount{
     return self.leftTicketDataList.count;
+}
+
+- (NSString *)getResError{
+    return self.resError;
 }
 
 @end

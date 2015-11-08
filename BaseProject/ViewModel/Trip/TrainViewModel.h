@@ -41,4 +41,5 @@
 
 - (NSString *)getErrorCode;
 - (NSInteger)getTrainCount;
+- (NSString *)getResError;
 @end

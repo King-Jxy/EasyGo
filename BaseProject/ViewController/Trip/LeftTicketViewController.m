@@ -9,8 +9,10 @@
 #import "LeftTicketViewController.h"
 #import "OldTrainCell.h"
 #import "NewTrainCell.h"
+#import "UMSocial.h"
+#import "UMSocialWechatHandler.h"
 #define INDEX indexPath.row
-@interface LeftTicketViewController ()
+@interface LeftTicketViewController ()<UMSocialDataDelegate,UMSocialUIDelegate>
 
 @end
 
@@ -20,6 +22,7 @@
     [super viewDidLoad];
     self.title = [[[self.trainVM getFromStationNameAtIndex:0] stringByAppendingString:@" - "]stringByAppendingString:[self.trainVM getToStationNameAtIndex:0]];
     self.tableView.tableFooterView = [UIView new];
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated{
@@ -29,6 +32,20 @@
         [self.tableView.header endRefreshing];
     }];
     [self.tableView.header beginRefreshing];
+}
+
+- (IBAction)UMShare:(id)sender {
+//横屏支持
+    [UMSocialConfig setSupportedInterfaceOrientations:UIInterfaceOrientationMaskLandscape];
+    [UMSocialSnsService presentSnsIconSheetView:self
+                                         appKey:@"563efdb8e0f55a78c7000f47"
+                                      shareText:[self.title stringByAppendingString:@"车票查询结果"]
+                                     shareImage:[UIImage imageNamed:@"more_share_weixin_ic.png"]
+                                shareToSnsNames:[NSArray arrayWithObjects:UMShareToSina,UMShareToWechatSession,UMShareToEmail,nil]
+                                       delegate:self];
+    
+    [UMSocialWechatHandler setWXAppId:@"wx945b58aef3a271fO" appSecret:@"Oae78dd42761fd9681b04833c79a857b" url:@"http://www.umeng.com/social"];
+    [UMSocialConfig hiddenNotInstallPlatforms:@[UMShareToQQ, UMShareToQzone, UMShareToWechatSession, UMShareToWechatTimeline]];
 }
 
 #pragma mark - Table view data source
@@ -132,6 +149,9 @@
     [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
+    return [NSString stringWithFormat:@"共有%ld次列车",[self.trainVM getTrainCount]];
+}
 
 /*
 #pragma mark - Navigation

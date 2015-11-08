@@ -221,8 +221,11 @@
         [self.trainVM getLeftTicketDataFromStation:self.start toStation:self.end andDate:self.startDate completionHandle:^(NSError *error) {
             [self hideProgress];
             if([[self.trainVM getErrorCode] isEqualToString:@"000"]){
+                if([self.trainVM getResError]){
+                    [self showErrorMsg:[self.trainVM getResError]];
+                }
                 if([self.trainVM getTrainCount] == 0){
-                    [self showErrorMsg:@"未找到列车"];
+                    [self showErrorMsg:@"当天已无列车"];
                 }else{
 //推出下一个界面
                     LeftTicketViewController *lvc = [kStoryboard(@"Main")instantiateViewControllerWithIdentifier:@"LeftTicketViewController"];
@@ -235,6 +238,8 @@
                 
             }else if([[self.trainVM getErrorCode] isEqualToString:@"002"]){
                 [self showErrorMsg:@"未填写到达站"];
+            }else if([[self.trainVM getErrorCode] isEqualToString:@"003"]){
+                [self showErrorMsg:@"此两地之间未通列车"];
             }
         }];
         
@@ -305,6 +310,13 @@
         _startDate = [self getDate];
 	}
 	return _startDate;
+}
+
+- (NSDate *)date {
+	if(_date == nil) {
+		_date = [NSDate date];
+	}
+	return _date;
 }
 
 @end

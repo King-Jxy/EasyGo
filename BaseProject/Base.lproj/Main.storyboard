@@ -253,7 +253,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="lci-X2-D6f">
                         <nil key="title"/>
-                        <barButtonItem key="leftBarButtonItem" systemItem="compose" id="eEc-JD-xSs"/>
+                        <barButtonItem key="leftBarButtonItem" image="main_33" id="eEc-JD-xSs"/>
                         <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="rmG-1h-3LV">
                             <rect key="frame" x="90" y="8" width="141" height="29"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -688,7 +688,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="inl-EV-fOj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1124" y="89"/>
+            <point key="canvasLocation" x="1118" y="97"/>
         </scene>
         <!--车次列表-->
         <scene sceneID="K56-Z7-FJX">
@@ -992,12 +992,18 @@
                             <outlet property="delegate" destination="1b6-4U-pey" id="oEB-Vs-Fyb"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="车次列表" id="0u6-Et-tQ8"/>
+                    <navigationItem key="navigationItem" title="车次列表" id="0u6-Et-tQ8">
+                        <barButtonItem key="rightBarButtonItem" image="more_share_ic" id="Mgc-eo-EXs">
+                            <connections>
+                                <action selector="UMShare:" destination="1b6-4U-pey" id="dxQ-re-Nd5"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xyB-0j-XZb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1680" y="-548"/>
+            <point key="canvasLocation" x="1579" y="-502"/>
         </scene>
         <!--Subway View Controller-->
         <scene sceneID="Euy-aN-4iQ">
@@ -1128,7 +1134,7 @@
         <!--更多-->
         <scene sceneID="jbX-bc-F0y">
             <objects>
-                <tableViewController id="HDy-Rk-vJS" sceneMemberID="viewController">
+                <tableViewController id="HDy-Rk-vJS" customClass="MoreViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="o7i-kp-Ojg">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1157,7 +1163,7 @@
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -1185,7 +1191,7 @@
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -1213,7 +1219,7 @@
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -1241,7 +1247,7 @@
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -1269,7 +1275,7 @@
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -1295,6 +1301,8 @@
     </scenes>
     <resources>
         <image name="icon_pin_floating" width="22" height="30"/>
+        <image name="main_33" width="48" height="48"/>
+        <image name="more_share_ic" width="19" height="21"/>
         <image name="png.jpg" width="391" height="220"/>
     </resources>
 </document>
