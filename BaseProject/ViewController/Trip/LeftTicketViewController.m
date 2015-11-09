@@ -14,7 +14,7 @@
 #import "TrainTimeViewController.h"
 #define INDEX indexPath.row
 @interface LeftTicketViewController ()<UMSocialDataDelegate,UMSocialUIDelegate>
-
+@property (nonatomic ) NSInteger selectedRow;
 @end
 
 @implementation LeftTicketViewController
@@ -64,7 +64,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    if([self.trainVM getPriceOfzyAtIndex:indexPath.row]){
+    if([self.trainVM getPriceOfzyAtIndex:indexPath.row]){//此处判断是否为动车或高铁
       NewTrainCell  *cell  = [tableView dequeueReusableCellWithIdentifier:@"NewTrainCell" forIndexPath:indexPath];
         cell.trainCodeName.text = [self.trainVM getTrainNameAtIndex:INDEX];
         cell.startStationName.text = [self.trainVM getFromStationNameAtIndex:INDEX];
@@ -80,7 +80,7 @@
         cell.endTime.text  = [self.trainVM getArriveTimeAtIndex:INDEX];
         cell.lishiTime.text = [self.trainVM getLishiTimeAtIndex:INDEX];
         
-        if(![self.trainVM getPriceOfswzAtIndex:INDEX]){
+        if(![self.trainVM getPriceOfswzAtIndex:INDEX]){//判断该列车是否有商务座
             cell.swzNum.text = @"";
         }else{
             
@@ -148,7 +148,9 @@
 #pragma mark - Table view delegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
-    [self performSegueWithIdentifier:@"TicketDetailSegue" sender:indexPath];
+    self.selectedRow = indexPath.row;
+    [self performSegueWithIdentifier:@"TicketDetailSegue" sender:self];
+    
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
@@ -158,9 +160,12 @@
 
 #pragma mark - Navigation
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(NSIndexPath *)index {
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     TrainTimeViewController *vc = segue.destinationViewController;
-    vc.selectedData = [self.trainVM getModelAtIndex:index.row];
+//    NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
+//  获得点击的是第几行
+    DDLogVerbose(@"%@",[self.trainVM getModelAtIndex:self.selectedRow]);
+    vc.selectedData = [self.trainVM getModelAtIndex:self.selectedRow];
 }
 
 
