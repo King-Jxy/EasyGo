@@ -57,6 +57,18 @@
 		234F8ECD1BEFED4800EF589E /* TrainTimeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 234F8ECC1BEFED4800EF589E /* TrainTimeModel.m */; };
 		234F8ED01BEFF0EC00EF589E /* TrainTimeViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 234F8ECF1BEFF0EC00EF589E /* TrainTimeViewModel.m */; };
 		234F8ED31BEFF50F00EF589E /* TrainTimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 234F8ED21BEFF50F00EF589E /* TrainTimeViewController.m */; };
+		234F8EDB1BF0BC1500EF589E /* BaiduMapAPI_Base.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 234F8ED41BF0BC1500EF589E /* BaiduMapAPI_Base.framework */; };
+		234F8EDC1BF0BC1500EF589E /* BaiduMapAPI_Cloud.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 234F8ED51BF0BC1500EF589E /* BaiduMapAPI_Cloud.framework */; };
+		234F8EDD1BF0BC1500EF589E /* BaiduMapAPI_Location.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 234F8ED61BF0BC1500EF589E /* BaiduMapAPI_Location.framework */; };
+		234F8EDE1BF0BC1500EF589E /* BaiduMapAPI_Map.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 234F8ED71BF0BC1500EF589E /* BaiduMapAPI_Map.framework */; };
+		234F8EDF1BF0BC1500EF589E /* BaiduMapAPI_Radar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 234F8ED81BF0BC1500EF589E /* BaiduMapAPI_Radar.framework */; };
+		234F8EE01BF0BC1500EF589E /* BaiduMapAPI_Search.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 234F8ED91BF0BC1500EF589E /* BaiduMapAPI_Search.framework */; };
+		234F8EE11BF0BC1600EF589E /* BaiduMapAPI_Utils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 234F8EDA1BF0BC1500EF589E /* BaiduMapAPI_Utils.framework */; };
+		234F8EE31BF0BCF700EF589E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 234F8EE21BF0BCF700EF589E /* QuartzCore.framework */; };
+		234F8EE51BF0BD0200EF589E /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 234F8EE41BF0BD0200EF589E /* OpenGLES.framework */; };
+		234F8EE71BF0BD4200EF589E /* libstdc++.6.0.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 234F8EE61BF0BD4200EF589E /* libstdc++.6.0.9.tbd */; };
+		234F8EE91BF0BE0200EF589E /* mapapi.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 234F8EE81BF0BE0200EF589E /* mapapi.bundle */; };
+		234F8EEC1BF0CD3100EF589E /* UIImage+Rotate.m in Sources */ = {isa = PBXBuildFile; fileRef = 234F8EEB1BF0CD3100EF589E /* UIImage+Rotate.m */; };
 		235958FD1BEEFAB800E9B181 /* UMSocialLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 235958751BEEFAB800E9B181 /* UMSocialLocalizable.strings */; };
 		235958FE1BEEFAB800E9B181 /* libUMSocial_Sdk_4.3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 235958831BEEFAB800E9B181 /* libUMSocial_Sdk_4.3.a */; };
 		235958FF1BEEFAB800E9B181 /* UMSCommentDetailController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 235958851BEEFAB800E9B181 /* UMSCommentDetailController.xib */; };
@@ -164,7 +176,7 @@
 		23B78A3B1BE79185003FAB86 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23B78A3A1BE79185003FAB86 /* MainViewController.m */; };
 		23B78A3E1BE791A7003FAB86 /* NewsWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23B78A3D1BE791A7003FAB86 /* NewsWebViewController.m */; };
 		23B78A511BE79823003FAB86 /* TrainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23B78A501BE79823003FAB86 /* TrainViewController.m */; };
-		23B78A541BE7983F003FAB86 /* DriveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23B78A531BE7983F003FAB86 /* DriveViewController.m */; };
+		23B78A541BE7983F003FAB86 /* DriveViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 23B78A531BE7983F003FAB86 /* DriveViewController.mm */; };
 		23B78A571BE79852003FAB86 /* SubwayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23B78A561BE79852003FAB86 /* SubwayViewController.m */; };
 		23B78A5A1BE7989B003FAB86 /* BusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23B78A591BE7989B003FAB86 /* BusViewController.m */; };
 		23B965C61BDA581200245FE5 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23B965C51BDA581200245FE5 /* CoreLocation.framework */; };
@@ -179,7 +191,7 @@
 		3804CE531BD758F10046C8C8 /* NSString+PJR.m in Sources */ = {isa = PBXBuildFile; fileRef = 3804CE4E1BD758F10046C8C8 /* NSString+PJR.m */; };
 		3804CE541BD758F10046C8C8 /* NSString+QRCode.m in Sources */ = {isa = PBXBuildFile; fileRef = 3804CE501BD758F10046C8C8 /* NSString+QRCode.m */; };
 		3886C0981BD748830014E661 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3886C0971BD748830014E661 /* main.m */; };
-		3886C09B1BD748830014E661 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3886C09A1BD748830014E661 /* AppDelegate.m */; };
+		3886C09B1BD748830014E661 /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3886C09A1BD748830014E661 /* AppDelegate.mm */; };
 		3886C0A11BD748830014E661 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3886C09F1BD748830014E661 /* Main.storyboard */; };
 		3886C0A31BD748830014E661 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3886C0A21BD748830014E661 /* Assets.xcassets */; };
 		3886C0AE1BD749A00014E661 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3886C0AD1BD749A00014E661 /* LaunchScreen.xib */; };
@@ -257,6 +269,19 @@
 		234F8ECF1BEFF0EC00EF589E /* TrainTimeViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrainTimeViewModel.m; sourceTree = "<group>"; };
 		234F8ED11BEFF50F00EF589E /* TrainTimeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrainTimeViewController.h; sourceTree = "<group>"; };
 		234F8ED21BEFF50F00EF589E /* TrainTimeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrainTimeViewController.m; sourceTree = "<group>"; };
+		234F8ED41BF0BC1500EF589E /* BaiduMapAPI_Base.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BaiduMapAPI_Base.framework; sourceTree = "<group>"; };
+		234F8ED51BF0BC1500EF589E /* BaiduMapAPI_Cloud.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BaiduMapAPI_Cloud.framework; sourceTree = "<group>"; };
+		234F8ED61BF0BC1500EF589E /* BaiduMapAPI_Location.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BaiduMapAPI_Location.framework; sourceTree = "<group>"; };
+		234F8ED71BF0BC1500EF589E /* BaiduMapAPI_Map.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BaiduMapAPI_Map.framework; sourceTree = "<group>"; };
+		234F8ED81BF0BC1500EF589E /* BaiduMapAPI_Radar.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BaiduMapAPI_Radar.framework; sourceTree = "<group>"; };
+		234F8ED91BF0BC1500EF589E /* BaiduMapAPI_Search.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BaiduMapAPI_Search.framework; sourceTree = "<group>"; };
+		234F8EDA1BF0BC1500EF589E /* BaiduMapAPI_Utils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BaiduMapAPI_Utils.framework; sourceTree = "<group>"; };
+		234F8EE21BF0BCF700EF589E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		234F8EE41BF0BD0200EF589E /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		234F8EE61BF0BD4200EF589E /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.0.9.tbd"; path = "usr/lib/libstdc++.6.0.9.tbd"; sourceTree = SDKROOT; };
+		234F8EE81BF0BE0200EF589E /* mapapi.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = mapapi.bundle; sourceTree = "<group>"; };
+		234F8EEA1BF0CD3100EF589E /* UIImage+Rotate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Rotate.h"; sourceTree = "<group>"; };
+		234F8EEB1BF0CD3100EF589E /* UIImage+Rotate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Rotate.m"; sourceTree = "<group>"; };
 		235958761BEEFAB800E9B181 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/UMSocialLocalizable.strings; sourceTree = "<group>"; };
 		235958781BEEFAB800E9B181 /* UMSocial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMSocial.h; sourceTree = "<group>"; };
 		235958791BEEFAB800E9B181 /* UMSocialAccountManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMSocialAccountManager.h; sourceTree = "<group>"; };
@@ -403,7 +428,7 @@
 		23B78A4F1BE79823003FAB86 /* TrainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrainViewController.h; sourceTree = "<group>"; };
 		23B78A501BE79823003FAB86 /* TrainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrainViewController.m; sourceTree = "<group>"; };
 		23B78A521BE7983F003FAB86 /* DriveViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DriveViewController.h; sourceTree = "<group>"; };
-		23B78A531BE7983F003FAB86 /* DriveViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DriveViewController.m; sourceTree = "<group>"; };
+		23B78A531BE7983F003FAB86 /* DriveViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = DriveViewController.mm; sourceTree = "<group>"; };
 		23B78A551BE79852003FAB86 /* SubwayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubwayViewController.h; sourceTree = "<group>"; };
 		23B78A561BE79852003FAB86 /* SubwayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubwayViewController.m; sourceTree = "<group>"; };
 		23B78A581BE7989B003FAB86 /* BusViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BusViewController.h; sourceTree = "<group>"; };
@@ -431,7 +456,7 @@
 		3886C0931BD748830014E661 /* EasyGo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EasyGo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3886C0971BD748830014E661 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3886C0991BD748830014E661 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		3886C09A1BD748830014E661 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		3886C09A1BD748830014E661 /* AppDelegate.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = AppDelegate.mm; sourceTree = "<group>"; };
 		3886C0A01BD748830014E661 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3886C0A21BD748830014E661 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../Assets.xcassets; sourceTree = "<group>"; };
 		3886C0A71BD748830014E661 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -451,13 +476,19 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2359595E1BEF370900E9B181 /* libsqlite3.tbd in Frameworks */,
+				234F8EE71BF0BD4200EF589E /* libstdc++.6.0.9.tbd in Frameworks */,
+				2359595A1BEF36D600E9B181 /* Security.framework in Frameworks */,
 				23609FCC1BE9B36C00279624 /* CoreGraphics.framework in Frameworks */,
 				235959581BEF368800E9B181 /* SystemConfiguration.framework in Frameworks */,
+				234F8EE51BF0BD0200EF589E /* OpenGLES.framework in Frameworks */,
+				234F8EE31BF0BCF700EF589E /* QuartzCore.framework in Frameworks */,
+				2359595E1BEF370900E9B181 /* libsqlite3.tbd in Frameworks */,
+				234F8EDD1BF0BC1500EF589E /* BaiduMapAPI_Location.framework in Frameworks */,
 				2359595C1BEF36E800E9B181 /* libiconv.tbd in Frameworks */,
-				2359595A1BEF36D600E9B181 /* Security.framework in Frameworks */,
+				234F8EDF1BF0BC1500EF589E /* BaiduMapAPI_Radar.framework in Frameworks */,
 				235959641BEF372C00E9B181 /* libz.tbd in Frameworks */,
 				235959621BEF371E00E9B181 /* libstdc++.tbd in Frameworks */,
+				234F8EDE1BF0BC1500EF589E /* BaiduMapAPI_Map.framework in Frameworks */,
 				234F8ECA1BEF9DAB00EF589E /* libMobClickLibrary.a in Frameworks */,
 				235959601BEF371100E9B181 /* CoreTelephony.framework in Frameworks */,
 				235959461BEEFAB800E9B181 /* libSocialWechat.a in Frameworks */,
@@ -466,7 +497,11 @@
 				235958FE1BEEFAB800E9B181 /* libUMSocial_Sdk_4.3.a in Frameworks */,
 				235959471BEEFAB800E9B181 /* libWeChatSDK.a in Frameworks */,
 				23B965C61BDA581200245FE5 /* CoreLocation.framework in Frameworks */,
+				234F8EDB1BF0BC1500EF589E /* BaiduMapAPI_Base.framework in Frameworks */,
+				234F8EE01BF0BC1500EF589E /* BaiduMapAPI_Search.framework in Frameworks */,
+				234F8EE11BF0BC1600EF589E /* BaiduMapAPI_Utils.framework in Frameworks */,
 				748A1D606B313CDD2287561F /* libPods-WeatherNews.a in Frameworks */,
+				234F8EDC1BF0BC1500EF589E /* BaiduMapAPI_Cloud.framework in Frameworks */,
 				2359593E1BEEFAB800E9B181 /* libSocialQQ.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -836,7 +871,7 @@
 				234F8ED11BEFF50F00EF589E /* TrainTimeViewController.h */,
 				234F8ED21BEFF50F00EF589E /* TrainTimeViewController.m */,
 				23B78A521BE7983F003FAB86 /* DriveViewController.h */,
-				23B78A531BE7983F003FAB86 /* DriveViewController.m */,
+				23B78A531BE7983F003FAB86 /* DriveViewController.mm */,
 				23B78A551BE79852003FAB86 /* SubwayViewController.h */,
 				23B78A561BE79852003FAB86 /* SubwayViewController.m */,
 				23B78A581BE7989B003FAB86 /* BusViewController.h */,
@@ -872,6 +907,8 @@
 		3804CE481BD758F10046C8C8 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				234F8EEA1BF0CD3100EF589E /* UIImage+Rotate.h */,
+				234F8EEB1BF0CD3100EF589E /* UIImage+Rotate.m */,
 				3804CE491BD758F10046C8C8 /* AppDelegate+Category.h */,
 				3804CE4A1BD758F10046C8C8 /* AppDelegate+Category.m */,
 				3804CE4B1BD758F10046C8C8 /* NSObject+Common.h */,
@@ -919,7 +956,7 @@
 				3886C0B61BD74A4A0014E661 /* ViewController */,
 				3886C0B71BD74A4A0014E661 /* ViewModel */,
 				3886C0991BD748830014E661 /* AppDelegate.h */,
-				3886C09A1BD748830014E661 /* AppDelegate.m */,
+				3886C09A1BD748830014E661 /* AppDelegate.mm */,
 				3886C0961BD748830014E661 /* Supporting Files */,
 			);
 			path = BaseProject;
@@ -967,6 +1004,7 @@
 		3886C0B21BD74A4A0014E661 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				234F8EE81BF0BE0200EF589E /* mapapi.bundle */,
 				230672221BE50FF400F31D79 /* png.jpg */,
 				239531A61BE23F1700FEB8DD /* bg.jpg */,
 				2306726D1BE6069C00F31D79 /* day */,
@@ -989,6 +1027,13 @@
 		3886C0B41BD74A4A0014E661 /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
+				234F8ED41BF0BC1500EF589E /* BaiduMapAPI_Base.framework */,
+				234F8ED51BF0BC1500EF589E /* BaiduMapAPI_Cloud.framework */,
+				234F8ED61BF0BC1500EF589E /* BaiduMapAPI_Location.framework */,
+				234F8ED71BF0BC1500EF589E /* BaiduMapAPI_Map.framework */,
+				234F8ED81BF0BC1500EF589E /* BaiduMapAPI_Radar.framework */,
+				234F8ED91BF0BC1500EF589E /* BaiduMapAPI_Search.framework */,
+				234F8EDA1BF0BC1500EF589E /* BaiduMapAPI_Utils.framework */,
 				234F8EC61BEF9DAB00EF589E /* UMAnalytics_Sdk_3.6.4 */,
 				235958731BEEFAB700E9B181 /* umeng_ios_social_sdk_4.3_arm64_custom */,
 				232FCE021BE9A138008B83A5 /* ZFCalendar */,
@@ -1045,6 +1090,9 @@
 		FA3445AEA3874C1D4FE61EAF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				234F8EE61BF0BD4200EF589E /* libstdc++.6.0.9.tbd */,
+				234F8EE41BF0BD0200EF589E /* OpenGLES.framework */,
+				234F8EE21BF0BCF700EF589E /* QuartzCore.framework */,
 				235959631BEF372C00E9B181 /* libz.tbd */,
 				235959611BEF371E00E9B181 /* libstdc++.tbd */,
 				2359595F1BEF371100E9B181 /* CoreTelephony.framework */,
@@ -1157,6 +1205,7 @@
 				23B78A271BE78ECA003FAB86 /* Pods-WeatherNews.release.xcconfig in Resources */,
 				235959131BEEFAB800E9B181 /* UMSocialEmailData.html in Resources */,
 				235959041BEEFAB800E9B181 /* UMSLoginViewController.xib in Resources */,
+				234F8EE91BF0BE0200EF589E /* mapapi.bundle in Resources */,
 				2359594D1BEEFAB800E9B181 /* ios-social-sdk-comment-detail.html in Resources */,
 				2306729B1BE6069C00F31D79 /* 11.png in Resources */,
 				2359592E1BEEFAB800E9B181 /* button_bar_background.png in Resources */,
@@ -1303,12 +1352,13 @@
 				2371775D1BE93E75008560DF /* S2StationModel.m in Sources */,
 				3804CE531BD758F10046C8C8 /* NSString+PJR.m in Sources */,
 				23CA0CDE1BEBB4FD006C777B /* LeftTicketModel.m in Sources */,
-				23B78A541BE7983F003FAB86 /* DriveViewController.m in Sources */,
+				234F8EEC1BF0CD3100EF589E /* UIImage+Rotate.m in Sources */,
+				23B78A541BE7983F003FAB86 /* DriveViewController.mm in Sources */,
 				232FCE201BE9A7CF008B83A5 /* NSObject+DateFormat.m in Sources */,
 				2371775A1BE93E3B008560DF /* WeatherModel.m in Sources */,
 				237177661BE93FF1008560DF /* NewsListNetManager.m in Sources */,
 				23B78A571BE79852003FAB86 /* SubwayViewController.m in Sources */,
-				3886C09B1BD748830014E661 /* AppDelegate.m in Sources */,
+				3886C09B1BD748830014E661 /* AppDelegate.mm in Sources */,
 				237177571BE93E3B008560DF /* BDNewsModel.m in Sources */,
 				232FCE171BE9A138008B83A5 /* CalendarHomeViewController.m in Sources */,
 				232FCE1A1BE9A138008B83A5 /* CalendarMonthHeaderView.m in Sources */,
@@ -1463,6 +1513,7 @@
 					"$(PROJECT_DIR)/BaseProject/Vendor/umeng_ios_social_sdk_4.3_arm64_custom/UMSocial_Sdk_Extra_Frameworks/Facebook",
 					"$(PROJECT_DIR)/BaseProject/Vendor/umeng_ios_social_sdk_4.3_arm64_custom/UMSocial_Sdk_Extra_Frameworks/TencentOpenAPI",
 					"$(PROJECT_DIR)/BaseProject/Vendor/umeng_ios_social_sdk_4.3_arm64_custom/UMSocial_Sdk_Extra_Frameworks/Twitter",
+					"$(PROJECT_DIR)/BaseProject/Vendor",
 				);
 				GCC_PREFIX_HEADER = BaseProject/Resource/PrefixHeader.pch;
 				INFOPLIST_FILE = BaseProject/Info.plist;
@@ -1500,6 +1551,7 @@
 					"$(PROJECT_DIR)/BaseProject/Vendor/umeng_ios_social_sdk_4.3_arm64_custom/UMSocial_Sdk_Extra_Frameworks/Facebook",
 					"$(PROJECT_DIR)/BaseProject/Vendor/umeng_ios_social_sdk_4.3_arm64_custom/UMSocial_Sdk_Extra_Frameworks/TencentOpenAPI",
 					"$(PROJECT_DIR)/BaseProject/Vendor/umeng_ios_social_sdk_4.3_arm64_custom/UMSocial_Sdk_Extra_Frameworks/Twitter",
+					"$(PROJECT_DIR)/BaseProject/Vendor",
 				);
 				GCC_PREFIX_HEADER = BaseProject/Resource/PrefixHeader.pch;
 				INFOPLIST_FILE = BaseProject/Info.plist;

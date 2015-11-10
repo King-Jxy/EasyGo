@@ -716,24 +716,25 @@
                                 <animations/>
                                 <state key="normal" title="公交"/>
                                 <connections>
-                                    <action selector="test:" destination="a2o-0E-B6Z" eventType="touchUpInside" id="hTd-4U-bf7"/>
+                                    <action selector="onClickBusSearch" destination="a2o-0E-B6Z" eventType="touchUpInside" id="Jns-sx-uBF"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PCh-jM-I3W">
                                 <rect key="frame" x="145" y="166" width="30" height="30"/>
                                 <animations/>
                                 <state key="normal" title="乘驾"/>
+                                <connections>
+                                    <action selector="onClickDriveSearch" destination="a2o-0E-B6Z" eventType="touchUpInside" id="7Mn-dH-Qbl"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nr3-5g-K2h">
                                 <rect key="frame" x="246" y="166" width="30" height="30"/>
                                 <animations/>
                                 <state key="normal" title="步行"/>
+                                <connections>
+                                    <action selector="onClickWalkSearch" destination="a2o-0E-B6Z" eventType="touchUpInside" id="Suq-8c-pQh"/>
+                                </connections>
                             </button>
-                            <mapView contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="bRq-Lc-yZT">
-                                <rect key="frame" x="0.0" y="206" width="320" height="274"/>
-                                <animations/>
-                                <color key="backgroundColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
-                            </mapView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -746,14 +747,11 @@
                             <constraint firstItem="9lw-8a-oUw" firstAttribute="leading" secondItem="IWk-Wa-XpB" secondAttribute="leading" constant="30" id="Eur-WD-GZV"/>
                             <constraint firstItem="Nr3-5g-K2h" firstAttribute="top" secondItem="oXi-Gj-pLQ" secondAttribute="bottom" constant="15" id="H2d-SY-68W"/>
                             <constraint firstItem="CtA-pf-0mr" firstAttribute="leading" secondItem="OBX-fk-uN2" secondAttribute="trailing" constant="10" id="I3A-RW-e7f"/>
-                            <constraint firstItem="Xdc-Vs-c12" firstAttribute="top" secondItem="bRq-Lc-yZT" secondAttribute="bottom" id="IAr-Zu-bIu"/>
                             <constraint firstItem="PCh-jM-I3W" firstAttribute="centerX" secondItem="IWk-Wa-XpB" secondAttribute="centerX" id="IvO-zd-PCs"/>
                             <constraint firstItem="CtA-pf-0mr" firstAttribute="centerY" secondItem="OBX-fk-uN2" secondAttribute="centerY" id="QGR-Sp-kTf"/>
-                            <constraint firstItem="bRq-Lc-yZT" firstAttribute="top" secondItem="PCh-jM-I3W" secondAttribute="bottom" constant="10" id="TdX-4S-Qud"/>
                             <constraint firstItem="Tew-27-hC9" firstAttribute="width" secondItem="OBX-fk-uN2" secondAttribute="width" id="V1H-Y8-B5S"/>
                             <constraint firstItem="Tew-27-hC9" firstAttribute="centerX" secondItem="OBX-fk-uN2" secondAttribute="centerX" id="Vab-bS-HnE"/>
                             <constraint firstItem="OBX-fk-uN2" firstAttribute="width" secondItem="A2C-lo-Pf0" secondAttribute="width" constant="30" id="WNi-Zd-oTu"/>
-                            <constraint firstAttribute="trailing" secondItem="bRq-Lc-yZT" secondAttribute="trailing" id="Y2D-2b-3bc"/>
                             <constraint firstItem="Tew-27-hC9" firstAttribute="centerY" secondItem="yZa-fM-YRJ" secondAttribute="centerY" constant="2" id="b29-GC-Eov"/>
                             <constraint firstAttribute="trailing" secondItem="CtA-pf-0mr" secondAttribute="trailing" constant="10" id="e8U-Rf-xU4"/>
                             <constraint firstItem="A2C-lo-Pf0" firstAttribute="leading" secondItem="IWk-Wa-XpB" secondAttribute="leading" constant="15" id="ghL-Ab-Bux"/>
@@ -762,16 +760,22 @@
                             <constraint firstItem="oXi-Gj-pLQ" firstAttribute="centerX" secondItem="CtA-pf-0mr" secondAttribute="centerX" id="hvA-mi-uKy"/>
                             <constraint firstItem="OBX-fk-uN2" firstAttribute="leading" secondItem="A2C-lo-Pf0" secondAttribute="trailing" constant="5" id="i2l-8s-VeO"/>
                             <constraint firstItem="PCh-jM-I3W" firstAttribute="top" secondItem="Nr3-5g-K2h" secondAttribute="top" id="lbb-Kc-yKc"/>
-                            <constraint firstItem="bRq-Lc-yZT" firstAttribute="leading" secondItem="IWk-Wa-XpB" secondAttribute="leading" id="sO2-s2-v8h"/>
                             <constraint firstItem="yZa-fM-YRJ" firstAttribute="top" secondItem="A2C-lo-Pf0" secondAttribute="bottom" constant="16" id="yue-bT-CCu"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="sbH-rV-4gm"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="_endAddrText" destination="oXi-Gj-pLQ" id="Y9s-0q-BeV"/>
+                        <outlet property="_endCityText" destination="Tew-27-hC9" id="qyh-hH-hyt"/>
+                        <outlet property="_startAddrText" destination="CtA-pf-0mr" id="AAB-c1-3Pm"/>
+                        <outlet property="_startCityText" destination="OBX-fk-uN2" id="iO2-ZJ-YeZ"/>
+                        <outlet property="centerButton" destination="PCh-jM-I3W" id="SRd-1O-doZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="inl-EV-fOj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1112" y="118"/>
+            <point key="canvasLocation" x="998" y="96"/>
         </scene>
         <!--车次列表-->
         <scene sceneID="K56-Z7-FJX">

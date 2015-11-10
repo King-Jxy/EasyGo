@@ -89,5 +89,7 @@
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
 	</array>
+	<key>CFBundleDisplayName</key>
+	<string>EasyGo</string>
 </dict>
 </plist>
