@@ -10,4 +10,5 @@
 #import "DVSwitch.h"
 @interface CoachSegmentViewController : UIViewController
 @property (nonatomic , strong) DVSwitch *dvSwitch;
+@property (nonatomic , strong) UINavigationController *navigationController;
 @end

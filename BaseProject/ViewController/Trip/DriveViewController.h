@@ -22,6 +22,6 @@
 -(IBAction)onClickDriveSearch;
 -(IBAction)onClickWalkSearch;
 - (IBAction)textFiledReturnEditing:(id)sender;
-
+@property (nonatomic , strong) UINavigationController *navigationController;
 
 @end

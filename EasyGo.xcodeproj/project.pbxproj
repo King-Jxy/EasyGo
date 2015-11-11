@@ -192,6 +192,7 @@
 		23C1C67A1BF3A0C200725EDA /* stations.json in Resources */ = {isa = PBXBuildFile; fileRef = 23C1C6781BF3A0C200725EDA /* stations.json */; };
 		23C1C67B1BF3A0C200725EDA /* provinces.json in Resources */ = {isa = PBXBuildFile; fileRef = 23C1C6791BF3A0C200725EDA /* provinces.json */; };
 		23C1C6811BF3BF7E00725EDA /* CoachSegmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23C1C6801BF3BF7E00725EDA /* CoachSegmentViewController.m */; };
+		23C1C6841BF3CC0800725EDA /* CoachResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23C1C6831BF3CC0800725EDA /* CoachResultViewController.m */; };
 		23CA0CDE1BEBB4FD006C777B /* LeftTicketModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 23CA0CDD1BEBB4FD006C777B /* LeftTicketModel.m */; };
 		23CA0CE71BED0DBE006C777B /* OldTrainCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 23CA0CE61BED0DBE006C777B /* OldTrainCell.m */; };
 		23CA0CEA1BED0DCF006C777B /* NewTrainCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 23CA0CE91BED0DCF006C777B /* NewTrainCell.m */; };
@@ -465,6 +466,8 @@
 		23C1C6791BF3A0C200725EDA /* provinces.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = provinces.json; sourceTree = "<group>"; };
 		23C1C67F1BF3BF7E00725EDA /* CoachSegmentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoachSegmentViewController.h; sourceTree = "<group>"; };
 		23C1C6801BF3BF7E00725EDA /* CoachSegmentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoachSegmentViewController.m; sourceTree = "<group>"; };
+		23C1C6821BF3CC0800725EDA /* CoachResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoachResultViewController.h; sourceTree = "<group>"; };
+		23C1C6831BF3CC0800725EDA /* CoachResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoachResultViewController.m; sourceTree = "<group>"; };
 		23CA0CDC1BEBB4FD006C777B /* LeftTicketModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftTicketModel.h; sourceTree = "<group>"; };
 		23CA0CDD1BEBB4FD006C777B /* LeftTicketModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftTicketModel.m; sourceTree = "<group>"; };
 		23CA0CE51BED0DBE006C777B /* OldTrainCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OldTrainCell.h; sourceTree = "<group>"; };
@@ -925,6 +928,8 @@
 				23B78A561BE79852003FAB86 /* CoachViewController.m */,
 				23C1C67F1BF3BF7E00725EDA /* CoachSegmentViewController.h */,
 				23C1C6801BF3BF7E00725EDA /* CoachSegmentViewController.m */,
+				23C1C6821BF3CC0800725EDA /* CoachResultViewController.h */,
+				23C1C6831BF3CC0800725EDA /* CoachResultViewController.m */,
 				23B78A581BE7989B003FAB86 /* BusViewController.h */,
 				23B78A591BE7989B003FAB86 /* BusViewController.m */,
 			);
@@ -1454,6 +1459,7 @@
 				232FCE1B1BE9A138008B83A5 /* CalendarViewController.m in Sources */,
 				237177741BE94D82008560DF /* NewsListViewModel.m in Sources */,
 				232FCE151BE9A138008B83A5 /* CalendarDayCell.m in Sources */,
+				23C1C6841BF3CC0800725EDA /* CoachResultViewController.m in Sources */,
 				23CA0CEA1BED0DCF006C777B /* NewTrainCell.m in Sources */,
 				234F8ECD1BEFED4800EF589E /* TrainTimeModel.m in Sources */,
 				232FCE191BE9A138008B83A5 /* CalendarMonthCollectionViewLayout.m in Sources */,

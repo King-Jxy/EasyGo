@@ -320,6 +320,7 @@
 - (DriveViewController *)dvc {
 	if(_dvc == nil) {
 		_dvc = [kStoryboard(@"Main")instantiateViewControllerWithIdentifier:@"DriveViewController"];
+        _dvc.navigationController = self.navigationController;
 	}
 	return _dvc;
 }
@@ -327,6 +328,7 @@
 - (CoachViewController *)svc {
 	if(_svc == nil) {
         _svc = [kStoryboard(@"Main") instantiateViewControllerWithIdentifier:@"CoachViewController"] ;
+        _svc.navigationController = self.navigationController;
 	}
 	return _svc;
 }
@@ -334,6 +336,7 @@
 - (BusViewController *)bvc {
 	if(_bvc == nil) {
 		_bvc = [kStoryboard(@"Main")instantiateViewControllerWithIdentifier:@"BusViewController"];
+        _bvc.navigationController = self.navigationController;
 	}
 	return _bvc;
 }

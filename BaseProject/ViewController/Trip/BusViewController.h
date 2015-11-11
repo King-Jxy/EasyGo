@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface BusViewController : UIViewController
-
+@property (nonatomic , strong) UINavigationController *navigationController;
 @end
