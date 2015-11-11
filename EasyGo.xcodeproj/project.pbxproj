@@ -69,6 +69,11 @@
 		234F8EE71BF0BD4200EF589E /* libstdc++.6.0.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 234F8EE61BF0BD4200EF589E /* libstdc++.6.0.9.tbd */; };
 		234F8EE91BF0BE0200EF589E /* mapapi.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 234F8EE81BF0BE0200EF589E /* mapapi.bundle */; };
 		234F8EEC1BF0CD3100EF589E /* UIImage+Rotate.m in Sources */ = {isa = PBXBuildFile; fileRef = 234F8EEB1BF0CD3100EF589E /* UIImage+Rotate.m */; };
+		234F8EF01BF3236400EF589E /* CoachModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 234F8EEF1BF3236400EF589E /* CoachModel.m */; };
+		234F8EF61BF3264B00EF589E /* CoachViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 234F8EF51BF3264B00EF589E /* CoachViewModel.m */; };
+		234F8EFC1BF32A0800EF589E /* CoachStationModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 234F8EFB1BF32A0800EF589E /* CoachStationModel.m */; };
+		234F8EFF1BF330FB00EF589E /* BusLineModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 234F8EFE1BF330FB00EF589E /* BusLineModel.m */; };
+		234F8F021BF3316600EF589E /* BusStationModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 234F8F011BF3316600EF589E /* BusStationModel.m */; };
 		235958FD1BEEFAB800E9B181 /* UMSocialLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 235958751BEEFAB800E9B181 /* UMSocialLocalizable.strings */; };
 		235958FE1BEEFAB800E9B181 /* libUMSocial_Sdk_4.3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 235958831BEEFAB800E9B181 /* libUMSocial_Sdk_4.3.a */; };
 		235958FF1BEEFAB800E9B181 /* UMSCommentDetailController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 235958851BEEFAB800E9B181 /* UMSCommentDetailController.xib */; };
@@ -282,6 +287,16 @@
 		234F8EE81BF0BE0200EF589E /* mapapi.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = mapapi.bundle; sourceTree = "<group>"; };
 		234F8EEA1BF0CD3100EF589E /* UIImage+Rotate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Rotate.h"; sourceTree = "<group>"; };
 		234F8EEB1BF0CD3100EF589E /* UIImage+Rotate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Rotate.m"; sourceTree = "<group>"; };
+		234F8EEE1BF3236300EF589E /* CoachModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoachModel.h; sourceTree = "<group>"; };
+		234F8EEF1BF3236400EF589E /* CoachModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoachModel.m; sourceTree = "<group>"; };
+		234F8EF41BF3264B00EF589E /* CoachViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoachViewModel.h; sourceTree = "<group>"; };
+		234F8EF51BF3264B00EF589E /* CoachViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoachViewModel.m; sourceTree = "<group>"; };
+		234F8EFA1BF32A0800EF589E /* CoachStationModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoachStationModel.h; sourceTree = "<group>"; };
+		234F8EFB1BF32A0800EF589E /* CoachStationModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoachStationModel.m; sourceTree = "<group>"; };
+		234F8EFD1BF330FB00EF589E /* BusLineModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BusLineModel.h; sourceTree = "<group>"; };
+		234F8EFE1BF330FB00EF589E /* BusLineModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BusLineModel.m; sourceTree = "<group>"; };
+		234F8F001BF3316600EF589E /* BusStationModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BusStationModel.h; sourceTree = "<group>"; };
+		234F8F011BF3316600EF589E /* BusStationModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BusStationModel.m; sourceTree = "<group>"; };
 		235958761BEEFAB800E9B181 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/UMSocialLocalizable.strings; sourceTree = "<group>"; };
 		235958781BEEFAB800E9B181 /* UMSocial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMSocial.h; sourceTree = "<group>"; };
 		235958791BEEFAB800E9B181 /* UMSocialAccountManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMSocialAccountManager.h; sourceTree = "<group>"; };
@@ -585,6 +600,21 @@
 			path = UMAnalytics_Sdk_3.6.4;
 			sourceTree = "<group>";
 		};
+		234F8EED1BF3231600EF589E /* BusModel */ = {
+			isa = PBXGroup;
+			children = (
+				234F8EEE1BF3236300EF589E /* CoachModel.h */,
+				234F8EEF1BF3236400EF589E /* CoachModel.m */,
+				234F8EFA1BF32A0800EF589E /* CoachStationModel.h */,
+				234F8EFB1BF32A0800EF589E /* CoachStationModel.m */,
+				234F8EFD1BF330FB00EF589E /* BusLineModel.h */,
+				234F8EFE1BF330FB00EF589E /* BusLineModel.m */,
+				234F8F001BF3316600EF589E /* BusStationModel.h */,
+				234F8F011BF3316600EF589E /* BusStationModel.m */,
+			);
+			path = BusModel;
+			sourceTree = "<group>";
+		};
 		235958731BEEFAB700E9B181 /* umeng_ios_social_sdk_4.3_arm64_custom */ = {
 			isa = PBXGroup;
 			children = (
@@ -848,6 +878,8 @@
 				237177781BE94DB8008560DF /* TrainViewModel.m */,
 				234F8ECE1BEFF0EC00EF589E /* TrainTimeViewModel.h */,
 				234F8ECF1BEFF0EC00EF589E /* TrainTimeViewModel.m */,
+				234F8EF41BF3264B00EF589E /* CoachViewModel.h */,
+				234F8EF51BF3264B00EF589E /* CoachViewModel.m */,
 			);
 			path = Trip;
 			sourceTree = "<group>";
@@ -982,6 +1014,7 @@
 		3886C0B01BD74A4A0014E661 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				234F8EED1BF3231600EF589E /* BusModel */,
 				2371774D1BE93E3B008560DF /* TrainModel */,
 				2371774E1BE93E3B008560DF /* WeatherNewsModel */,
 				3886C0BF1BD74B090014E661 /* BaseModel.h */,
@@ -1342,6 +1375,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				234F8EF01BF3236400EF589E /* CoachModel.m in Sources */,
 				23B78A381BE79130003FAB86 /* LocationViewController.m in Sources */,
 				23CA0CF01BEDC4C2006C777B /* MoreViewController.m in Sources */,
 				3886C0BE1BD74AFE0014E661 /* BaseNetManager.m in Sources */,
@@ -1369,15 +1403,18 @@
 				23B78A511BE79823003FAB86 /* TrainViewController.m in Sources */,
 				232FCE161BE9A138008B83A5 /* CalendarDayModel.m in Sources */,
 				23B78A3B1BE79185003FAB86 /* MainViewController.m in Sources */,
+				234F8EFF1BF330FB00EF589E /* BusLineModel.m in Sources */,
 				237177581BE93E3B008560DF /* CityListModel.m in Sources */,
 				237177671BE93FF1008560DF /* WeatherNetManager.m in Sources */,
 				3886C0BB1BD74AE90014E661 /* BaseViewModel.m in Sources */,
+				234F8EF61BF3264B00EF589E /* CoachViewModel.m in Sources */,
 				23B78A371BE79130003FAB86 /* LocationDistrictViewController.m in Sources */,
 				234F8ED01BEFF0EC00EF589E /* TrainTimeViewModel.m in Sources */,
 				3886C0C11BD74B090014E661 /* BaseModel.m in Sources */,
 				2395315A1BE1C2AE00FEB8DD /* WeatherView.m in Sources */,
 				3886C0981BD748830014E661 /* main.m in Sources */,
 				23B78A5A1BE7989B003FAB86 /* BusViewController.m in Sources */,
+				234F8F021BF3316600EF589E /* BusStationModel.m in Sources */,
 				234F8ED31BEFF50F00EF589E /* TrainTimeViewController.m in Sources */,
 				3804CE521BD758F10046C8C8 /* NSObject+Common.m in Sources */,
 				23CA0CE71BED0DBE006C777B /* OldTrainCell.m in Sources */,
@@ -1394,6 +1431,7 @@
 				232FCE181BE9A138008B83A5 /* CalendarLogic.m in Sources */,
 				230671F71BE4A2CB00F31D79 /* NSString+CalcTime.m in Sources */,
 				23B78A361BE79130003FAB86 /* LocationCityViewController.m in Sources */,
+				234F8EFC1BF32A0800EF589E /* CoachStationModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

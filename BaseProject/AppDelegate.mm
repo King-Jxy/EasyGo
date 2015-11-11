@@ -66,6 +66,10 @@
     [self.window addSubview:navigationController.view];
     [self.window makeKeyAndVisible];
     
+//    [TripNetManager getBusStationDataAtCity:@"温州" atStation:@"温州大学" CompletionHandle:^(BusStationModel *model, NSError *error) {
+//        
+//    }];
+    
     return YES;
 }
 
