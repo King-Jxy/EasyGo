@@ -9,7 +9,7 @@
 #import "TrainViewController.h"
 #import "ReMenu.h"
 #import "DriveViewController.h"
-#import "SubwayViewController.h"
+#import "CoachViewController.h"
 #import "BusViewController.h"
 #import "GoLocationViewController.h"
 #import "LocationViewController.h"
@@ -21,7 +21,7 @@
 #import "TrainTimeViewController.h"
 @interface TrainViewController () <GoLocationViewControllerDelegate,LocationViewControllerDelegate,UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic , strong) DriveViewController *dvc;
-@property (nonatomic , strong) SubwayViewController *svc;
+@property (nonatomic , strong) CoachViewController *svc;
 @property (nonatomic , strong) BusViewController *bvc;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic , strong) NSString *start;
@@ -105,6 +105,7 @@
                                                           [self.dvc.view removeFromSuperview];
                                                           [self.svc.view removeFromSuperview];
                                                           [self.bvc.view removeFromSuperview];
+                                                          self.title = @"火车出行";
                                                       }];
     
     REMenuItem *exploreItem = [[REMenuItem alloc] initWithTitle:@"自驾"
@@ -117,28 +118,31 @@
                                                              [self.svc.view removeFromSuperview];
                                                              [self.bvc.view removeFromSuperview];
                                                              [self.view addSubview:self.dvc.view];
+                                                             self.title = @"自驾出行";
                                                          }];
     
     REMenuItem *activityItem = [[REMenuItem alloc] initWithTitle:@"长途汽车"
                                                         subtitle:@"长途汽车站点、时刻表和价格查询"
-                                                           image:[UIImage imageNamed:@"02.png"]
+                                                           image:[UIImage imageNamed:@"Rect_blue_bus.png"]
                                                 highlightedImage:nil
                                                           action:^(REMenuItem *item) {
                                                               NSLog(@"Item: %@", item);
                                                               [self.dvc.view removeFromSuperview];
                                                               [self.bvc.view removeFromSuperview];
                                                               [self.view addSubview:self.svc.view];
+                                                              self.title = @"巴士出行";
                                                           }];
     
     REMenuItem *profileItem = [[REMenuItem alloc] initWithTitle:@"公交"
                                                        subtitle:@"公交线路规划，站点查询"
-                                                          image:[UIImage imageNamed:@"03.png"]
+                                                          image:[UIImage imageNamed:@"Bus.png"]
                                                highlightedImage:nil
                                                          action:^(REMenuItem *item) {
                                                              NSLog(@"Item: %@", item);
                                                              [self.svc.view removeFromSuperview];
                                                              [self.dvc.view removeFromSuperview];
                                                              [self.view addSubview:self.bvc.view];
+                                                             self.title = @"公交出行";
                                                          }];
     
     self.menu = [[REMenu alloc] initWithItems:@[homeItem, exploreItem, activityItem, profileItem]];
@@ -189,15 +193,15 @@
         if(indexPath.row == 0){
             cell = [tableView dequeueReusableCellWithIdentifier:@"TrainStartCell" forIndexPath:indexPath];
             cell.detailTextLabel.text = self.start;
-            cell.imageView.image = [UIImage imageNamed:@"00.png"];
+            cell.imageView.image = [UIImage imageNamed:@"map_start_26px.png"];
         }else if(indexPath.row == 1){
             cell = [tableView dequeueReusableCellWithIdentifier:@"TrainEndCell" forIndexPath:indexPath];
             cell.detailTextLabel.text = self.end;
-            cell.imageView.image = [UIImage imageNamed:@"07.png"];
+            cell.imageView.image = [UIImage imageNamed:@"map_end_26px.png"];
         }else{
             cell = [tableView dequeueReusableCellWithIdentifier:@"TrainStartDateCell" forIndexPath:indexPath];
             cell.detailTextLabel.text = self.startDateWeek;
-            cell.imageView.image = [UIImage imageNamed:@"09.png"];
+            cell.imageView.image = [UIImage imageNamed:@"main_4.png"];
         }
     }else{
         cell = [tableView dequeueReusableCellWithIdentifier:@"TrainSearchCell" forIndexPath:indexPath];
@@ -320,9 +324,9 @@
 	return _dvc;
 }
 
-- (SubwayViewController *)svc {
+- (CoachViewController *)svc {
 	if(_svc == nil) {
-        _svc = [kStoryboard(@"Main") instantiateViewControllerWithIdentifier:@"SubwayViewController"] ;
+        _svc = [kStoryboard(@"Main") instantiateViewControllerWithIdentifier:@"CoachViewController"] ;
 	}
 	return _svc;
 }

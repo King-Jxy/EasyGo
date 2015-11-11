@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "3886C0921BD748830014E661"
-               BuildableName = "WeatherNews.app"
+               BuildableName = "EasyGo.app"
                BlueprintName = "EasyGo"
                ReferencedContainer = "container:EasyGo.xcodeproj">
             </BuildableReference>
@@ -33,7 +33,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "3886C0921BD748830014E661"
-            BuildableName = "WeatherNews.app"
+            BuildableName = "EasyGo.app"
             BlueprintName = "EasyGo"
             ReferencedContainer = "container:EasyGo.xcodeproj">
          </BuildableReference>
@@ -56,7 +56,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "3886C0921BD748830014E661"
-            BuildableName = "WeatherNews.app"
+            BuildableName = "EasyGo.app"
             BlueprintName = "EasyGo"
             ReferencedContainer = "container:EasyGo.xcodeproj">
          </BuildableReference>
@@ -75,7 +75,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "3886C0921BD748830014E661"
-            BuildableName = "WeatherNews.app"
+            BuildableName = "EasyGo.app"
             BlueprintName = "EasyGo"
             ReferencedContainer = "container:EasyGo.xcodeproj">
          </BuildableReference>

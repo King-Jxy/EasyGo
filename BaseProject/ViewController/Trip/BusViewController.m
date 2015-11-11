@@ -7,7 +7,7 @@
 //
 
 #import "BusViewController.h"
-
+#import "DVSwitch.h"
 @interface BusViewController ()
 
 @end
@@ -16,8 +16,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    self.view.backgroundColor  = [UIColor redColor];
+    DVSwitch *third = [DVSwitch switchWithStringsArray:@[@"线路查询", @"路线规划",@"站点查询"]];
+    third.frame = CGRectMake(10, 70, self.view.frame.size.width - 10 * 2, 30);
+    third.font = [UIFont fontWithName:@"AmericanTypewriter-Bold" size:18];
+    third.backgroundColor = [UIColor colorWithRed:21/255.0 green:94/255.0 blue:228/255.0 alpha:0.6];
+    third.sliderColor = [UIColor colorWithRed:255/255.0 green:255/255.0 blue:255/255.0 alpha:0.9];
+    [self.view addSubview:third];
 }
 
 - (void)didReceiveMemoryWarning {

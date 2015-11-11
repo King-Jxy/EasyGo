@@ -74,6 +74,7 @@
 		234F8EFC1BF32A0800EF589E /* CoachStationModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 234F8EFB1BF32A0800EF589E /* CoachStationModel.m */; };
 		234F8EFF1BF330FB00EF589E /* BusLineModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 234F8EFE1BF330FB00EF589E /* BusLineModel.m */; };
 		234F8F021BF3316600EF589E /* BusStationModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 234F8F011BF3316600EF589E /* BusStationModel.m */; };
+		234F8F051BF33CE000EF589E /* BusViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 234F8F041BF33CE000EF589E /* BusViewModel.m */; };
 		235958FD1BEEFAB800E9B181 /* UMSocialLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 235958751BEEFAB800E9B181 /* UMSocialLocalizable.strings */; };
 		235958FE1BEEFAB800E9B181 /* libUMSocial_Sdk_4.3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 235958831BEEFAB800E9B181 /* libUMSocial_Sdk_4.3.a */; };
 		235958FF1BEEFAB800E9B181 /* UMSCommentDetailController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 235958851BEEFAB800E9B181 /* UMSCommentDetailController.xib */; };
@@ -182,10 +183,15 @@
 		23B78A3E1BE791A7003FAB86 /* NewsWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23B78A3D1BE791A7003FAB86 /* NewsWebViewController.m */; };
 		23B78A511BE79823003FAB86 /* TrainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23B78A501BE79823003FAB86 /* TrainViewController.m */; };
 		23B78A541BE7983F003FAB86 /* DriveViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 23B78A531BE7983F003FAB86 /* DriveViewController.mm */; };
-		23B78A571BE79852003FAB86 /* SubwayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23B78A561BE79852003FAB86 /* SubwayViewController.m */; };
+		23B78A571BE79852003FAB86 /* CoachViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23B78A561BE79852003FAB86 /* CoachViewController.m */; };
 		23B78A5A1BE7989B003FAB86 /* BusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23B78A591BE7989B003FAB86 /* BusViewController.m */; };
 		23B965C61BDA581200245FE5 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23B965C51BDA581200245FE5 /* CoreLocation.framework */; };
 		23B965C81BDA581900245FE5 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23B965C71BDA581900245FE5 /* MapKit.framework */; };
+		23C1C6751BF3997400725EDA /* DVSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = 23C1C6741BF3997400725EDA /* DVSwitch.m */; };
+		23C1C6771BF3A0B900725EDA /* cities.json in Resources */ = {isa = PBXBuildFile; fileRef = 23C1C6761BF3A0B900725EDA /* cities.json */; };
+		23C1C67A1BF3A0C200725EDA /* stations.json in Resources */ = {isa = PBXBuildFile; fileRef = 23C1C6781BF3A0C200725EDA /* stations.json */; };
+		23C1C67B1BF3A0C200725EDA /* provinces.json in Resources */ = {isa = PBXBuildFile; fileRef = 23C1C6791BF3A0C200725EDA /* provinces.json */; };
+		23C1C6811BF3BF7E00725EDA /* CoachSegmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23C1C6801BF3BF7E00725EDA /* CoachSegmentViewController.m */; };
 		23CA0CDE1BEBB4FD006C777B /* LeftTicketModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 23CA0CDD1BEBB4FD006C777B /* LeftTicketModel.m */; };
 		23CA0CE71BED0DBE006C777B /* OldTrainCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 23CA0CE61BED0DBE006C777B /* OldTrainCell.m */; };
 		23CA0CEA1BED0DCF006C777B /* NewTrainCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 23CA0CE91BED0DCF006C777B /* NewTrainCell.m */; };
@@ -297,6 +303,8 @@
 		234F8EFE1BF330FB00EF589E /* BusLineModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BusLineModel.m; sourceTree = "<group>"; };
 		234F8F001BF3316600EF589E /* BusStationModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BusStationModel.h; sourceTree = "<group>"; };
 		234F8F011BF3316600EF589E /* BusStationModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BusStationModel.m; sourceTree = "<group>"; };
+		234F8F031BF33CE000EF589E /* BusViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BusViewModel.h; sourceTree = "<group>"; };
+		234F8F041BF33CE000EF589E /* BusViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BusViewModel.m; sourceTree = "<group>"; };
 		235958761BEEFAB800E9B181 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/UMSocialLocalizable.strings; sourceTree = "<group>"; };
 		235958781BEEFAB800E9B181 /* UMSocial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMSocial.h; sourceTree = "<group>"; };
 		235958791BEEFAB800E9B181 /* UMSocialAccountManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMSocialAccountManager.h; sourceTree = "<group>"; };
@@ -444,12 +452,19 @@
 		23B78A501BE79823003FAB86 /* TrainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrainViewController.m; sourceTree = "<group>"; };
 		23B78A521BE7983F003FAB86 /* DriveViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DriveViewController.h; sourceTree = "<group>"; };
 		23B78A531BE7983F003FAB86 /* DriveViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = DriveViewController.mm; sourceTree = "<group>"; };
-		23B78A551BE79852003FAB86 /* SubwayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubwayViewController.h; sourceTree = "<group>"; };
-		23B78A561BE79852003FAB86 /* SubwayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubwayViewController.m; sourceTree = "<group>"; };
+		23B78A551BE79852003FAB86 /* CoachViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoachViewController.h; sourceTree = "<group>"; };
+		23B78A561BE79852003FAB86 /* CoachViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoachViewController.m; sourceTree = "<group>"; };
 		23B78A581BE7989B003FAB86 /* BusViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BusViewController.h; sourceTree = "<group>"; };
 		23B78A591BE7989B003FAB86 /* BusViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BusViewController.m; sourceTree = "<group>"; };
 		23B965C51BDA581200245FE5 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		23B965C71BDA581900245FE5 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		23C1C6731BF3997400725EDA /* DVSwitch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DVSwitch.h; sourceTree = "<group>"; };
+		23C1C6741BF3997400725EDA /* DVSwitch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DVSwitch.m; sourceTree = "<group>"; };
+		23C1C6761BF3A0B900725EDA /* cities.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = cities.json; sourceTree = "<group>"; };
+		23C1C6781BF3A0C200725EDA /* stations.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = stations.json; sourceTree = "<group>"; };
+		23C1C6791BF3A0C200725EDA /* provinces.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = provinces.json; sourceTree = "<group>"; };
+		23C1C67F1BF3BF7E00725EDA /* CoachSegmentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoachSegmentViewController.h; sourceTree = "<group>"; };
+		23C1C6801BF3BF7E00725EDA /* CoachSegmentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoachSegmentViewController.m; sourceTree = "<group>"; };
 		23CA0CDC1BEBB4FD006C777B /* LeftTicketModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftTicketModel.h; sourceTree = "<group>"; };
 		23CA0CDD1BEBB4FD006C777B /* LeftTicketModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftTicketModel.m; sourceTree = "<group>"; };
 		23CA0CE51BED0DBE006C777B /* OldTrainCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OldTrainCell.h; sourceTree = "<group>"; };
@@ -880,6 +895,8 @@
 				234F8ECF1BEFF0EC00EF589E /* TrainTimeViewModel.m */,
 				234F8EF41BF3264B00EF589E /* CoachViewModel.h */,
 				234F8EF51BF3264B00EF589E /* CoachViewModel.m */,
+				234F8F031BF33CE000EF589E /* BusViewModel.h */,
+				234F8F041BF33CE000EF589E /* BusViewModel.m */,
 			);
 			path = Trip;
 			sourceTree = "<group>";
@@ -904,8 +921,10 @@
 				234F8ED21BEFF50F00EF589E /* TrainTimeViewController.m */,
 				23B78A521BE7983F003FAB86 /* DriveViewController.h */,
 				23B78A531BE7983F003FAB86 /* DriveViewController.mm */,
-				23B78A551BE79852003FAB86 /* SubwayViewController.h */,
-				23B78A561BE79852003FAB86 /* SubwayViewController.m */,
+				23B78A551BE79852003FAB86 /* CoachViewController.h */,
+				23B78A561BE79852003FAB86 /* CoachViewController.m */,
+				23C1C67F1BF3BF7E00725EDA /* CoachSegmentViewController.h */,
+				23C1C6801BF3BF7E00725EDA /* CoachSegmentViewController.m */,
 				23B78A581BE7989B003FAB86 /* BusViewController.h */,
 				23B78A591BE7989B003FAB86 /* BusViewController.m */,
 			);
@@ -1052,6 +1071,9 @@
 		3886C0B31BD74A4A0014E661 /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				23C1C6781BF3A0C200725EDA /* stations.json */,
+				23C1C6791BF3A0C200725EDA /* provinces.json */,
+				23C1C6761BF3A0B900725EDA /* cities.json */,
 				3804CE481BD758F10046C8C8 /* Category */,
 			);
 			path = Util;
@@ -1060,6 +1082,8 @@
 		3886C0B41BD74A4A0014E661 /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
+				23C1C6731BF3997400725EDA /* DVSwitch.h */,
+				23C1C6741BF3997400725EDA /* DVSwitch.m */,
 				234F8ED41BF0BC1500EF589E /* BaiduMapAPI_Base.framework */,
 				234F8ED51BF0BC1500EF589E /* BaiduMapAPI_Cloud.framework */,
 				234F8ED61BF0BC1500EF589E /* BaiduMapAPI_Location.framework */,
@@ -1243,9 +1267,11 @@
 				2306729B1BE6069C00F31D79 /* 11.png in Resources */,
 				2359592E1BEEFAB800E9B181 /* button_bar_background.png in Resources */,
 				235959141BEEFAB800E9B181 /* UMSocialExtConfig.html in Resources */,
+				23C1C67A1BF3A0C200725EDA /* stations.json in Resources */,
 				235959181BEEFAB800E9B181 /* UMSocialLWSessionData.html in Resources */,
 				230672AB1BE6069C00F31D79 /* 27.png in Resources */,
 				2359592A1BEEFAB800E9B181 /* UMSocialYXTimelineData.html in Resources */,
+				23C1C67B1BF3A0C200725EDA /* provinces.json in Resources */,
 				230672AD1BE6069C00F31D79 /* 29.png in Resources */,
 				230672A31BE6069C00F31D79 /* 19.png in Resources */,
 				23B78A261BE78ECA003FAB86 /* Pods-WeatherNews.debug.xcconfig in Resources */,
@@ -1282,6 +1308,7 @@
 				235959191BEEFAB800E9B181 /* UMSocialLWTimelineData.html in Resources */,
 				235959081BEEFAB800E9B181 /* UMSocialAccountEntity.html in Resources */,
 				235959531BEEFAB800E9B181 /* ios-social-sdk-share-detail.html in Resources */,
+				23C1C6771BF3A0B900725EDA /* cities.json in Resources */,
 				235959071BEEFAB800E9B181 /* UMSocialSDKResourcesNew.bundle in Resources */,
 				235959001BEEFAB800E9B181 /* UMSCommentInputController.xib in Resources */,
 				235959361BEEFAB800E9B181 /* UMSocialUIDelegate.html in Resources */,
@@ -1386,15 +1413,17 @@
 				2371775D1BE93E75008560DF /* S2StationModel.m in Sources */,
 				3804CE531BD758F10046C8C8 /* NSString+PJR.m in Sources */,
 				23CA0CDE1BEBB4FD006C777B /* LeftTicketModel.m in Sources */,
+				23C1C6811BF3BF7E00725EDA /* CoachSegmentViewController.m in Sources */,
 				234F8EEC1BF0CD3100EF589E /* UIImage+Rotate.m in Sources */,
 				23B78A541BE7983F003FAB86 /* DriveViewController.mm in Sources */,
 				232FCE201BE9A7CF008B83A5 /* NSObject+DateFormat.m in Sources */,
 				2371775A1BE93E3B008560DF /* WeatherModel.m in Sources */,
 				237177661BE93FF1008560DF /* NewsListNetManager.m in Sources */,
-				23B78A571BE79852003FAB86 /* SubwayViewController.m in Sources */,
+				23B78A571BE79852003FAB86 /* CoachViewController.m in Sources */,
 				3886C09B1BD748830014E661 /* AppDelegate.mm in Sources */,
 				237177571BE93E3B008560DF /* BDNewsModel.m in Sources */,
 				232FCE171BE9A138008B83A5 /* CalendarHomeViewController.m in Sources */,
+				23C1C6751BF3997400725EDA /* DVSwitch.m in Sources */,
 				232FCE1A1BE9A138008B83A5 /* CalendarMonthHeaderView.m in Sources */,
 				23CA0CED1BED0F84006C777B /* LeftTicketViewController.m in Sources */,
 				3804CE511BD758F10046C8C8 /* AppDelegate+Category.m in Sources */,
@@ -1404,6 +1433,7 @@
 				232FCE161BE9A138008B83A5 /* CalendarDayModel.m in Sources */,
 				23B78A3B1BE79185003FAB86 /* MainViewController.m in Sources */,
 				234F8EFF1BF330FB00EF589E /* BusLineModel.m in Sources */,
+				234F8F051BF33CE000EF589E /* BusViewModel.m in Sources */,
 				237177581BE93E3B008560DF /* CityListModel.m in Sources */,
 				237177671BE93FF1008560DF /* WeatherNetManager.m in Sources */,
 				3886C0BB1BD74AE90014E661 /* BaseViewModel.m in Sources */,
