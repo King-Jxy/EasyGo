@@ -18,6 +18,7 @@
 #import "Color.h"
 #import "TrainViewModel.h"
 #import "LeftTicketViewController.h"
+#import "TrainTimeViewController.h"
 @interface TrainViewController () <GoLocationViewControllerDelegate,LocationViewControllerDelegate,UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic , strong) DriveViewController *dvc;
 @property (nonatomic , strong) SubwayViewController *svc;
@@ -32,7 +33,7 @@
 @property (nonatomic , strong) CalendarHomeViewController *chvc;
 
 @property (nonatomic , strong) TrainViewModel *trainVM;
-
+@property (nonatomic , strong) NSIndexPath *textFieldIndex;
 @end
 
 @implementation TrainViewController
@@ -52,6 +53,18 @@
     self.tableView.tableFooterView = [UIView new];
    
 }
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    [self.view endEditing:YES];
+}
+
+- (IBAction)closeKeyBoard {
+    UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:self.textFieldIndex];
+    UITextField *tf = (UITextField *)[cell.contentView viewWithTag:100];
+    [tf resignFirstResponder];
+}
+
+
 #pragma mark - 起点和终点选择的代理方法
 - (void)goLocationView:(GoLocationViewController *)senderVC withDistination:(NSString *)destination{
     self.end = destination;
@@ -106,8 +119,8 @@
                                                              [self.view addSubview:self.dvc.view];
                                                          }];
     
-    REMenuItem *activityItem = [[REMenuItem alloc] initWithTitle:@"地铁"
-                                                        subtitle:@"地铁线路规划"
+    REMenuItem *activityItem = [[REMenuItem alloc] initWithTitle:@"长途汽车"
+                                                        subtitle:@"长途汽车站点、时刻表和价格查询"
                                                            image:[UIImage imageNamed:@"02.png"]
                                                 highlightedImage:nil
                                                           action:^(REMenuItem *item) {
@@ -141,12 +154,13 @@
 }
 #pragma mark - TableViewDateSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 2;
+    return 3;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-
     if(section == 0){
+        return 1;
+    }else if(section == 1){
         return 3;
     }else{
         return 1;
@@ -157,6 +171,21 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     UITableViewCell *cell;
     if(indexPath.section == 0){
+        self.textFieldIndex = indexPath;
+        cell = [tableView dequeueReusableCellWithIdentifier:@"TrainTimeQueryCell" forIndexPath:indexPath];
+        UITextField *tf = (UITextField *)[cell.contentView viewWithTag:100];
+        UIButton *btn = (UIButton *)[cell.contentView viewWithTag:200];
+//查询推出下一个视图
+        [btn bk_addEventHandler:^(id sender) {
+            if(!tf.text) {
+                [self showErrorMsg:@"未输入车次"];
+                return ;
+            }
+            TrainTimeViewController *tvc = [kStoryboard(@"Main")instantiateViewControllerWithIdentifier:@"TrainTimeViewController"];
+            tvc.trainName = tf.text;
+            [self.navigationController pushViewController:tvc animated:YES];
+        } forControlEvents:UIControlEventTouchUpInside];
+    }else if(indexPath.section == 1){
         if(indexPath.row == 0){
             cell = [tableView dequeueReusableCellWithIdentifier:@"TrainStartCell" forIndexPath:indexPath];
             cell.detailTextLabel.text = self.start;
@@ -178,9 +207,35 @@
 
 
 #pragma mark - TableViewDelegate 
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
+    if(section == 0){
+        return 50;
+    }else{
+        return 10;
+    }
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
+    if(section == 0){
+        return @"列车时刻列表";
+    }else if(section == 1){
+        return @"站到站余票查询";
+    }else{
+        return nil;
+    }
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    if(indexPath.section == 0){
+        return 60;
+    }else{
+        return 46;
+    }
+}
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    if(indexPath.section == 0){
+    if(indexPath.section == 1){
         if(indexPath.row == 0){
             LocationViewController *lvc = [kStoryboard(@"Main")instantiateViewControllerWithIdentifier:@"LocationViewController"];
             lvc.delegate = self;
@@ -207,7 +262,7 @@
             [self.navigationController pushViewController:self.chvc animated:YES];
 
         }
-    }else{
+    }else if(indexPath.section == 2){
         if(!self.start){
             [self showErrorMsg:@"未填写出发站"];
         }else if(!self.end){
@@ -242,8 +297,7 @@
                 [self showErrorMsg:@"此两地之间未通列车"];
             }
         }];
-        
-    }
+        }
     }
 }
 

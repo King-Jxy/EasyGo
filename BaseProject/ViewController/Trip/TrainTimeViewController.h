@@ -10,5 +10,5 @@
 #import "LeftTicketModel.h"
 @interface TrainTimeViewController : UITableViewController
 @property (nonatomic , strong) LTBodyDataModel *selectedData;
-
+@property (nonatomic , strong) NSString *trainName;
 @end
