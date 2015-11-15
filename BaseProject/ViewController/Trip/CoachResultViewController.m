@@ -7,49 +7,99 @@
 //
 
 #import "CoachResultViewController.h"
-
+#import "CoachViewModel.h"
 @interface CoachResultViewController ()
-
+@property (nonatomic , strong) CoachViewModel *coachVM;
 @end
 
 @implementation CoachResultViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+   
+    self.tableView.header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        if(self.city){
+            [self.coachVM getCoachStationDataAtCity:self.city completionHandle:^(NSError *error) {
+                [self.tableView.header endRefreshing];
+                if(error){
+                    [self showErrorMsg:(NSString *)error.userInfo];
+                    return;
+                }else if(!self.coachVM.stationDataArr){
+                    [self showErrorMsg:self.coachVM.reason];
+                    return;
+                }
+                [self.tableView reloadData];
+                self.title = [NSString stringWithFormat:@"%@车站列表",self.city];
+                
+            }];
+        }else{
+            [self.coachVM getCoachS2SListDataFrom:self.start to:self.end completionHandle:^(NSError *error) {
+                [self.tableView.header endRefreshing];
+                if(error){
+                    [self showErrorMsg:(NSString *)error.userInfo];
+                    return;
+                }else if(!self.coachVM.s2sDataArr){
+                    [self showErrorMsg:self.coachVM.reason];
+                    return;
+                }
+                [self.tableView reloadData];
+                self.title = [NSString stringWithFormat:@"%@-%@ 汽车时刻表",self.start,self.end];
+               
+            }];
+        }
+    }];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
+    [self.tableView.header beginRefreshing];
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    self.tableView.tableFooterView = [UIView new];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 0;
+    if(self.city){
+        return self.coachVM.stationDataArr.count;
+    }else{
+        return self.coachVM.s2sDataArr.count;
+    }
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
-    // Configure the cell...
+    UITableViewCell *cell ;
+    if(self.city){
+        cell = [tableView dequeueReusableCellWithIdentifier:@"CoachStationCell" forIndexPath:indexPath];
+        UILabel *nameLabel = (UILabel *)[cell.contentView viewWithTag:100];
+        UILabel *telLabel = (UILabel *)[cell.contentView viewWithTag:101];
+        UILabel *addsLabel = (UILabel *)[cell.contentView viewWithTag:102];
+        nameLabel.text = [@"站名："stringByAppendingString:[self.coachVM getStationNameAtIndex:indexPath.row]];
+        telLabel.text = [@"电话："stringByAppendingString:[self.coachVM getStationTeleAtIndex:indexPath.row]];
+        addsLabel.text = [@"地址："stringByAppendingString:[self.coachVM getStationAddsAtIndex:indexPath.row]];
+        
+    }else{
+        cell = [tableView dequeueReusableCellWithIdentifier:@"CoachTimeCell" forIndexPath:indexPath];
+        UILabel *startLabel = (UILabel *)[cell.contentView viewWithTag:201];
+        UILabel *endLabel = (UILabel *)[cell.contentView viewWithTag:202];
+        UILabel *timeLabel = (UILabel *)[cell.contentView viewWithTag:203];
+        UILabel *priceLabel = (UILabel *)[cell.contentView viewWithTag:204];
+        startLabel.text = [@"出发站："stringByAppendingString:[self.coachVM getStartStaionAtIndex:indexPath.row]];
+        endLabel.text = [@"终点站："stringByAppendingString:[self.coachVM getArriveStationAtIndex:indexPath.row]];
+        timeLabel.text = [@"出发时间："stringByAppendingString:[self.coachVM getDateTimeAtIndex:indexPath.row]];
+        priceLabel.text = [@"票价："stringByAppendingString:[self.coachVM getPriceAtIndex:indexPath.row]];
+    }
     
     return cell;
 }
-*/
+
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
 
 /*
 // Override to support conditional editing of the table view.
@@ -94,5 +144,12 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+- (CoachViewModel *)coachVM {
+	if(_coachVM == nil) {
+		_coachVM = [[CoachViewModel alloc] init];
+	}
+	return _coachVM;
+}
 
 @end

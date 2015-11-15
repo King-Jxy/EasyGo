@@ -48,6 +48,7 @@
     
     [self.searchButton bk_addEventHandler:^(id sender) {
         CoachResultViewController *crvc = [kStoryboard(@"Main")instantiateViewControllerWithIdentifier:@"CoachResultViewController"];
+        crvc.city = self.city;
         [self.navigationController pushViewController:crvc animated:YES];
     } forControlEvents:UIControlEventTouchUpInside];
     

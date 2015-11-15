@@ -70,6 +70,8 @@
     
     [self.searchBtn bk_addEventHandler:^(id sender) {
         CoachResultViewController *crvc = [kStoryboard(@"Main")instantiateViewControllerWithIdentifier:@"CoachResultViewController"];
+        crvc.start = self.startCityStr;
+        crvc.end = self.endCityStr;
         [self.navigationController pushViewController:crvc animated:YES];
     } forControlEvents:UIControlEventTouchUpInside];
 }

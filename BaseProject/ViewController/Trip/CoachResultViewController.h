@@ -9,5 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface CoachResultViewController : UITableViewController
+@property (nonatomic , strong) NSString *city;
+@property (nonatomic , strong) NSString *start;
+@property (nonatomic , strong) NSString *end;
 
 @end
