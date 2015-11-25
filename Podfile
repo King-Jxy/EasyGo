@@ -3,7 +3,7 @@
 # Uncomment this line if you're using Swift
 # use_frameworks!
 
-target 'WeatherNews' do
+target 'EasyGo' do
 
 pod 'AFNetworking'
 pod 'BlocksKit'
@@ -17,6 +17,7 @@ pod 'SVProgressHUD'
 pod 'TPKeyboardAvoiding'
 pod 'MLTransition'
 pod 'REMenu'
+pod 'RESideMenu'
 
 end
 

@@ -98,7 +98,7 @@
     
     REMenuItem *homeItem = [[REMenuItem alloc] initWithTitle:@"火车，动车，高铁"
                                                     subtitle:@"支持实时余票查询，车次查询"
-                                                       image:[UIImage imageNamed:@"01.png"]
+                                                       image:[UIImage imageNamed:@""]
                                             highlightedImage:nil
                                                       action:^(REMenuItem *item) {
                                                           NSLog(@"Item: %@", item);
@@ -110,7 +110,7 @@
     
     REMenuItem *exploreItem = [[REMenuItem alloc] initWithTitle:@"自驾"
                                                        subtitle:@"基于百度地图导航"
-                                                          image:[UIImage imageNamed:@"00.png"]
+                                                          image:[UIImage imageNamed:@""]
                                                highlightedImage:nil
                                                          action:^(REMenuItem *item) {
                                                              NSLog(@"Item: %@", item);
@@ -123,7 +123,7 @@
     
     REMenuItem *activityItem = [[REMenuItem alloc] initWithTitle:@"长途汽车"
                                                         subtitle:@"长途汽车站点、时刻表和价格查询"
-                                                           image:[UIImage imageNamed:@"Rect_blue_bus.png"]
+                                                           image:[UIImage imageNamed:@""]
                                                 highlightedImage:nil
                                                           action:^(REMenuItem *item) {
                                                               NSLog(@"Item: %@", item);
@@ -135,7 +135,7 @@
     
     REMenuItem *profileItem = [[REMenuItem alloc] initWithTitle:@"公交"
                                                        subtitle:@"公交线路规划，站点查询"
-                                                          image:[UIImage imageNamed:@"Bus.png"]
+                                                          image:[UIImage imageNamed:@""]
                                                highlightedImage:nil
                                                          action:^(REMenuItem *item) {
                                                              NSLog(@"Item: %@", item);
@@ -201,7 +201,7 @@
         }else{
             cell = [tableView dequeueReusableCellWithIdentifier:@"TrainStartDateCell" forIndexPath:indexPath];
             cell.detailTextLabel.text = self.startDateWeek;
-            cell.imageView.image = [UIImage imageNamed:@"main_4.png"];
+            
         }
     }else{
         cell = [tableView dequeueReusableCellWithIdentifier:@"TrainSearchCell" forIndexPath:indexPath];
@@ -213,7 +213,7 @@
 #pragma mark - TableViewDelegate 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
     if(section == 0){
-        return 50;
+        return 25;
     }else{
         return 10;
     }

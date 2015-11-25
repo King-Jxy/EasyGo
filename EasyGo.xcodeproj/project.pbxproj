@@ -173,8 +173,6 @@
 		237177791BE94DB8008560DF /* TrainViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 237177781BE94DB8008560DF /* TrainViewModel.m */; };
 		2395315A1BE1C2AE00FEB8DD /* WeatherView.m in Sources */ = {isa = PBXBuildFile; fileRef = 239531591BE1C2AE00FEB8DD /* WeatherView.m */; };
 		239531A71BE23F1700FEB8DD /* bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 239531A61BE23F1700FEB8DD /* bg.jpg */; };
-		23B78A261BE78ECA003FAB86 /* Pods-WeatherNews.debug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 23B78A241BE78ECA003FAB86 /* Pods-WeatherNews.debug.xcconfig */; };
-		23B78A271BE78ECA003FAB86 /* Pods-WeatherNews.release.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 23B78A251BE78ECA003FAB86 /* Pods-WeatherNews.release.xcconfig */; };
 		23B78A351BE79130003FAB86 /* GoLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23B78A2E1BE79130003FAB86 /* GoLocationViewController.m */; };
 		23B78A361BE79130003FAB86 /* LocationCityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23B78A301BE79130003FAB86 /* LocationCityViewController.m */; };
 		23B78A371BE79130003FAB86 /* LocationDistrictViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23B78A321BE79130003FAB86 /* LocationDistrictViewController.m */; };
@@ -198,6 +196,7 @@
 		23CA0CEA1BED0DCF006C777B /* NewTrainCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 23CA0CE91BED0DCF006C777B /* NewTrainCell.m */; };
 		23CA0CED1BED0F84006C777B /* LeftTicketViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23CA0CEC1BED0F84006C777B /* LeftTicketViewController.m */; };
 		23CA0CF01BEDC4C2006C777B /* MoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23CA0CEF1BEDC4C2006C777B /* MoreViewController.m */; };
+		23EE496F1C04846C00C94C70 /* LeftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23EE496E1C04846C00C94C70 /* LeftViewController.m */; };
 		3804CE511BD758F10046C8C8 /* AppDelegate+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 3804CE4A1BD758F10046C8C8 /* AppDelegate+Category.m */; };
 		3804CE521BD758F10046C8C8 /* NSObject+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 3804CE4C1BD758F10046C8C8 /* NSObject+Common.m */; };
 		3804CE531BD758F10046C8C8 /* NSString+PJR.m in Sources */ = {isa = PBXBuildFile; fileRef = 3804CE4E1BD758F10046C8C8 /* NSString+PJR.m */; };
@@ -210,11 +209,11 @@
 		3886C0BB1BD74AE90014E661 /* BaseViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3886C0BA1BD74AE90014E661 /* BaseViewModel.m */; };
 		3886C0BE1BD74AFE0014E661 /* BaseNetManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3886C0BD1BD74AFE0014E661 /* BaseNetManager.m */; };
 		3886C0C11BD74B090014E661 /* BaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3886C0C01BD74B090014E661 /* BaseModel.m */; };
-		748A1D606B313CDD2287561F /* libPods-WeatherNews.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BC86D973B5D70DB61006010 /* libPods-WeatherNews.a */; };
+		AFB74431F994D20FE6AFA682 /* libPods-EasyGo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C315BE428A3504758197E7A5 /* libPods-EasyGo.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1BC86D973B5D70DB61006010 /* libPods-WeatherNews.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WeatherNews.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		08307824173883B8F34AFC96 /* Pods-EasyGo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyGo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EasyGo/Pods-EasyGo.debug.xcconfig"; sourceTree = "<group>"; };
 		230671F51BE4A2CB00F31D79 /* NSString+CalcTime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+CalcTime.h"; sourceTree = "<group>"; };
 		230671F61BE4A2CB00F31D79 /* NSString+CalcTime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+CalcTime.m"; sourceTree = "<group>"; };
 		230672221BE50FF400F31D79 /* png.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = png.jpg; sourceTree = "<group>"; };
@@ -435,8 +434,6 @@
 		239531581BE1C2AE00FEB8DD /* WeatherView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherView.h; sourceTree = "<group>"; };
 		239531591BE1C2AE00FEB8DD /* WeatherView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherView.m; sourceTree = "<group>"; };
 		239531A61BE23F1700FEB8DD /* bg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bg.jpg; sourceTree = "<group>"; };
-		23B78A241BE78ECA003FAB86 /* Pods-WeatherNews.debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = "Pods-WeatherNews.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WeatherNews/Pods-WeatherNews.debug.xcconfig"; sourceTree = "<group>"; };
-		23B78A251BE78ECA003FAB86 /* Pods-WeatherNews.release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = "Pods-WeatherNews.release.xcconfig"; path = "Pods/Target Support Files/Pods-WeatherNews/Pods-WeatherNews.release.xcconfig"; sourceTree = "<group>"; };
 		23B78A2D1BE79130003FAB86 /* GoLocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoLocationViewController.h; sourceTree = "<group>"; };
 		23B78A2E1BE79130003FAB86 /* GoLocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoLocationViewController.m; sourceTree = "<group>"; };
 		23B78A2F1BE79130003FAB86 /* LocationCityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationCityViewController.h; sourceTree = "<group>"; };
@@ -478,6 +475,8 @@
 		23CA0CEC1BED0F84006C777B /* LeftTicketViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftTicketViewController.m; sourceTree = "<group>"; };
 		23CA0CEE1BEDC4C2006C777B /* MoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreViewController.h; sourceTree = "<group>"; };
 		23CA0CEF1BEDC4C2006C777B /* MoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreViewController.m; sourceTree = "<group>"; };
+		23EE496D1C04846C00C94C70 /* LeftViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftViewController.h; sourceTree = "<group>"; };
+		23EE496E1C04846C00C94C70 /* LeftViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftViewController.m; sourceTree = "<group>"; };
 		3804CE491BD758F10046C8C8 /* AppDelegate+Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+Category.h"; sourceTree = "<group>"; };
 		3804CE4A1BD758F10046C8C8 /* AppDelegate+Category.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+Category.m"; sourceTree = "<group>"; };
 		3804CE4B1BD758F10046C8C8 /* NSObject+Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Common.h"; sourceTree = "<group>"; };
@@ -502,6 +501,8 @@
 		3886C0BF1BD74B090014E661 /* BaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseModel.h; sourceTree = "<group>"; };
 		3886C0C01BD74B090014E661 /* BaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseModel.m; sourceTree = "<group>"; };
 		3886C0C21BD74B430014E661 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		3FEA0F14AE34C71618AEB655 /* Pods-EasyGo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyGo.release.xcconfig"; path = "Pods/Target Support Files/Pods-EasyGo/Pods-EasyGo.release.xcconfig"; sourceTree = "<group>"; };
+		C315BE428A3504758197E7A5 /* libPods-EasyGo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-EasyGo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -533,9 +534,9 @@
 				234F8EDB1BF0BC1500EF589E /* BaiduMapAPI_Base.framework in Frameworks */,
 				234F8EE01BF0BC1500EF589E /* BaiduMapAPI_Search.framework in Frameworks */,
 				234F8EE11BF0BC1600EF589E /* BaiduMapAPI_Utils.framework in Frameworks */,
-				748A1D606B313CDD2287561F /* libPods-WeatherNews.a in Frameworks */,
 				234F8EDC1BF0BC1500EF589E /* BaiduMapAPI_Cloud.framework in Frameworks */,
 				2359593E1BEEFAB800E9B181 /* libSocialQQ.a in Frameworks */,
+				AFB74431F994D20FE6AFA682 /* libPods-EasyGo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1121,6 +1122,8 @@
 			children = (
 				23B78A391BE79185003FAB86 /* MainViewController.h */,
 				23B78A3A1BE79185003FAB86 /* MainViewController.m */,
+				23EE496D1C04846C00C94C70 /* LeftViewController.h */,
+				23EE496E1C04846C00C94C70 /* LeftViewController.m */,
 				23B78A3F1BE7955D003FAB86 /* More */,
 				23B78A2C1BE79109003FAB86 /* Location */,
 				23B78A2B1BE790D8003FAB86 /* Trip */,
@@ -1143,8 +1146,8 @@
 		DEB62B47C560AA65E07ECFA4 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				23B78A241BE78ECA003FAB86 /* Pods-WeatherNews.debug.xcconfig */,
-				23B78A251BE78ECA003FAB86 /* Pods-WeatherNews.release.xcconfig */,
+				08307824173883B8F34AFC96 /* Pods-EasyGo.debug.xcconfig */,
+				3FEA0F14AE34C71618AEB655 /* Pods-EasyGo.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -1166,7 +1169,7 @@
 				23609FC91BE9B36500279624 /* UIKit.framework */,
 				23B965C71BDA581900245FE5 /* MapKit.framework */,
 				23B965C51BDA581200245FE5 /* CoreLocation.framework */,
-				1BC86D973B5D70DB61006010 /* libPods-WeatherNews.a */,
+				C315BE428A3504758197E7A5 /* libPods-EasyGo.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1264,7 +1267,6 @@
 				239531A71BE23F1700FEB8DD /* bg.jpg in Resources */,
 				230672921BE6069C00F31D79 /* 02.png in Resources */,
 				3886C0AE1BD749A00014E661 /* LaunchScreen.xib in Resources */,
-				23B78A271BE78ECA003FAB86 /* Pods-WeatherNews.release.xcconfig in Resources */,
 				235959131BEEFAB800E9B181 /* UMSocialEmailData.html in Resources */,
 				235959041BEEFAB800E9B181 /* UMSLoginViewController.xib in Resources */,
 				234F8EE91BF0BE0200EF589E /* mapapi.bundle in Resources */,
@@ -1279,7 +1281,6 @@
 				23C1C67B1BF3A0C200725EDA /* provinces.json in Resources */,
 				230672AD1BE6069C00F31D79 /* 29.png in Resources */,
 				230672A31BE6069C00F31D79 /* 19.png in Resources */,
-				23B78A261BE78ECA003FAB86 /* Pods-WeatherNews.debug.xcconfig in Resources */,
 				235959161BEEFAB800E9B181 /* UMSocialIconActionSheet.html in Resources */,
 				235959051BEEFAB800E9B181 /* UMSnsAccountViewController.xib in Resources */,
 				230672941BE6069C00F31D79 /* 04.png in Resources */,
@@ -1382,7 +1383,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WeatherNews/Pods-WeatherNews-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EasyGo/Pods-EasyGo-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D8E8828545C9BEB50A74CA11 /* Copy Pods Resources */ = {
@@ -1397,7 +1398,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WeatherNews/Pods-WeatherNews-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EasyGo/Pods-EasyGo-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1416,6 +1417,7 @@
 				3804CE541BD758F10046C8C8 /* NSString+QRCode.m in Sources */,
 				237177651BE93FF1008560DF /* CityListNetManager.m in Sources */,
 				2371775D1BE93E75008560DF /* S2StationModel.m in Sources */,
+				23EE496F1C04846C00C94C70 /* LeftViewController.m in Sources */,
 				3804CE531BD758F10046C8C8 /* NSString+PJR.m in Sources */,
 				23CA0CDE1BEBB4FD006C777B /* LeftTicketModel.m in Sources */,
 				23C1C6811BF3BF7E00725EDA /* CoachSegmentViewController.m in Sources */,
@@ -1577,7 +1579,7 @@
 		};
 		3886C0AB1BD748830014E661 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 23B78A241BE78ECA003FAB86 /* Pods-WeatherNews.debug.xcconfig */;
+			baseConfigurationReference = 08307824173883B8F34AFC96 /* Pods-EasyGo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -1615,7 +1617,7 @@
 		};
 		3886C0AC1BD748830014E661 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 23B78A251BE78ECA003FAB86 /* Pods-WeatherNews.release.xcconfig */;
+			baseConfigurationReference = 3FEA0F14AE34C71618AEB655 /* Pods-EasyGo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";

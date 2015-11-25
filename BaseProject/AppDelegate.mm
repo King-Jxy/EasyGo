@@ -12,6 +12,8 @@
 #import "UMSocial.h"
 #import "MobClick.h"
 #import "MobClickSocialAnalytics.h"
+#import "LeftViewController.h"
+#import "MainViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -62,9 +64,12 @@
     if (!ret) {
         NSLog(@"manager start failed!");
     }
+    
+    
     // Add the navigation controller's view to the window and display.
     [self.window addSubview:navigationController.view];
     [self.window makeKeyAndVisible];
+
     
 //    [TripNetManager getBusStationDataAtCity:@"温州" atStation:@"温州大学" CompletionHandle:^(BusStationModel *model, NSError *error) {
 //        

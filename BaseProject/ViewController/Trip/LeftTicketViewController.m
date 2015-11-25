@@ -45,7 +45,7 @@
                                 shareToSnsNames:[NSArray arrayWithObjects:UMShareToSina,UMShareToWechatSession,UMShareToEmail,nil]
                                        delegate:self];
     
-    [UMSocialWechatHandler setWXAppId:@"wx945b58aef3a271fO" appSecret:@"Oae78dd42761fd9681b04833c79a857b" url:@"http://www.umeng.com/social"];
+    [UMSocialWechatHandler setWXAppId:@"wxf2677aed96fb96a1" appSecret:@"d4624c36b6795d1d99dcf0547af5443d" url:@"http://www.umeng.com/social"];
     [UMSocialConfig hiddenNotInstallPlatforms:@[UMShareToQQ, UMShareToQzone, UMShareToWechatSession, UMShareToWechatTimeline]];
 }
 

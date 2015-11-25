@@ -21,6 +21,7 @@
 @property (weak, nonatomic) IBOutlet UITableView *newsTableView;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *placeSegment;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *setMyLocation;
+
 @property (weak, nonatomic) IBOutlet UIButton *goWhereBtn;
 @property (weak, nonatomic) IBOutlet UIImageView *weatherImageView;//天气背景图
 @property (weak, nonatomic) IBOutlet WeatherView *headerView;//天气视图
@@ -103,6 +104,11 @@
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
     self.navigationController.interactivePopGestureRecognizer.delegate = self.savedDelegate;//这里是为了保留系统的右滑返回手势
+    
+}
+
+#pragma mark - 划出做半边的菜单
+- (void)showLeftView:(UIBarButtonItem *)sender{
     
 }
 

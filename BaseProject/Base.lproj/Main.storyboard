@@ -8,10 +8,68 @@
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
+        <!--Side Menu-->
+        <scene sceneID="8XX-Pa-cIB">
+            <objects>
+                <viewController storyboardIdentifier="RESideMenu" id="NuD-E1-Ybp" customClass="RESideMenu" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="pIZ-sI-fnY"/>
+                        <viewControllerLayoutGuide type="bottom" id="jUa-wB-MzU"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ajW-X2-4ub">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="bJw-D1-JwY">
+                        <nil key="title"/>
+                        <barButtonItem key="leftBarButtonItem" image="home_personal_btn_normal" id="tsQ-Xl-zsg"/>
+                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="USD-sW-TFv">
+                            <rect key="frame" x="90" y="8" width="141" height="29"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <animations/>
+                            <segments>
+                                <segment title="本地"/>
+                                <segment title="目的地"/>
+                            </segments>
+                        </segmentedControl>
+                        <barButtonItem key="rightBarButtonItem" title="我的位置" id="fHW-2Z-ZJw"/>
+                    </navigationItem>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="contentViewStoryboardID" value="MainViewController"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="leftMenuViewStoryboardID" value="LeftViewController"/>
+                    </userDefinedRuntimeAttributes>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="edh-x2-Vpd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="134" y="-1980"/>
+        </scene>
+        <!--Left View Controller-->
+        <scene sceneID="HkQ-po-yAx">
+            <objects>
+                <viewController storyboardIdentifier="LeftViewController" id="AZw-bc-iSM" customClass="LeftViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="CLs-k4-TZm"/>
+                        <viewControllerLayoutGuide type="bottom" id="yjg-tn-eWg"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8RO-YI-H0S">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="m81-35-SQj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="300" y="-1980"/>
+        </scene>
         <!--Main View Controller-->
         <scene sceneID="NsB-C7-PSp">
             <objects>
-                <viewController id="0Sz-QH-HIn" customClass="MainViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainViewController" id="0Sz-QH-HIn" customClass="MainViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="gUZ-EQ-etK"/>
                         <viewControllerLayoutGuide type="bottom" id="5ms-3i-TEx"/>
@@ -20,8 +78,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="108" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="VOb-Hw-80E" userLabel="NewsTable">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="108" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="VOb-Hw-80E" userLabel="NewsTable">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="431"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexBackgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -282,7 +340,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DcV-ea-97V" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1120" y="-1476"/>
+            <point key="canvasLocation" x="1043" y="-1837"/>
         </scene>
         <!--去哪-->
         <scene sceneID="tvh-im-Ghi">
@@ -475,11 +533,11 @@
             </objects>
             <point key="canvasLocation" x="1956" y="-1556"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--资讯-->
         <scene sceneID="5iY-6H-dB4">
             <objects>
                 <navigationController storyboardIdentifier="WeatherNews" automaticallyAdjustsScrollViewInsets="NO" id="p1n-dM-rJR" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="mostViewed" id="hSB-sR-BRg"/>
+                    <tabBarItem key="tabBarItem" title="资讯" image="unstar_24px" id="hSB-sR-BRg"/>
                     <toolbarItems/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="kya-2q-tiV">
@@ -489,7 +547,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="0Sz-QH-HIn" kind="relationship" relationship="rootViewController" id="35K-AZ-iLb"/>
+                        <segue destination="0Sz-QH-HIn" kind="relationship" relationship="rootViewController" id="8NV-Kc-bes"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RTd-wc-T1g" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1757,11 +1815,11 @@
             </objects>
             <point key="canvasLocation" x="-870" y="-514"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--出行-->
         <scene sceneID="6Au-KR-fD2">
             <objects>
                 <navigationController storyboardIdentifier="TripView" automaticallyAdjustsScrollViewInsets="NO" id="3PS-9m-98L" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="recents" id="lPx-Sk-fMl"/>
+                    <tabBarItem key="tabBarItem" title="出行" image="bus_white_24px" id="lPx-Sk-fMl"/>
                     <toolbarItems/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="dTF-Rh-5wH">
@@ -1778,11 +1836,11 @@
             </objects>
             <point key="canvasLocation" x="-131" y="-126"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--更多-->
         <scene sceneID="TGH-yL-1gD">
             <objects>
                 <navigationController id="gO0-cS-iqX" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="more" id="dUC-WZ-OHY"/>
+                    <tabBarItem key="tabBarItem" title="更多" image="more_action_24px" id="dUC-WZ-OHY"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="fde-QF-Fuy">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -1966,12 +2024,15 @@
         </scene>
     </scenes>
     <resources>
+        <image name="bus_white_24px" width="24" height="24"/>
         <image name="city_relocate_ic" width="24" height="24"/>
         <image name="home_personal_btn_normal" width="32" height="32"/>
         <image name="icon_pin_floating" width="22" height="30"/>
+        <image name="more_action_24px" width="24" height="24"/>
         <image name="more_share_ic" width="19" height="21"/>
         <image name="png.jpg" width="391" height="220"/>
         <image name="ride_bg2_pic" width="429" height="82"/>
         <image name="ride_bg3_pic" width="429" height="82"/>
+        <image name="unstar_24px" width="24" height="24"/>
     </resources>
 </document>
