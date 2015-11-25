@@ -7,7 +7,7 @@
 //
 
 #import "MoreViewController.h"
-
+#import "DetailFunctionViewController.h"
 @interface MoreViewController ()
 
 @end
@@ -40,6 +40,36 @@
     return @"携程旗下";
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    DetailFunctionViewController *dfvc;
+    NSString *path;
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    switch (indexPath.row) {
+        case 0:
+            path = @"http://m.ctrip.com/html5/flight?allianceid=283778&sid=735700";
+            dfvc = [[DetailFunctionViewController alloc]initWithURL:[NSURL URLWithString:path]];
+            break;
+        case 1:
+            path = @"http://m.ctrip.com/webapp/hotel/?city=2&day=1&allianceid=283778&sid=735700&popup=close";
+            dfvc = [[DetailFunctionViewController alloc]initWithURL:[NSURL URLWithString:path]];
+            break;
+        case 2:
+            path = @"http://m.ctrip.com/webapp/bus/bus/index?bus=1&utmSource=zs&ad=close&popup=close";
+            dfvc = [[DetailFunctionViewController alloc]initWithURL:[NSURL URLWithString:path]];
+            break;
+        case 3:
+            path = @"http://m.ctrip.com/webapp/train/home/index?allianceid=283778&sid=732699";
+            dfvc = [[DetailFunctionViewController alloc]initWithURL:[NSURL URLWithString:path]];
+            break;
+        case 4:
+            path = @"http://m.ctrip.com/webapp/car/com/index?allianceid=283778&sid=735700";
+            dfvc = [[DetailFunctionViewController alloc]initWithURL:[NSURL URLWithString:path]];
+            break;
+        default:
+            break;
+    }
+    [self.navigationController pushViewController:dfvc animated:YES];
+}
 /*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];

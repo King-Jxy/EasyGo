@@ -197,6 +197,7 @@
 		23CA0CED1BED0F84006C777B /* LeftTicketViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23CA0CEC1BED0F84006C777B /* LeftTicketViewController.m */; };
 		23CA0CF01BEDC4C2006C777B /* MoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23CA0CEF1BEDC4C2006C777B /* MoreViewController.m */; };
 		23EE496F1C04846C00C94C70 /* LeftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23EE496E1C04846C00C94C70 /* LeftViewController.m */; };
+		23EE49721C0555C700C94C70 /* DetailFunctionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23EE49711C0555C700C94C70 /* DetailFunctionViewController.m */; };
 		3804CE511BD758F10046C8C8 /* AppDelegate+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 3804CE4A1BD758F10046C8C8 /* AppDelegate+Category.m */; };
 		3804CE521BD758F10046C8C8 /* NSObject+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 3804CE4C1BD758F10046C8C8 /* NSObject+Common.m */; };
 		3804CE531BD758F10046C8C8 /* NSString+PJR.m in Sources */ = {isa = PBXBuildFile; fileRef = 3804CE4E1BD758F10046C8C8 /* NSString+PJR.m */; };
@@ -477,6 +478,8 @@
 		23CA0CEF1BEDC4C2006C777B /* MoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreViewController.m; sourceTree = "<group>"; };
 		23EE496D1C04846C00C94C70 /* LeftViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftViewController.h; sourceTree = "<group>"; };
 		23EE496E1C04846C00C94C70 /* LeftViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftViewController.m; sourceTree = "<group>"; };
+		23EE49701C0555C700C94C70 /* DetailFunctionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailFunctionViewController.h; sourceTree = "<group>"; };
+		23EE49711C0555C700C94C70 /* DetailFunctionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailFunctionViewController.m; sourceTree = "<group>"; };
 		3804CE491BD758F10046C8C8 /* AppDelegate+Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+Category.h"; sourceTree = "<group>"; };
 		3804CE4A1BD758F10046C8C8 /* AppDelegate+Category.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+Category.m"; sourceTree = "<group>"; };
 		3804CE4B1BD758F10046C8C8 /* NSObject+Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Common.h"; sourceTree = "<group>"; };
@@ -957,6 +960,8 @@
 			children = (
 				23CA0CEE1BEDC4C2006C777B /* MoreViewController.h */,
 				23CA0CEF1BEDC4C2006C777B /* MoreViewController.m */,
+				23EE49701C0555C700C94C70 /* DetailFunctionViewController.h */,
+				23EE49711C0555C700C94C70 /* DetailFunctionViewController.m */,
 			);
 			path = More;
 			sourceTree = "<group>";
@@ -1430,6 +1435,7 @@
 				3886C09B1BD748830014E661 /* AppDelegate.mm in Sources */,
 				237177571BE93E3B008560DF /* BDNewsModel.m in Sources */,
 				232FCE171BE9A138008B83A5 /* CalendarHomeViewController.m in Sources */,
+				23EE49721C0555C700C94C70 /* DetailFunctionViewController.m in Sources */,
 				23C1C6751BF3997400725EDA /* DVSwitch.m in Sources */,
 				232FCE1A1BE9A138008B83A5 /* CalendarMonthHeaderView.m in Sources */,
 				23CA0CED1BED0F84006C777B /* LeftTicketViewController.m in Sources */,
