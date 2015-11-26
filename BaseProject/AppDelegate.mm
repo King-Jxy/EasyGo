@@ -71,10 +71,10 @@
     [self.window makeKeyAndVisible];
 
     
-//    [TripNetManager getBusStationDataAtCity:@"温州" atStation:@"温州大学" CompletionHandle:^(BusStationModel *model, NSError *error) {
+//    [TripNetManager getBusLineDataAtCity:@"温州" inLine:@"40" CompletionHandle:^(BusLineModel *model, NSError *error) {
 //        
 //    }];
-    
+
     return YES;
 }
 

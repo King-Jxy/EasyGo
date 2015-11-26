@@ -5,7 +5,7 @@
 //  Created by jake on 15/11/11.
 //  Copyright © 2015年 Tarena. All rights reserved.
 //
-
+//公交线路模型
 #import "BaseModel.h"
 
 @class BusLineBodyModel,BusLineRetlistModel;
@@ -33,6 +33,8 @@
 @property (nonatomic, copy) NSString *info;
 
 @property (nonatomic, copy) NSString *stats;
+
+@property (nonatomic , strong) NSArray *stations;//用于存储站点数组（从stats字符串中获取出来，在viewModel层中处理）
 
 @end
 

@@ -182,7 +182,6 @@
 		23B78A511BE79823003FAB86 /* TrainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23B78A501BE79823003FAB86 /* TrainViewController.m */; };
 		23B78A541BE7983F003FAB86 /* DriveViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 23B78A531BE7983F003FAB86 /* DriveViewController.mm */; };
 		23B78A571BE79852003FAB86 /* CoachViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23B78A561BE79852003FAB86 /* CoachViewController.m */; };
-		23B78A5A1BE7989B003FAB86 /* BusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23B78A591BE7989B003FAB86 /* BusViewController.m */; };
 		23B965C61BDA581200245FE5 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23B965C51BDA581200245FE5 /* CoreLocation.framework */; };
 		23B965C81BDA581900245FE5 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23B965C71BDA581900245FE5 /* MapKit.framework */; };
 		23C1C6751BF3997400725EDA /* DVSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = 23C1C6741BF3997400725EDA /* DVSwitch.m */; };
@@ -198,6 +197,10 @@
 		23CA0CF01BEDC4C2006C777B /* MoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23CA0CEF1BEDC4C2006C777B /* MoreViewController.m */; };
 		23EE496F1C04846C00C94C70 /* LeftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23EE496E1C04846C00C94C70 /* LeftViewController.m */; };
 		23EE49721C0555C700C94C70 /* DetailFunctionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23EE49711C0555C700C94C70 /* DetailFunctionViewController.m */; };
+		23FA5E871C069A050019075A /* BusStationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23FA5E841C069A050019075A /* BusStationViewController.m */; };
+		23FA5E881C069A050019075A /* BusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23FA5E861C069A050019075A /* BusViewController.m */; };
+		23FA5E8B1C06A8A60019075A /* BusStationListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23FA5E8A1C06A8A60019075A /* BusStationListViewController.m */; };
+		23FA5E8E1C06D03B0019075A /* BusLineListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23FA5E8D1C06D03B0019075A /* BusLineListViewController.m */; };
 		3804CE511BD758F10046C8C8 /* AppDelegate+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 3804CE4A1BD758F10046C8C8 /* AppDelegate+Category.m */; };
 		3804CE521BD758F10046C8C8 /* NSObject+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 3804CE4C1BD758F10046C8C8 /* NSObject+Common.m */; };
 		3804CE531BD758F10046C8C8 /* NSString+PJR.m in Sources */ = {isa = PBXBuildFile; fileRef = 3804CE4E1BD758F10046C8C8 /* NSString+PJR.m */; };
@@ -453,8 +456,6 @@
 		23B78A531BE7983F003FAB86 /* DriveViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = DriveViewController.mm; sourceTree = "<group>"; };
 		23B78A551BE79852003FAB86 /* CoachViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoachViewController.h; sourceTree = "<group>"; };
 		23B78A561BE79852003FAB86 /* CoachViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoachViewController.m; sourceTree = "<group>"; };
-		23B78A581BE7989B003FAB86 /* BusViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BusViewController.h; sourceTree = "<group>"; };
-		23B78A591BE7989B003FAB86 /* BusViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BusViewController.m; sourceTree = "<group>"; };
 		23B965C51BDA581200245FE5 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		23B965C71BDA581900245FE5 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		23C1C6731BF3997400725EDA /* DVSwitch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DVSwitch.h; sourceTree = "<group>"; };
@@ -480,6 +481,14 @@
 		23EE496E1C04846C00C94C70 /* LeftViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftViewController.m; sourceTree = "<group>"; };
 		23EE49701C0555C700C94C70 /* DetailFunctionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailFunctionViewController.h; sourceTree = "<group>"; };
 		23EE49711C0555C700C94C70 /* DetailFunctionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailFunctionViewController.m; sourceTree = "<group>"; };
+		23FA5E831C069A050019075A /* BusStationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BusStationViewController.h; sourceTree = "<group>"; };
+		23FA5E841C069A050019075A /* BusStationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BusStationViewController.m; sourceTree = "<group>"; };
+		23FA5E851C069A050019075A /* BusViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BusViewController.h; sourceTree = "<group>"; };
+		23FA5E861C069A050019075A /* BusViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BusViewController.m; sourceTree = "<group>"; };
+		23FA5E891C06A8A60019075A /* BusStationListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BusStationListViewController.h; sourceTree = "<group>"; };
+		23FA5E8A1C06A8A60019075A /* BusStationListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BusStationListViewController.m; sourceTree = "<group>"; };
+		23FA5E8C1C06D03B0019075A /* BusLineListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BusLineListViewController.h; sourceTree = "<group>"; };
+		23FA5E8D1C06D03B0019075A /* BusLineListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BusLineListViewController.m; sourceTree = "<group>"; };
 		3804CE491BD758F10046C8C8 /* AppDelegate+Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+Category.h"; sourceTree = "<group>"; };
 		3804CE4A1BD758F10046C8C8 /* AppDelegate+Category.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+Category.m"; sourceTree = "<group>"; };
 		3804CE4B1BD758F10046C8C8 /* NSObject+Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Common.h"; sourceTree = "<group>"; };
@@ -934,8 +943,14 @@
 				23C1C6801BF3BF7E00725EDA /* CoachSegmentViewController.m */,
 				23C1C6821BF3CC0800725EDA /* CoachResultViewController.h */,
 				23C1C6831BF3CC0800725EDA /* CoachResultViewController.m */,
-				23B78A581BE7989B003FAB86 /* BusViewController.h */,
-				23B78A591BE7989B003FAB86 /* BusViewController.m */,
+				23FA5E851C069A050019075A /* BusViewController.h */,
+				23FA5E861C069A050019075A /* BusViewController.m */,
+				23FA5E831C069A050019075A /* BusStationViewController.h */,
+				23FA5E841C069A050019075A /* BusStationViewController.m */,
+				23FA5E891C06A8A60019075A /* BusStationListViewController.h */,
+				23FA5E8A1C06A8A60019075A /* BusStationListViewController.m */,
+				23FA5E8C1C06D03B0019075A /* BusLineListViewController.h */,
+				23FA5E8D1C06D03B0019075A /* BusLineListViewController.m */,
 			);
 			path = Trip;
 			sourceTree = "<group>";
@@ -1431,16 +1446,19 @@
 				232FCE201BE9A7CF008B83A5 /* NSObject+DateFormat.m in Sources */,
 				2371775A1BE93E3B008560DF /* WeatherModel.m in Sources */,
 				237177661BE93FF1008560DF /* NewsListNetManager.m in Sources */,
+				23FA5E871C069A050019075A /* BusStationViewController.m in Sources */,
 				23B78A571BE79852003FAB86 /* CoachViewController.m in Sources */,
 				3886C09B1BD748830014E661 /* AppDelegate.mm in Sources */,
 				237177571BE93E3B008560DF /* BDNewsModel.m in Sources */,
 				232FCE171BE9A138008B83A5 /* CalendarHomeViewController.m in Sources */,
+				23FA5E881C069A050019075A /* BusViewController.m in Sources */,
 				23EE49721C0555C700C94C70 /* DetailFunctionViewController.m in Sources */,
 				23C1C6751BF3997400725EDA /* DVSwitch.m in Sources */,
 				232FCE1A1BE9A138008B83A5 /* CalendarMonthHeaderView.m in Sources */,
 				23CA0CED1BED0F84006C777B /* LeftTicketViewController.m in Sources */,
 				3804CE511BD758F10046C8C8 /* AppDelegate+Category.m in Sources */,
 				237177731BE94D82008560DF /* CityListViewModel.m in Sources */,
+				23FA5E8B1C06A8A60019075A /* BusStationListViewController.m in Sources */,
 				232FCE1D1BE9A138008B83A5 /* NSDate+WQCalendarLogic.m in Sources */,
 				23B78A511BE79823003FAB86 /* TrainViewController.m in Sources */,
 				232FCE161BE9A138008B83A5 /* CalendarDayModel.m in Sources */,
@@ -1455,8 +1473,8 @@
 				234F8ED01BEFF0EC00EF589E /* TrainTimeViewModel.m in Sources */,
 				3886C0C11BD74B090014E661 /* BaseModel.m in Sources */,
 				2395315A1BE1C2AE00FEB8DD /* WeatherView.m in Sources */,
+				23FA5E8E1C06D03B0019075A /* BusLineListViewController.m in Sources */,
 				3886C0981BD748830014E661 /* main.m in Sources */,
-				23B78A5A1BE7989B003FAB86 /* BusViewController.m in Sources */,
 				234F8F021BF3316600EF589E /* BusStationModel.m in Sources */,
 				234F8ED31BEFF50F00EF589E /* TrainTimeViewController.m in Sources */,
 				3804CE521BD758F10046C8C8 /* NSObject+Common.m in Sources */,
